@@ -13,19 +13,20 @@ DEFINE_string(follow, "", "Starts following the given username");
 DEFINE_string(read, "", "Reads the warble thread starting at the given id");
 DEFINE_bool(profile, false, "Get the user's profile of following and followers");
 
-// Prints error message
-void PrintError(char* errorMessage, char* fields) {
-	//printf("\nError: %s, %s", errorMessage, fields);
+// TODO: Prints error message
+void PrintError(const std::string &errorMessage, const std::string &fields) {
+	
 }
 
-// Registers the given non-blank username
+// TODO: Registers the given non-blank username
 void RegisterUser(std::string username) {
 	
 }
 
-// Posts a new warble (optionally as a reply), returns the id of new warble
-std::string Warble(std::string username, std::string text, std::string warbleID="") {
-	return "";
+// TODO: Posts a new warble (optionally as a reply), returns the id of new warble
+std::string Warble(const std::string &username, const std::string &text,
+                   const std::string &warbleID = "") {
+  return "";
 }
 
 // Starts following a given user
@@ -44,24 +45,29 @@ void Profile() {
 }
 
 int main(int argc, char* argv[]) {
-	google::ParseCommandLineFlags(&argc, &argv, true);
+  google::ParseCommandLineFlags(&argc, &argv, true);
 
-	if (FLAGS_registeruser != "") {
-		RegisterUser(FLAGS_registeruser);
-		return;
-	}
+  if (!FLAGS_registeruser.empty()) {
+    RegisterUser(FLAGS_registeruser);
+    return 0;
+  }
 
-	// if not user logged in, can not perform other functions
-	if (FLAGS_user == "") { 
-		//PrintError(MISSING_ARGUMENT_ERROR, "user");
-		return;
-	}
+  // if not user logged in, can not perform other functions
+  if (!FLAGS_user.empty()) { 
+    //TODO: Print error
+    return 0;
+  }
+  
+  if (FLAGS_warble != "") 
+    Warble(FLAGS_user, FLAGS_warble); 
+  if (FLAGS_reply != "") 
+    Warble(FLAGS_user, FLAGS_warble, FLAGS_reply);
+  if (FLAGS_follow != "") 
+    Follow(FLAGS_user, FLAGS_follow);
+  if (FLAGS_read != "") 
+    Read(FLAGS_read);
+  if (FLAGS_profile) 
+    Profile();
 
-	if (FLAGS_warble != "") {Warble(FLAGS_user, FLAGS_warble);} 
-	if (FLAGS_reply != "") {Warble(FLAGS_user, FLAGS_warble, FLAGS_reply);}
-	if (FLAGS_follow != "") {Follow(FLAGS_user, FLAGS_follow);}	
-	if (FLAGS_read != "") {Read(FLAGS_read);}
-	if (FLAGS_profile) {Profile();}
-
-	return 0;
+  return 0;
 }
