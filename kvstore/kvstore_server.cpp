@@ -16,7 +16,7 @@ class KvstoreServiceImpl final :  public KeyValueStore::Service {
 
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply) {
     // TODO: remove
-    retrurn Status::OK;
+    return Status::OK;
   }
 };
 
