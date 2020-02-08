@@ -1,0 +1,3 @@
+/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/warble.dir
+/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/edit_cache.dir

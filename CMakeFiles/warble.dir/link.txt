@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/warble.dir/warble.cpp.o  -o warble gflags-2.2.1/build/lib/libgflags.a -lpthread 
