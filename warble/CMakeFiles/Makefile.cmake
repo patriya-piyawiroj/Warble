@@ -7,13 +7,13 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/gflags-config-version.cmake"
+  "/home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/gflags-config.cmake"
+  "/home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/gflags-targets.cmake"
   "CMakeFiles/3.10.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.10.2/CMakeSystem.cmake"
   "CMakeLists.txt"
-  "gflags-2.2.1/build/gflags-config-version.cmake"
-  "gflags-2.2.1/build/gflags-config.cmake"
-  "gflags-2.2.1/build/gflags-targets.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake"

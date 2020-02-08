@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DGFLAGS_IS_A_DLL=0
 
-CXX_INCLUDES = -isystem /home/vagrant/csci499_patriya-piyawiroj/gflags-2.2.1/build/include 
+CXX_INCLUDES = -isystem /home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/include 
 
