@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/warble.dir/warble.cpp.o  -o warble /home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/lib/libgflags.a -lpthread 
+/usr/bin/c++     CMakeFiles/warble.dir/warble.cpp.o  -o warble /home/vagrant/csci499_patriya-piyawiroj/third-party/gflags-2.2.1/lib/libgflags.a -lglog -lpthread 

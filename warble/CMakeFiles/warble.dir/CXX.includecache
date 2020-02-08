@@ -33,6 +33,8 @@ stdlib.h
 -
 gflags/gflags.h
 -
+glog/logging.h
+-
 iostream
 -
 

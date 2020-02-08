@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <gflags/gflags.h>
+#include <glog/logging.h>
 #include <iostream>
 
 const std::string INVALID_FLAG_ERROR = "Invalid flag combinations";
@@ -20,7 +21,7 @@ void PrintError(const std::string &errorMessage, const std::string &fields) {
 
 // TODO: Registers the given non-blank username
 void RegisterUser(std::string username) {
-	
+  LOG(INFO) << "Registering " << username;
 }
 
 // TODO: Posts a new warble (optionally as a reply), returns the id of new warble
