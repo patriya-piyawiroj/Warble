@@ -2,6 +2,16 @@
 #include <grpc/grpc.h>
 #include <unordered_map>
 
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext; :
+using kvstore::PutRequest;
+using kvstore::PutReply;
+using kvstore::GetRequest;
+using kvstore::GetReply;
+using kvstore::HelloRequest;
+using kvstore::HelloReply;
+
 class KvstoreServiceImpl final :  public KeyValueStore::Service {
 
   Status put(ServerContext* context, const PutRequest* request, PutReply* reply) {

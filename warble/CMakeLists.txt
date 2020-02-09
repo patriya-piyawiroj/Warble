@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6...3.16)
 project(warble)
 
 set(gflags_DIR  "~/csci499_patriya-piyawiroj/third-party/gflags-2.2.1")
-set(glog_DIR    "~/csci499_patriya-piyawiroj/third-party/glog")
+set(glog_DIR "~/csci499_patriya-piyawiroj/third-party/glog")
 find_package(gflags REQUIRED)
 find_package(glog REQUIRED)
 add_executable("${PROJECT_NAME}" warble.cpp)
