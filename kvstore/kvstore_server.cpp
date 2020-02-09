@@ -1,34 +1,20 @@
-#include <iostream>
-#include <grpc/grpc.h>
-#include <unordered_map>
+#include <kvstore_server.h>
 
-using grpc::Server;
-using grpc::ServerBuilder;
-using grpc::ServerContext; :
-using kvstore::PutRequest;
-using kvstore::PutReply;
-using kvstore::GetRequest;
-using kvstore::GetReply;
-using kvstore::HelloRequest;
-using kvstore::HelloReply;
+Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
+  // TODO: put
+  return Status::OK;
+}
 
-class KvstoreServiceImpl final :  public KeyValueStore::Service {
+Status KvstoreServiceImpl::get(ServerContext* context, const GetRequest* request, GetReply* reply) {
+  // TODO: get
+  return Status::OK;
+}
 
-  Status put(ServerContext* context, const PutRequest* request, PutReply* reply) {
-    // TODO: put
-     return Status::OK;
-  }
+Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply) {
+  // TODO: remove
+  return Status::OK;
+}
 
-  Status get(ServerContext* context, const GetRequest* request, GetReply* reply) {
-    // TODO: get
-    return Status::OK;
-  }
-
-  Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply) {
-    // TODO: remove
-    return Status::OK;
-  }
-};
 
 void RunServer() {
   std::string server_address("127.0.0.1:50001");
