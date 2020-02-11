@@ -1,18 +1,32 @@
 #include <kvstore_server.h>
 
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
-  // TODO: put
+  std::pair<std::string, std::string> pair(request->key(), request->value());
+  std::unique_lock<std::mutex> lock(mu_);
+  map_.insert(pair);
   return Status::OK;
 }
 
 Status KvstoreServiceImpl::get(ServerContext* context, const GetRequest* request, GetReply* reply) {
-  // TODO: get
-  return Status::OK;
+  std::unique_lock<std::mutex> lock(mu_);
+  auto it = map_.find(request->key());
+  if (it == map_end()) {
+    return Status::NOT_FOUND;
+  else {
+    reply->set_reply(it->second);
+    return Status::OK;
+  }
 }
 
 Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply) {
-  // TODO: remove
-  return Status::OK;
+  std::unique_lock<std::mutex> lock(mu_);
+  auto it = map_.find(request->key());
+  if (it == map_end()) {
+    return Status::NOT_FOUND;
+  else {
+    map_.erase(it);
+    return Status::OK;
+  }
 }
 
 

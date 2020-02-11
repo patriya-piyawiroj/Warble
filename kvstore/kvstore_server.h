@@ -1,6 +1,7 @@
 #include <iostream>
 #include <grpc/grpc.h>
 #include <unordered_map>
+#include <string>
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -16,7 +17,7 @@ public:
   Status get(ServerContext* context, const GetRequest* request, GetReply* reply){}
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply){}
 private:
-  std::unordered_map map_;
+  std::unordered_map<std::string, std::string> map_;
   std::mutex mu_;
 };
   
