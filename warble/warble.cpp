@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <gflags/gflags.h>
+#include <glog/logging.h>
 #include <iostream>
 
-#define INVALID_FLAG_ERROR "Invalid flag combinations"
-#define MISSING_ARGUMENT_ERROR "Missing arguments"
+const std::string INVALID_FLAG_ERROR = "Invalid flag combinations";
+const std::string MISSING_ARGUMENT_ERROR = "Missing arguments";
 
 DEFINE_string(registeruser, "", "Registers the given username");
 DEFINE_string(user, "", "Logs in as the given username");
@@ -15,12 +16,12 @@ DEFINE_bool(profile, false, "Get the user's profile of following and followers")
 
 // TODO: Prints error message
 void PrintError(const std::string &errorMessage, const std::string &fields) {
-	
+  printf("%s %s", errorMessage.c_str(), fields.c_str());
 }
 
 // TODO: Registers the given non-blank username
 void RegisterUser(std::string username) {
-	
+  LOG(INFO) << "Registering " << username;
 }
 
 // TODO: Posts a new warble (optionally as a reply), returns the id of new warble
@@ -55,6 +56,7 @@ int main(int argc, char* argv[]) {
   // if not user logged in, can not perform other functions
   if (!FLAGS_user.empty()) { 
     //TODO: Print error
+    PrintError(MISSING_ARGUMENT_ERROR, "username");
     return 0;
   }
   
