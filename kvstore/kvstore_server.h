@@ -10,6 +10,8 @@ using kvstore::PutRequest;
 using kvstore::PutReply;
 using kvstore::GetRequest;
 using kvstore::GetReply;
+using kvstore::RemoveRequest;
+using kvstore::RemoveReply;
 
 class KvstoreServiceImpl final : public KeyValueStore::Service {
 public:
