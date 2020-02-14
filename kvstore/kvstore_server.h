@@ -3,6 +3,8 @@
 #include <unordered_map>
 #include <string>
 
+#include kvmap.h
+
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
@@ -19,7 +21,6 @@ public:
   Status get(ServerContext* context, const GetRequest* request, GetReply* reply){}
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply){}
 private:
-  std::unordered_map<std::string, std::string> map_;
-  std::mutex mu_;
+  Kvmap kvmap_;
 };
   
