@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o  -o kvstore_server libstore.a 

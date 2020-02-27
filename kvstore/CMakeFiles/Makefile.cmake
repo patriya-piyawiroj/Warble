@@ -42,5 +42,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/store.dir/DependInfo.cmake"
   "CMakeFiles/kvstore_server.dir/DependInfo.cmake"
   )

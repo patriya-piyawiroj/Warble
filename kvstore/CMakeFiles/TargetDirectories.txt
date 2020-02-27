@@ -1,3 +1,4 @@
-/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/rebuild_cache.dir
-/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/kvstore_server.dir
 /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/edit_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/store.dir
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/kvstore_server.dir

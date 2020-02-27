@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named store
+
+# Build rule for target.
+store: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 store
+.PHONY : store
+
+# fast build rule for target.
+store/fast:
+	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/build
+.PHONY : store/fast
+
+#=============================================================================
 # Target rules for targets named kvstore_server
 
 # Build rule for target.
@@ -123,15 +136,136 @@ kvstore_server/fast:
 	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/build
 .PHONY : kvstore_server/fast
 
+dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
+
+.PHONY : dist/kvstore.grpc.pb.o
+
+# target to build an object file
+dist/kvstore.grpc.pb.cc.o:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
+.PHONY : dist/kvstore.grpc.pb.cc.o
+
+dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
+
+.PHONY : dist/kvstore.grpc.pb.i
+
+# target to preprocess a source file
+dist/kvstore.grpc.pb.cc.i:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i
+.PHONY : dist/kvstore.grpc.pb.cc.i
+
+dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
+
+.PHONY : dist/kvstore.grpc.pb.s
+
+# target to generate assembly for a file
+dist/kvstore.grpc.pb.cc.s:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s
+.PHONY : dist/kvstore.grpc.pb.cc.s
+
+dist/kvstore.pb.o: dist/kvstore.pb.cc.o
+
+.PHONY : dist/kvstore.pb.o
+
+# target to build an object file
+dist/kvstore.pb.cc.o:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
+.PHONY : dist/kvstore.pb.cc.o
+
+dist/kvstore.pb.i: dist/kvstore.pb.cc.i
+
+.PHONY : dist/kvstore.pb.i
+
+# target to preprocess a source file
+dist/kvstore.pb.cc.i:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i
+.PHONY : dist/kvstore.pb.cc.i
+
+dist/kvstore.pb.s: dist/kvstore.pb.cc.s
+
+.PHONY : dist/kvstore.pb.s
+
+# target to generate assembly for a file
+dist/kvstore.pb.cc.s:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s
+.PHONY : dist/kvstore.pb.cc.s
+
+kvmap.o: kvmap.cpp.o
+
+.PHONY : kvmap.o
+
+# target to build an object file
+kvmap.cpp.o:
+	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.o
+.PHONY : kvmap.cpp.o
+
+kvmap.i: kvmap.cpp.i
+
+.PHONY : kvmap.i
+
+# target to preprocess a source file
+kvmap.cpp.i:
+	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.i
+.PHONY : kvmap.cpp.i
+
+kvmap.s: kvmap.cpp.s
+
+.PHONY : kvmap.s
+
+# target to generate assembly for a file
+kvmap.cpp.s:
+	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.s
+.PHONY : kvmap.cpp.s
+
+kvstore_server.o: kvstore_server.cpp.o
+
+.PHONY : kvstore_server.o
+
+# target to build an object file
+kvstore_server.cpp.o:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
+.PHONY : kvstore_server.cpp.o
+
+kvstore_server.i: kvstore_server.cpp.i
+
+.PHONY : kvstore_server.i
+
+# target to preprocess a source file
+kvstore_server.cpp.i:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i
+.PHONY : kvstore_server.cpp.i
+
+kvstore_server.s: kvstore_server.cpp.s
+
+.PHONY : kvstore_server.s
+
+# target to generate assembly for a file
+kvstore_server.cpp.s:
+	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
+.PHONY : kvstore_server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... kvstore_server"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... store"
+	@echo "... kvstore_server"
+	@echo "... dist/kvstore.grpc.pb.o"
+	@echo "... dist/kvstore.grpc.pb.i"
+	@echo "... dist/kvstore.grpc.pb.s"
+	@echo "... dist/kvstore.pb.o"
+	@echo "... dist/kvstore.pb.i"
+	@echo "... dist/kvstore.pb.s"
+	@echo "... kvmap.o"
+	@echo "... kvmap.i"
+	@echo "... kvmap.s"
+	@echo "... kvstore_server.o"
+	@echo "... kvstore_server.i"
+	@echo "... kvstore_server.s"
 .PHONY : help
 
 

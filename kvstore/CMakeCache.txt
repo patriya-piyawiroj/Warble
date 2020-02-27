@@ -130,7 +130,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=kvstore
+CMAKE_PROJECT_NAME:STATIC=Project
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -181,23 +181,14 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//The directory containing a CMake configuration file for Protobuf.
-Protobuf_DIR:PATH=/usr/local/lib/cmake/protobuf
-
-//The directory containing a CMake configuration file for gRPC.
-gRPC_DIR:PATH=/usr/local/lib/cmake/grpc
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
 
 //Value Computed by CMake
-kvstore_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
+Project_SOURCE_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
 
-//Value Computed by CMake
-kvstore_SOURCE_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
-
-//CMake build-in FindProtobuf.cmake module compatible
-protobuf_MODULE_COMPATIBLE:BOOL=OFF
-
-//Enable for verbose output
-protobuf_VERBOSE:BOOL=OFF
+//Dependencies for target
+store_LIB_DEPENDS:STATIC=
 
 
 ########################
@@ -276,14 +267,6 @@ CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
-//Have symbol pthread_create
-CMAKE_HAVE_LIBC_CREATE:INTERNAL=
-//Have library pthreads
-CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
-//Have library pthread
-CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
-//Have include pthread.h
-CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/vagrant/csci499_patriya-piyawiroj/kvstore
@@ -347,12 +330,4 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/local/bin/protoc-3.7.0.0][/usr/local/lib/libprotobuf.a][/usr/local/include][v3.7.0.0()]
-//Details about finding Threads
-FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//ADVANCED property for variable: protobuf_MODULE_COMPATIBLE
-protobuf_MODULE_COMPATIBLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: protobuf_VERBOSE
-protobuf_VERBOSE-ADVANCED:INTERNAL=1
 
