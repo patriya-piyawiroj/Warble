@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named store
-
-# Build rule for target.
-store: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 store
-.PHONY : store
-
-# fast build rule for target.
-store/fast:
-	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/build
-.PHONY : store/fast
-
-#=============================================================================
 # Target rules for targets named kvstore_server
 
 # Build rule for target.
@@ -135,6 +122,32 @@ kvstore_server: cmake_check_build_system
 kvstore_server/fast:
 	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/build
 .PHONY : kvstore_server/fast
+
+#=============================================================================
+# Target rules for targets named kvstore
+
+# Build rule for target.
+kvstore: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kvstore
+.PHONY : kvstore
+
+# fast build rule for target.
+kvstore/fast:
+	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/build
+.PHONY : kvstore/fast
+
+#=============================================================================
+# Target rules for targets named store_test
+
+# Build rule for target.
+store_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 store_test
+.PHONY : store_test
+
+# fast build rule for target.
+store_test/fast:
+	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/build
+.PHONY : store_test/fast
 
 dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
@@ -196,7 +209,7 @@ kvmap.o: kvmap.cpp.o
 
 # target to build an object file
 kvmap.cpp.o:
-	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.o
+	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.o
 .PHONY : kvmap.cpp.o
 
 kvmap.i: kvmap.cpp.i
@@ -205,7 +218,7 @@ kvmap.i: kvmap.cpp.i
 
 # target to preprocess a source file
 kvmap.cpp.i:
-	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.i
+	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.i
 .PHONY : kvmap.cpp.i
 
 kvmap.s: kvmap.cpp.s
@@ -214,7 +227,7 @@ kvmap.s: kvmap.cpp.s
 
 # target to generate assembly for a file
 kvmap.cpp.s:
-	$(MAKE) -f CMakeFiles/store.dir/build.make CMakeFiles/store.dir/kvmap.cpp.s
+	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.s
 .PHONY : kvmap.cpp.s
 
 kvstore_server.o: kvstore_server.cpp.o
@@ -244,6 +257,33 @@ kvstore_server.cpp.s:
 	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
 .PHONY : kvstore_server.cpp.s
 
+store_test.o: store_test.cpp.o
+
+.PHONY : store_test.o
+
+# target to build an object file
+store_test.cpp.o:
+	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.o
+.PHONY : store_test.cpp.o
+
+store_test.i: store_test.cpp.i
+
+.PHONY : store_test.i
+
+# target to preprocess a source file
+store_test.cpp.i:
+	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.i
+.PHONY : store_test.cpp.i
+
+store_test.s: store_test.cpp.s
+
+.PHONY : store_test.s
+
+# target to generate assembly for a file
+store_test.cpp.s:
+	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.s
+.PHONY : store_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -251,9 +291,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... store"
 	@echo "... kvstore_server"
+	@echo "... rebuild_cache"
+	@echo "... kvstore"
+	@echo "... store_test"
 	@echo "... dist/kvstore.grpc.pb.o"
 	@echo "... dist/kvstore.grpc.pb.i"
 	@echo "... dist/kvstore.grpc.pb.s"
@@ -266,6 +307,9 @@ help:
 	@echo "... kvstore_server.o"
 	@echo "... kvstore_server.i"
 	@echo "... kvstore_server.s"
+	@echo "... store_test.o"
+	@echo "... store_test.i"
+	@echo "... store_test.s"
 .PHONY : help
 
 

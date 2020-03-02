@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++17 -pthread  -rdynamic CMakeFiles/store_test.dir/store_test.cpp.o  -o store_test -lgtest -lgtest_main libkvstore.a 

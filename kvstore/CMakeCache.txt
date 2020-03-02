@@ -188,6 +188,9 @@ Project_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
 Project_SOURCE_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/kvstore
 
 //Dependencies for target
+kvstore_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 store_LIB_DEPENDS:STATIC=
 
 

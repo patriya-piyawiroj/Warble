@@ -2,9 +2,12 @@
 #include <unordered_map>
 #include <string>
 
-#include <grpc/grpc.h>>
+#include <grpcpp/grpcpp.h>
 
-#include kvmap.h
+#include "kvstore.grpc.pb.h"
+
+#include "kvmap.h"
+
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -17,11 +20,11 @@ using kvstore::RemoveRequest;
 using kvstore::RemoveReply;
 
 class KvstoreServiceImpl final : public KeyValueStore::Service {
-public:
-  Status put(ServerContext* context, const PutRequest* request, PutReply* reply){}
-  Status get(ServerContext* context, const GetRequest* request, GetReply* reply){}
-  Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply){}
-private:
+ public:
+  Status put(ServerContext* context, const PutRequest* request, PutReply* reply);
+  Status get(ServerContext* context, const GetRequest* request, GetReply* reply);
+  Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply);
+ private:
   Kvmap kvmap_;
 };
   

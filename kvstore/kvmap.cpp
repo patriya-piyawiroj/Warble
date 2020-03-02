@@ -1,25 +1,29 @@
-#include kvmap.h
+#include "kvmap.h"
+
 
 void Kvmap::put(std::string key, std::string value) {
+  std::unique_lock<std::mutex> lock(mu_);
   std::pair<std::string, std::string> pair(key, value);
   map_.insert(pair);
   return;
 }
 
-std::optional<string> Kvmap::get(std::string key) {
-  auto it = map_.find(key);
-  if (it == map_end()) {
+std::optional<std::string> Kvmap::get(std::string key) {
+  std::unique_lock<std::mutex> lock(mu_);
+   auto it = map_.find(key);
+  if (it == map_.end()) {
     return std::nullopt;
   } else {
     return it->second;
   }
 }
 
-bool Kvmap::remove() {
-  auto it = map_.find(request->key());
-  if (it == map_end()) {
+bool Kvmap::remove(std::string key) {
+  std::unique_lock<std::mutex> lock(mu_);
+  auto it = map_.find(key);
+  if (it == map_.end()) {
     return false;
-  else {
+  } else {
     map_.erase(it);
     return true;
   }

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvmap.h
+unordered_map
+-
+string
+-
+optional
+-
+mutex
+-
+
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp
+kvstore_server.h
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.h
+
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.h
+iostream
+-
+unordered_map
+-
+string
+-
+grpcpp/grpcpp.h
+-
+kvstore.grpc.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore.grpc.pb.h
+kvmap.h
+/home/vagrant/csci499_patriya-piyawiroj/kvstore/kvmap.h
+

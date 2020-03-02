@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.3)
 
 set(glog_DIR "~/csci499_patriya-piyawiroj/third-party/glog")
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
 # Gets proto filenames
 get_filename_component(store_proto "../protos/kvstore.proto" ABSOLUTE)
@@ -13,7 +14,7 @@ file(MAKE_DIRECTORY ${DIST_DIR})
 set(store_proto_srcs "${DIST_DIR}/kvstore.pb.cc")
 set(store_proto_hdrs "${DIST_DIR}/kvstore.pb.h")
 set(store_grpc_srcs "${DIST_DIR}/kvstore.grpc.pb.cc")
-set(store_grpc_hdrs "${DIST_DIR}/kvalue_store.grpc.pb.h")
+set(store_grpc_hdrs "${DIST_DIR}/kvstore.grpc.pb.h")
 add_custom_command(
       OUTPUT "${store_proto_srcs}" "${store_proto_hdrs}" "${store_grpc_srcs}" "${store_grpc_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
@@ -30,19 +31,19 @@ include_directories("${DIST_DIR}")
 #set(client_interface_hdrs "key_value_store_client_interface.h")
 
 # Compiles store as a library
-add_library(store STATIC kvmap.cpp kvmap.h)
+add_library(kvstore STATIC kvmap.cpp kvmap.h)
 
 # Adds test
-#add_executable(store_test store_test.cc)
-#target_link_libraries(store_test PUBLIC
-#    gtest
-#    gtest_main
-#    store
-#)
-#add_test(
-#    NAME store_test
-#    COMMAND store_test
-#)
+add_executable(store_test store_test.cpp)
+target_link_libraries(store_test PUBLIC
+    gtest
+    gtest_main
+    kvstore
+)
+add_test(
+    NAME store_test
+    COMMAND store_test
+)
 
 # Compiles key_value_store_server_sync
 add_executable(kvstore_server kvstore_server.cpp
@@ -52,5 +53,6 @@ add_executable(kvstore_server kvstore_server.cpp
 target_link_libraries(kvstore_server
     ${_GRPC_GRPCPP_UNSECURE}
     ${_PROTOBUF_LIBPROTOBUF}
-    store)
+    glog
+    kvstore)
 
