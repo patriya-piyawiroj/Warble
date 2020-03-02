@@ -48,24 +48,70 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +124,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles 0
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/progress.marks
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,57 +154,63 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named kvstore_server
+# Convenience name for target.
+kvstore/CMakeFiles/store_test.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/CMakeFiles/store_test.dir/rule
+.PHONY : kvstore/CMakeFiles/store_test.dir/rule
 
-# Build rule for target.
-kvstore_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kvstore_server
-.PHONY : kvstore_server
+# Convenience name for target.
+store_test: kvstore/CMakeFiles/store_test.dir/rule
 
-# fast build rule for target.
-kvstore_server/fast:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/build
-.PHONY : kvstore_server/fast
-
-#=============================================================================
-# Target rules for targets named kvstore
-
-# Build rule for target.
-kvstore: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 kvstore
-.PHONY : kvstore
-
-# fast build rule for target.
-kvstore/fast:
-	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/build
-.PHONY : kvstore/fast
-
-#=============================================================================
-# Target rules for targets named store_test
-
-# Build rule for target.
-store_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 store_test
 .PHONY : store_test
 
 # fast build rule for target.
 store_test/fast:
-	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/build
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/store_test.dir/build.make kvstore/CMakeFiles/store_test.dir/build
 .PHONY : store_test/fast
+
+# Convenience name for target.
+kvstore/CMakeFiles/kvstore.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/CMakeFiles/kvstore.dir/rule
+.PHONY : kvstore/CMakeFiles/kvstore.dir/rule
+
+# Convenience name for target.
+kvstore: kvstore/CMakeFiles/kvstore.dir/rule
+
+.PHONY : kvstore
+
+# fast build rule for target.
+kvstore/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore.dir/build.make kvstore/CMakeFiles/kvstore.dir/build
+.PHONY : kvstore/fast
+
+# Convenience name for target.
+kvstore/CMakeFiles/kvstore_server.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 kvstore/CMakeFiles/kvstore_server.dir/rule
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/rule
+
+# Convenience name for target.
+kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/rule
+
+.PHONY : kvstore_server
+
+# fast build rule for target.
+kvstore_server/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/build
+.PHONY : kvstore_server/fast
 
 dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
@@ -155,7 +218,7 @@ dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
 # target to build an object file
 dist/kvstore.grpc.pb.cc.o:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
 .PHONY : dist/kvstore.grpc.pb.cc.o
 
 dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
@@ -164,7 +227,7 @@ dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
 
 # target to preprocess a source file
 dist/kvstore.grpc.pb.cc.i:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i
 .PHONY : dist/kvstore.grpc.pb.cc.i
 
 dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
@@ -173,7 +236,7 @@ dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
 
 # target to generate assembly for a file
 dist/kvstore.grpc.pb.cc.s:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s
 .PHONY : dist/kvstore.grpc.pb.cc.s
 
 dist/kvstore.pb.o: dist/kvstore.pb.cc.o
@@ -182,7 +245,7 @@ dist/kvstore.pb.o: dist/kvstore.pb.cc.o
 
 # target to build an object file
 dist/kvstore.pb.cc.o:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
 .PHONY : dist/kvstore.pb.cc.o
 
 dist/kvstore.pb.i: dist/kvstore.pb.cc.i
@@ -191,7 +254,7 @@ dist/kvstore.pb.i: dist/kvstore.pb.cc.i
 
 # target to preprocess a source file
 dist/kvstore.pb.cc.i:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i
 .PHONY : dist/kvstore.pb.cc.i
 
 dist/kvstore.pb.s: dist/kvstore.pb.cc.s
@@ -200,7 +263,7 @@ dist/kvstore.pb.s: dist/kvstore.pb.cc.s
 
 # target to generate assembly for a file
 dist/kvstore.pb.cc.s:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s
 .PHONY : dist/kvstore.pb.cc.s
 
 kvmap.o: kvmap.cpp.o
@@ -209,7 +272,7 @@ kvmap.o: kvmap.cpp.o
 
 # target to build an object file
 kvmap.cpp.o:
-	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore.dir/build.make kvstore/CMakeFiles/kvstore.dir/kvmap.cpp.o
 .PHONY : kvmap.cpp.o
 
 kvmap.i: kvmap.cpp.i
@@ -218,7 +281,7 @@ kvmap.i: kvmap.cpp.i
 
 # target to preprocess a source file
 kvmap.cpp.i:
-	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore.dir/build.make kvstore/CMakeFiles/kvstore.dir/kvmap.cpp.i
 .PHONY : kvmap.cpp.i
 
 kvmap.s: kvmap.cpp.s
@@ -227,7 +290,7 @@ kvmap.s: kvmap.cpp.s
 
 # target to generate assembly for a file
 kvmap.cpp.s:
-	$(MAKE) -f CMakeFiles/kvstore.dir/build.make CMakeFiles/kvstore.dir/kvmap.cpp.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore.dir/build.make kvstore/CMakeFiles/kvstore.dir/kvmap.cpp.s
 .PHONY : kvmap.cpp.s
 
 kvstore_server.o: kvstore_server.cpp.o
@@ -236,7 +299,7 @@ kvstore_server.o: kvstore_server.cpp.o
 
 # target to build an object file
 kvstore_server.cpp.o:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
 .PHONY : kvstore_server.cpp.o
 
 kvstore_server.i: kvstore_server.cpp.i
@@ -245,7 +308,7 @@ kvstore_server.i: kvstore_server.cpp.i
 
 # target to preprocess a source file
 kvstore_server.cpp.i:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i
 .PHONY : kvstore_server.cpp.i
 
 kvstore_server.s: kvstore_server.cpp.s
@@ -254,7 +317,7 @@ kvstore_server.s: kvstore_server.cpp.s
 
 # target to generate assembly for a file
 kvstore_server.cpp.s:
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
 .PHONY : kvstore_server.cpp.s
 
 store_test.o: store_test.cpp.o
@@ -263,7 +326,7 @@ store_test.o: store_test.cpp.o
 
 # target to build an object file
 store_test.cpp.o:
-	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/store_test.dir/build.make kvstore/CMakeFiles/store_test.dir/store_test.cpp.o
 .PHONY : store_test.cpp.o
 
 store_test.i: store_test.cpp.i
@@ -272,7 +335,7 @@ store_test.i: store_test.cpp.i
 
 # target to preprocess a source file
 store_test.cpp.i:
-	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/store_test.dir/build.make kvstore/CMakeFiles/store_test.dir/store_test.cpp.i
 .PHONY : store_test.cpp.i
 
 store_test.s: store_test.cpp.s
@@ -281,7 +344,7 @@ store_test.s: store_test.cpp.s
 
 # target to generate assembly for a file
 store_test.cpp.s:
-	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f kvstore/CMakeFiles/store_test.dir/build.make kvstore/CMakeFiles/store_test.dir/store_test.cpp.s
 .PHONY : store_test.cpp.s
 
 # Help Target
@@ -290,11 +353,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... kvstore_server"
-	@echo "... rebuild_cache"
-	@echo "... kvstore"
+	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... store_test"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... kvstore"
+	@echo "... rebuild_cache"
+	@echo "... kvstore_server"
+	@echo "... edit_cache"
 	@echo "... dist/kvstore.grpc.pb.o"
 	@echo "... dist/kvstore.grpc.pb.i"
 	@echo "... dist/kvstore.grpc.pb.s"
@@ -321,6 +389,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,103 +43,103 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # Include any dependencies generated for this target.
-include CMakeFiles/kvstore_server.dir/depend.make
+include kvstore/CMakeFiles/kvstore_server.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/kvstore_server.dir/progress.make
+include kvstore/CMakeFiles/kvstore_server.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/kvstore_server.dir/flags.make
+include kvstore/CMakeFiles/kvstore_server.dir/flags.make
 
-dist/kvstore.pb.cc: /home/vagrant/csci499_patriya-piyawiroj/protos/kvstore.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dist/kvstore.pb.cc, dist/kvstore.pb.h, dist/kvstore.grpc.pb.cc, dist/kvstore.grpc.pb.h"
-	--grpc_out /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist --cpp_out /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist -I /home/vagrant/csci499_patriya-piyawiroj/protos --plugin=protoc-gen-grpc="" /home/vagrant/csci499_patriya-piyawiroj/protos/kvstore.proto
+kvstore/dist/kvstore.pb.cc: protos/kvstore.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dist/kvstore.pb.cc, dist/kvstore.pb.h, dist/kvstore.grpc.pb.cc, dist/kvstore.grpc.pb.h"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/local/bin/protoc --grpc_out /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist --cpp_out /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist -I /home/vagrant/csci499_patriya-piyawiroj/protos --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" /home/vagrant/csci499_patriya-piyawiroj/protos/kvstore.proto
 
-dist/kvstore.pb.h: dist/kvstore.pb.cc
-	@$(CMAKE_COMMAND) -E touch_nocreate dist/kvstore.pb.h
+kvstore/dist/kvstore.pb.h: kvstore/dist/kvstore.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate kvstore/dist/kvstore.pb.h
 
-dist/kvstore.grpc.pb.cc: dist/kvstore.pb.cc
-	@$(CMAKE_COMMAND) -E touch_nocreate dist/kvstore.grpc.pb.cc
+kvstore/dist/kvstore.grpc.pb.cc: kvstore/dist/kvstore.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate kvstore/dist/kvstore.grpc.pb.cc
 
-dist/kvstore.grpc.pb.h: dist/kvstore.pb.cc
-	@$(CMAKE_COMMAND) -E touch_nocreate dist/kvstore.grpc.pb.h
+kvstore/dist/kvstore.grpc.pb.h: kvstore/dist/kvstore.pb.cc
+	@$(CMAKE_COMMAND) -E touch_nocreate kvstore/dist/kvstore.grpc.pb.h
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o: CMakeFiles/kvstore_server.dir/flags.make
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o: kvstore_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o: kvstore/CMakeFiles/kvstore_server.dir/flags.make
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o: kvstore/kvstore_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp > CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp > CMakeFiles/kvstore_server.dir/kvstore_server.cpp.i
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp -o CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/kvstore_server.cpp -o CMakeFiles/kvstore_server.dir/kvstore_server.cpp.s
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires:
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires:
 
-.PHONY : CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides: CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides.build
-.PHONY : CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides: kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
+	$(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides.build
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides
 
-CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides.build: CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
+kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.provides.build: kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
 
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o: CMakeFiles/kvstore_server.dir/flags.make
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o: dist/kvstore.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o: kvstore/CMakeFiles/kvstore_server.dir/flags.make
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o: kvstore/dist/kvstore.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc > CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc > CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.i
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc -o CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.pb.cc -o CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.s
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires:
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires:
 
-.PHONY : CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides: CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides.build
-.PHONY : CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
+	$(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides.build
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides.build: CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.provides.build: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
 
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o: CMakeFiles/kvstore_server.dir/flags.make
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o: dist/kvstore.grpc.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o: kvstore/CMakeFiles/kvstore_server.dir/flags.make
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o: kvstore/dist/kvstore.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc > CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc > CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.i
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s: cmake_force
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc -o CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/dist/kvstore.grpc.pb.cc -o CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.s
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires:
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires:
 
-.PHONY : CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides: CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
-	$(MAKE) -f CMakeFiles/kvstore_server.dir/build.make CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides.build
-.PHONY : CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
+	$(MAKE) -f kvstore/CMakeFiles/kvstore_server.dir/build.make kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides.build
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides
 
-CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides.build: CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
+kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.provides.build: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
 
 
 # Object files for target kvstore_server
@@ -151,34 +151,35 @@ kvstore_server_OBJECTS = \
 # External object files for target kvstore_server
 kvstore_server_EXTERNAL_OBJECTS =
 
-kvstore_server: CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
-kvstore_server: CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
-kvstore_server: CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
-kvstore_server: CMakeFiles/kvstore_server.dir/build.make
-kvstore_server: libkvstore.a
-kvstore_server: CMakeFiles/kvstore_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable kvstore_server"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kvstore_server.dir/link.txt --verbose=$(VERBOSE)
+kvstore/kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o
+kvstore/kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o
+kvstore/kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o
+kvstore/kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/build.make
+kvstore/kvstore_server: /usr/local/lib/libprotobuf.a
+kvstore/kvstore_server: kvstore/libkvstore.a
+kvstore/kvstore_server: kvstore/CMakeFiles/kvstore_server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable kvstore_server"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kvstore_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/kvstore_server.dir/build: kvstore_server
+kvstore/CMakeFiles/kvstore_server.dir/build: kvstore/kvstore_server
 
-.PHONY : CMakeFiles/kvstore_server.dir/build
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/build
 
-CMakeFiles/kvstore_server.dir/requires: CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
-CMakeFiles/kvstore_server.dir/requires: CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
-CMakeFiles/kvstore_server.dir/requires: CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
+kvstore/CMakeFiles/kvstore_server.dir/requires: kvstore/CMakeFiles/kvstore_server.dir/kvstore_server.cpp.o.requires
+kvstore/CMakeFiles/kvstore_server.dir/requires: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.pb.cc.o.requires
+kvstore/CMakeFiles/kvstore_server.dir/requires: kvstore/CMakeFiles/kvstore_server.dir/dist/kvstore.grpc.pb.cc.o.requires
 
-.PHONY : CMakeFiles/kvstore_server.dir/requires
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/requires
 
-CMakeFiles/kvstore_server.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/kvstore_server.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/kvstore_server.dir/clean
+kvstore/CMakeFiles/kvstore_server.dir/clean:
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -P CMakeFiles/kvstore_server.dir/cmake_clean.cmake
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/clean
 
-CMakeFiles/kvstore_server.dir/depend: dist/kvstore.pb.cc
-CMakeFiles/kvstore_server.dir/depend: dist/kvstore.pb.h
-CMakeFiles/kvstore_server.dir/depend: dist/kvstore.grpc.pb.cc
-CMakeFiles/kvstore_server.dir/depend: dist/kvstore.grpc.pb.h
-	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/kvstore_server.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/kvstore_server.dir/depend
+kvstore/CMakeFiles/kvstore_server.dir/depend: kvstore/dist/kvstore.pb.cc
+kvstore/CMakeFiles/kvstore_server.dir/depend: kvstore/dist/kvstore.pb.h
+kvstore/CMakeFiles/kvstore_server.dir/depend: kvstore/dist/kvstore.grpc.pb.cc
+kvstore/CMakeFiles/kvstore_server.dir/depend: kvstore/dist/kvstore.grpc.pb.h
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/kvstore_server.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : kvstore/CMakeFiles/kvstore_server.dir/depend
 

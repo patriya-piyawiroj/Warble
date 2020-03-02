@@ -10,11 +10,16 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "dist"
+  "/usr/local/include"
+  "kvstore/dist"
+  "third-party/grpc/third_party/googletest/googletest/include"
+  "third-party/grpc/third_party/googletest/googletest"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/vagrant/csci499_patriya-piyawiroj/third-party/grpc/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/vagrant/csci499_patriya-piyawiroj/third-party/grpc/third_party/googletest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/kvstore.dir/DependInfo.cmake"
   )
 

@@ -23,7 +23,7 @@ add_custom_command(
         -I "${store_proto_path}"
         --plugin=protoc-gen-grpc="${_GRPC_CPP_PLUGIN_EXECUTABLE}"
         "${store_proto}"
-      DEPENDS ${store_proto})
+      DEPENDS "${store_proto}")
 
 # Include generated *.pb.h files
 include_directories("${DIST_DIR}")

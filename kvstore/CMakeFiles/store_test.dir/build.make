@@ -43,42 +43,42 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj/kvstore
+CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # Include any dependencies generated for this target.
-include CMakeFiles/store_test.dir/depend.make
+include kvstore/CMakeFiles/store_test.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/store_test.dir/progress.make
+include kvstore/CMakeFiles/store_test.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/store_test.dir/flags.make
+include kvstore/CMakeFiles/store_test.dir/flags.make
 
-CMakeFiles/store_test.dir/store_test.cpp.o: CMakeFiles/store_test.dir/flags.make
-CMakeFiles/store_test.dir/store_test.cpp.o: store_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/store_test.dir/store_test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/store_test.dir/store_test.cpp.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.o: kvstore/CMakeFiles/store_test.dir/flags.make
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.o: kvstore/store_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object kvstore/CMakeFiles/store_test.dir/store_test.cpp.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/store_test.dir/store_test.cpp.o -c /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp
 
-CMakeFiles/store_test.dir/store_test.cpp.i: cmake_force
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/store_test.dir/store_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp > CMakeFiles/store_test.dir/store_test.cpp.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp > CMakeFiles/store_test.dir/store_test.cpp.i
 
-CMakeFiles/store_test.dir/store_test.cpp.s: cmake_force
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/store_test.dir/store_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp -o CMakeFiles/store_test.dir/store_test.cpp.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/kvstore/store_test.cpp -o CMakeFiles/store_test.dir/store_test.cpp.s
 
-CMakeFiles/store_test.dir/store_test.cpp.o.requires:
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.requires:
 
-.PHONY : CMakeFiles/store_test.dir/store_test.cpp.o.requires
+.PHONY : kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.requires
 
-CMakeFiles/store_test.dir/store_test.cpp.o.provides: CMakeFiles/store_test.dir/store_test.cpp.o.requires
-	$(MAKE) -f CMakeFiles/store_test.dir/build.make CMakeFiles/store_test.dir/store_test.cpp.o.provides.build
-.PHONY : CMakeFiles/store_test.dir/store_test.cpp.o.provides
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.provides: kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.requires
+	$(MAKE) -f kvstore/CMakeFiles/store_test.dir/build.make kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.provides.build
+.PHONY : kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.provides
 
-CMakeFiles/store_test.dir/store_test.cpp.o.provides.build: CMakeFiles/store_test.dir/store_test.cpp.o
+kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.provides.build: kvstore/CMakeFiles/store_test.dir/store_test.cpp.o
 
 
 # Object files for target store_test
@@ -88,27 +88,30 @@ store_test_OBJECTS = \
 # External object files for target store_test
 store_test_EXTERNAL_OBJECTS =
 
-store_test: CMakeFiles/store_test.dir/store_test.cpp.o
-store_test: CMakeFiles/store_test.dir/build.make
-store_test: libkvstore.a
-store_test: CMakeFiles/store_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable store_test"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/store_test.dir/link.txt --verbose=$(VERBOSE)
+kvstore/store_test: kvstore/CMakeFiles/store_test.dir/store_test.cpp.o
+kvstore/store_test: kvstore/CMakeFiles/store_test.dir/build.make
+kvstore/store_test: lib/libgtest.a
+kvstore/store_test: lib/libgtest_main.a
+kvstore/store_test: kvstore/libkvstore.a
+kvstore/store_test: lib/libgtest.a
+kvstore/store_test: kvstore/CMakeFiles/store_test.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable store_test"
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/store_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/store_test.dir/build: store_test
+kvstore/CMakeFiles/store_test.dir/build: kvstore/store_test
 
-.PHONY : CMakeFiles/store_test.dir/build
+.PHONY : kvstore/CMakeFiles/store_test.dir/build
 
-CMakeFiles/store_test.dir/requires: CMakeFiles/store_test.dir/store_test.cpp.o.requires
+kvstore/CMakeFiles/store_test.dir/requires: kvstore/CMakeFiles/store_test.dir/store_test.cpp.o.requires
 
-.PHONY : CMakeFiles/store_test.dir/requires
+.PHONY : kvstore/CMakeFiles/store_test.dir/requires
 
-CMakeFiles/store_test.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/store_test.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/store_test.dir/clean
+kvstore/CMakeFiles/store_test.dir/clean:
+	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -P CMakeFiles/store_test.dir/cmake_clean.cmake
+.PHONY : kvstore/CMakeFiles/store_test.dir/clean
 
-CMakeFiles/store_test.dir/depend:
-	cd /home/vagrant/csci499_patriya-piyawiroj/kvstore && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/store_test.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/store_test.dir/depend
+kvstore/CMakeFiles/store_test.dir/depend:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/kvstore /home/vagrant/csci499_patriya-piyawiroj/kvstore/CMakeFiles/store_test.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : kvstore/CMakeFiles/store_test.dir/depend
 
