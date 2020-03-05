@@ -1,4 +1,4 @@
-#include "kvstore_server.h"
+#include "key_value_store_server.h"
 
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
   map_.put(request->key(), request->value());
