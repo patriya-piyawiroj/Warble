@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-642c4ef88b3facee4a97507781bbc70e kvstore/dist/kvstore.pb.cc

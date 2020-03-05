@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++17 -pthread  -rdynamic   -o kvstore_test -lgtest -lgtest_main libkvstore.a 

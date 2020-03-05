@@ -27,7 +27,7 @@ enable_testing()
 
 # Adds gflags
 # set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
-find_package(gflags REQUIRED)
+#find_package(gflags REQUIRED)
 
 # Adds benchmark
 #add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
