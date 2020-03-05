@@ -6,7 +6,7 @@
 
 #include "kvstore.grpc.pb.h"
 
-#include "kvmap.h"
+#include "store.h"
 
 
 using grpc::Server;
