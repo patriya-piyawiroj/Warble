@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.3)
-
-set(glog_DIR "~/csci499_patriya-piyawiroj/third-party/glog")
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
 # Gets proto filenames
@@ -23,7 +20,7 @@ add_custom_command(
         -I "${store_proto_path}"
         --plugin=protoc-gen-grpc="${_GRPC_CPP_PLUGIN_EXECUTABLE}"
         "${store_proto}"
-      DEPENDS "${store_proto}")
+      DEPENDS ${store_proto})
 
 # Include generated *.pb.h files
 include_directories("${DIST_DIR}")
@@ -31,28 +28,27 @@ include_directories("${DIST_DIR}")
 #set(client_interface_hdrs "key_value_store_client_interface.h")
 
 # Compiles store as a library
-add_library(kvstore STATIC kvmap.cpp kvmap.h)
+add_library(store STATIC store.cc store.h)
 
 # Adds test
-add_executable(store_test store_test.cpp)
-target_link_libraries(store_test PUBLIC
-    gtest
-    gtest_main
-    kvstore
-)
-add_test(
-    NAME store_test
-    COMMAND store_test
-)
+#add_executable(store_test store_test.cc)
+#target_link_libraries(store_test PUBLIC
+#    gtest
+#    gtest_main
+#    store
+#)
+#add_test(
+#    NAME store_test
+#    COMMAND store_test
+#)
 
 # Compiles key_value_store_server_sync
-add_executable(kvstore_server kvstore_server.cpp
-    kvstore_server.h
+add_executable(key_value_store_server key_value_store_server.cc
+    key_value_store_server.h
     ${store_proto_srcs}
     ${store_grpc_srcs})
-target_link_libraries(kvstore_server
+target_link_libraries(key_value_store_server
     ${_GRPC_GRPCPP_UNSECURE}
     ${_PROTOBUF_LIBPROTOBUF}
-    glog
-    kvstore)
-
+    #glog::glog
+    store)

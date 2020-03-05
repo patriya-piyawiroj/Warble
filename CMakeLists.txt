@@ -19,24 +19,22 @@ set(_PROTOBUF_PROTOC $<TARGET_FILE:protobuf::protoc>)
 set(_GRPC_GRPCPP_UNSECURE grpc++_unsecure)
 set(_GRPC_CPP_PLUGIN_EXECUTABLE /usr/local/bin/grpc_cpp_plugin)
 
-set(THIRD_PARTY_DIR "third-party/grpc/third_party")
+#set(THIRD_PARTY_DIR "third_party")
 
 # Adds googletest
-add_subdirectory(${THIRD_PARTY_DIR}/googletest)
-enable_testing()
+#add_subdirectory(${THIRD_PARTY_DIR}/googletest)
+#enable_testing()
 
 # Adds gflags
 # set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
-find_package(gflags REQUIRED)
+#find_package(gflags REQUIRED)
 
 # Adds benchmark
 #add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
 
-#set(glog_DIR "~/csci499_patriya-piyawiroj/third-party/glog")
 # Adds glog
 #add_subdirectory(${THIRD_PARTY_DIR}/glog)
-#add_subdirectory(glog_DIR)
 
 # Adds subdirectories
 # ! Notice here !
-add_subdirectory(kvstore)
+add_subdirectory(store)
