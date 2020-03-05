@@ -6,21 +6,21 @@ Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request
 }
 
 Status KvstoreServiceImpl::get(ServerContext* context, const GetRequest* request, GetReply* reply) {
-  std::string value = map_.get(request->key());
-  if (value == std::nullopt) {
-     return Status::NOT_FOUND;
+  std::optional<std::string> opt = map_.get(request->key());
+  if (opt.has_value()) {
+    reply->set_value(opt.value());
+    return Status::OK;
   } else {
-     reply->set_value(value);
-     return Status::OK;
+    return Status(StatusCode::NOT_FOUND, "GetRequest unsuccessful");
   }
 }
 
 Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply) {
-  bool removed = map_remove(request->key());
+  bool removed = map_.remove(request->key());
   if (removed) {
     return Status::OK;
-  else {
-    return Status::NOT_FOUND;
+  } else {
+    return grpc::Status(grpc::StatusCode::NOT_FOUND, "RemoveRequest unsuccessful");
   }
 }
 
@@ -29,9 +29,9 @@ void RunServer() {
   std::string server_address("127.0.0.1:50001");
   KvstoreServiceImpl service;
 
-  ServiceBuilder builder;
+  ServerBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-  builder.RegisterServce(&servce);
+  builder.RegisterService(&service);
   std::unique_ptr<Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
   server->Wait();

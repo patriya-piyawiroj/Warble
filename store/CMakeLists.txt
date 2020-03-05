@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
 # Gets proto filenames
 get_filename_component(store_proto "../protos/kvstore.proto" ABSOLUTE)
@@ -7,10 +8,10 @@ get_filename_component(store_proto_path "${store_proto}" PATH)
 # Generates gRPC codes
 set(DIST_DIR "${CMAKE_CURRENT_BINARY_DIR}/dist")
 file(MAKE_DIRECTORY ${DIST_DIR})
-set(store_proto_srcs "${DIST_DIR}/key_value_store.pb.cc")
-set(store_proto_hdrs "${DIST_DIR}/key_value_store.pb.h")
-set(store_grpc_srcs "${DIST_DIR}/key_value_store.grpc.pb.cc")
-set(store_grpc_hdrs "${DIST_DIR}/key_value_store.grpc.pb.h")
+set(store_proto_srcs "${DIST_DIR}/kvstore.pb.cc")
+set(store_proto_hdrs "${DIST_DIR}/kvstore.pb.h")
+set(store_grpc_srcs "${DIST_DIR}/kvstore.grpc.pb.cc")
+set(store_grpc_hdrs "${DIST_DIR}/kvstore.grpc.pb.h")
 add_custom_command(
       OUTPUT "${store_proto_srcs}" "${store_proto_hdrs}" "${store_grpc_srcs}" "${store_grpc_hdrs}"
       COMMAND ${_PROTOBUF_PROTOC}
