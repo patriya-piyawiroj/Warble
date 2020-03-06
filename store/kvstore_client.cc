@@ -2,7 +2,7 @@
 
 class KvstoreClient {
 
-KvstoreClien::KvstoreClient(std::shared_ptr<Channel> channel)
+KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
 
 void KvstoreClient::Put(const std::string& key, const std::string& value) {
