@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include <grpc/grpc.h>
+#include <grpcpp/grpcpp.h>
 
 #include "kvstore.grpc.pb.h"
 

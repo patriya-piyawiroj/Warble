@@ -28,7 +28,7 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   }
 }
 
-std::string KvstoreClient::Get(const std::string& key) {
+std::optional<string> KvstoreClient::Get(const std::string& key) {
   // Data to be sent to server
   GetRequest request;
   request.set_key(key);
@@ -47,7 +47,7 @@ std::string KvstoreClient::Get(const std::string& key) {
     return reply.value();
   } else {
     std::cout << status.error_code() <<  ": " << status.error_message() << std::endl;
-    return "RPC failed";
+    return std::nullopt;
   }
 }
 
