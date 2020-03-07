@@ -60,7 +60,7 @@ void WarbleService::Follow(std::string username, std::string userToFollow) {
 }
 
 // Feature 4: Read
-void WarbleService::Read(std::string warbleID) {
+std::string WarbleService::Read(std::string warbleID) {
   std::string key = "warble-" + warbleID;
   std::string text = kvstore_.Get(key);
   cout << "Text: " << text;
