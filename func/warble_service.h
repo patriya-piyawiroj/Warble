@@ -6,7 +6,11 @@
 #include "func_server.h"
 #include "kvstore_client.h"
 
-// Warble features known by func
+// Contains all Warble features. Func_Server is able send warble payloads to warble service and have warble
+// service perform the relevant function of the feature. 
+//     Example:
+//         WarbleService warble = new WarbleService;
+//         warble.Call(registeruser, registeruserRequest, registeruserReply);
 class WarbleService {
  public:
   // Initializes KvstoreClient
