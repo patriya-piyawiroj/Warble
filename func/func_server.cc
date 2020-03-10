@@ -1,24 +1,39 @@
 #include "func_server.h"
 
 FuncServiceImpl::FuncServiceImpl() {
-  KvstoreClient kvstore_(grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials()));
+  warble_ = new WarbleService();
 }
 
 Status FuncServiceImpl::hook(ServerContext* context, const HookRequest* request, HookReply* reply) {
-  auto event_type = request->event_type();
-  auto event_function = request->event_function();
-  kvstore_.Put(event_type, event_function);
+  int event_type = request->event_type();
+  std::string event_function = request->event_function();
+  std::pair<int, std::string> pair(event_type, event_function);
+  map_.insert(pair);
   return Status::OK;
 }
 
-Status FuncServiceImpl::unhook(ServerContext* context, const UnhookRequest* request, UnhookReply* reply){
-  auto event_type = request->event_type();
-  kvstore_.Remove(event_type);
-  return Status::OK;
+Status FuncServiceImpl::unhook(ServerContext* context, const UnhookRequest* request, UnhookReply* reply) {
+  int event_type = request->event_type();
+  auto it = map_.find(event_type);
+  if (it == map_.end()) {
+    return Status(StatusCode::NOT_FOUND, "Event not found");
+  } else {
+    return Status::OK;
+  }
 }
 
-Status FuncServiceImpl::event(ServerContext* context, EventRequest* request, EventReply* reply){
-  //  TODO: Incoming int event_type and google.protobuf.Any payload. reply payload.
+Status FuncServiceImpl::event(ServerContext* context, EventRequest* request, EventReply* reply) {
+  int event_type = request->event_type();
+  auto it = map_.find(event_type):
+  if (it == map_.end()) {
+    return StatusCode::NOT_FOUND, "Event not found");
+  } else {
+    std::string event_function = it*;
+    Any request_payload;
+    Any reply_payload;
+    request_payload.PackFrom(request->paylaod());
+    reply_payload(reply->payload());
+    warble_.Call(event_function, &request_payload, &reply_payload);
 }
 
 void RunServer() {
@@ -27,7 +42,7 @@ void RunServer() {
 
   ServiceBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-  builder.RegisterServce(&servce);
+  builder.RegisterServce(&service);
   std::unique_ptr<Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
   server->Wait();
