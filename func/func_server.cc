@@ -17,23 +17,22 @@ Status FuncServiceImpl::unhook(ServerContext* context, const UnhookRequest* requ
   auto it = map_.find(event_type);
   if (it == map_.end()) {
     return Status(StatusCode::NOT_FOUND, "Event not found");
-  } else {
-    return Status::OK;
   }
+  return Status::OK;
 }
 
 Status FuncServiceImpl::event(ServerContext* context, EventRequest* request, EventReply* reply) {
   int event_type = request->event_type();
   auto it = map_.find(event_type):
   if (it == map_.end()) {
-    return StatusCode::NOT_FOUND, "Event not found");
-  } else {
-    std::string event_function = it*;
-    Any request_payload;
-    Any reply_payload;
-    request_payload.PackFrom(request->paylaod());
-    reply_payload(reply->payload());
-    warble_.Call(event_function, &request_payload, &reply_payload);
+    return Status(StatusCode::NOT_FOUND, "Event not found");
+  } 
+  std::string event_function = it*;
+  Any request_payload;
+  Any reply_payload;
+  request_payload.PackFrom(request->paylaod());
+  reply_payload(reply->payload());
+  warble_.Call(event_function, &request_payload, &reply_payload);
 }
 
 void RunServer() {

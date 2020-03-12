@@ -4,7 +4,7 @@ WarbleService::WarbleService() {
 }
 
 // Takes a function name and calls the relevant warble function and payload
-void WarbleService::Call(std::string event_function, Any *request, Any *reply) {
+void WarbleService::Call(const std::string &event_function, Any *request, Any *reply) {
   // TODO : Implement Logic for different event functions
   if ((event_function.compare("registeruser") == 0) {
     RegisteruserRequest request = any.unpack(ReigsteruserRequest.class);
@@ -21,22 +21,14 @@ void WarbleService::Call(std::string event_function, Any *request, Any *reply) {
 bool WarbleService::CheckUser(std::string username) {
   std::string key = "username-" + username;
   std::optional<string> user = kvstore_.Get(key);
-  if (user.has_value()) {
-    return true;
-  } else {
-    return false;
-  }
+  return user.has_value();
 }
 
 // Returns true if warble exists, false if otherwise
 bool WarbleService::CheckWarble(std::string warbleID) {
   std::string key = "warble-" + warbleID;
   std::optional<string> warble = kvstore_.Get(key);
-  if (warble.has_value()) {
-    return true;
-  } else {
-    return false;
-  }
+  return warble.has_value();
 }
 
 // Creates a Warble
