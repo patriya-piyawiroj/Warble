@@ -53,3 +53,57 @@ Makefile:126: recipe for target 'cmTC_308f2/fast' failed
 make: *** [cmTC_308f2/fast] Error 2
 
 
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_72e8a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_72e8a.dir/build.make CMakeFiles/cmTC_72e8a.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_72e8a.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32   -Wshorten-64-to-32 -o CMakeFiles/cmTC_72e8a.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+c++: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles/cmTC_72e8a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_72e8a.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_72e8a.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_72e8a/fast' failed
+make: *** [cmTC_72e8a/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_23f13/fast"
+/usr/bin/make -f CMakeFiles/cmTC_23f13.dir/build.make CMakeFiles/cmTC_23f13.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_23f13.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654   -wd654 -o CMakeFiles/cmTC_23f13.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-wd654'
+c++: error: unrecognized command line option '-wd654'
+CMakeFiles/cmTC_23f13.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_23f13.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_23f13.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_23f13/fast' failed
+make: *** [cmTC_23f13/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY failed with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99bc4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_99bc4.dir/build.make CMakeFiles/cmTC_99bc4.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_99bc4.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety   -Wthread-safety -o CMakeFiles/cmTC_99bc4.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+c++: error: unrecognized command line option '-Wthread-safety'; did you mean '-fthread-jumps'?
+CMakeFiles/cmTC_99bc4.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99bc4.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_99bc4.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99bc4/fast' failed
+make: *** [cmTC_99bc4/fast] Error 2
+
+Source file was:
+int main() { return 0; }

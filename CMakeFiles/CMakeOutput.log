@@ -659,3 +659,183 @@ Linking C executable cmTC_f09a7
 make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
 
 
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_STD_CXX11 succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c0dff/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c0dff.dir/build.make CMakeFiles/cmTC_c0dff.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c0dff.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread -DHAVE_CXX_FLAG_STD_CXX11  -std=c++11   -std=c++11 -o CMakeFiles/cmTC_c0dff.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_c0dff
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0dff.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread -DHAVE_CXX_FLAG_STD_CXX11  -std=c++11    CMakeFiles/cmTC_c0dff.dir/src.cxx.o  -o cmTC_c0dff 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WALL succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3aa3e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3aa3e.dir/build.make CMakeFiles/cmTC_3aa3e.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3aa3e.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11 -DHAVE_CXX_FLAG_WALL  -Wall   -Wall -o CMakeFiles/cmTC_3aa3e.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_3aa3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3aa3e.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11 -DHAVE_CXX_FLAG_WALL  -Wall    CMakeFiles/cmTC_3aa3e.dir/src.cxx.o  -o cmTC_3aa3e 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WEXTRA succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1952d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1952d.dir/build.make CMakeFiles/cmTC_1952d.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1952d.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall -DHAVE_CXX_FLAG_WEXTRA  -Wextra   -Wextra -o CMakeFiles/cmTC_1952d.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1952d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1952d.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall -DHAVE_CXX_FLAG_WEXTRA  -Wextra    CMakeFiles/cmTC_1952d.dir/src.cxx.o  -o cmTC_1952d 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHADOW succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_12aea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_12aea.dir/build.make CMakeFiles/cmTC_12aea.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_12aea.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra -DHAVE_CXX_FLAG_WSHADOW  -Wshadow   -Wshadow -o CMakeFiles/cmTC_12aea.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_12aea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12aea.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra -DHAVE_CXX_FLAG_WSHADOW  -Wshadow    CMakeFiles/cmTC_12aea.dir/src.cxx.o  -o cmTC_12aea 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WERROR succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e0706/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e0706.dir/build.make CMakeFiles/cmTC_e0706.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e0706.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow -DHAVE_CXX_FLAG_WERROR  -Werror   -Werror -o CMakeFiles/cmTC_e0706.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_e0706
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0706.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow -DHAVE_CXX_FLAG_WERROR  -Werror    CMakeFiles/cmTC_e0706.dir/src.cxx.o  -o cmTC_e0706 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_PEDANTIC succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_59bf6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_59bf6.dir/build.make CMakeFiles/cmTC_59bf6.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_59bf6.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow -DHAVE_CXX_FLAG_PEDANTIC  -pedantic   -pedantic -o CMakeFiles/cmTC_59bf6.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_59bf6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_59bf6.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow -DHAVE_CXX_FLAG_PEDANTIC  -pedantic    CMakeFiles/cmTC_59bf6.dir/src.cxx.o  -o cmTC_59bf6 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_PEDANTIC_ERRORS succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_72b7c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_72b7c.dir/build.make CMakeFiles/cmTC_72b7c.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_72b7c.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic -DHAVE_CXX_FLAG_PEDANTIC_ERRORS  -pedantic-errors   -pedantic-errors -o CMakeFiles/cmTC_72b7c.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_72b7c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72b7c.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic -DHAVE_CXX_FLAG_PEDANTIC_ERRORS  -pedantic-errors    CMakeFiles/cmTC_72b7c.dir/src.cxx.o  -o cmTC_72b7c 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_FSTRICT_ALIASING succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_47385/fast"
+/usr/bin/make -f CMakeFiles/cmTC_47385.dir/build.make CMakeFiles/cmTC_47385.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_47385.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_FSTRICT_ALIASING  -fstrict-aliasing   -fstrict-aliasing -o CMakeFiles/cmTC_47385.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_47385
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47385.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_FSTRICT_ALIASING  -fstrict-aliasing    CMakeFiles/cmTC_47385.dir/src.cxx.o  -o cmTC_47385 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8143d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8143d.dir/build.make CMakeFiles/cmTC_8143d.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8143d.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing -DHAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS  -Wno-deprecated-declarations   -Wno-deprecated-declarations -o CMakeFiles/cmTC_8143d.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_8143d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8143d.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing -DHAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS  -Wno-deprecated-declarations    CMakeFiles/cmTC_8143d.dir/src.cxx.o  -o cmTC_8143d 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WNO_DEPRECATED succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bdb7b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bdb7b.dir/build.make CMakeFiles/cmTC_bdb7b.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_bdb7b.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -DHAVE_CXX_FLAG_WNO_DEPRECATED  -Wno-deprecated   -Wno-deprecated -o CMakeFiles/cmTC_bdb7b.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_bdb7b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdb7b.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -DHAVE_CXX_FLAG_WNO_DEPRECATED  -Wno-deprecated    CMakeFiles/cmTC_bdb7b.dir/src.cxx.o  -o cmTC_bdb7b 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSTRICT_ALIASING succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a1d37/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a1d37.dir/build.make CMakeFiles/cmTC_a1d37.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a1d37.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -DHAVE_CXX_FLAG_WSTRICT_ALIASING  -Wstrict-aliasing   -Wstrict-aliasing -o CMakeFiles/cmTC_a1d37.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_a1d37
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a1d37.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations -DHAVE_CXX_FLAG_WSTRICT_ALIASING  -Wstrict-aliasing    CMakeFiles/cmTC_a1d37.dir/src.cxx.o  -o cmTC_a1d37 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_COVERAGE succeeded with the following output:
+Change Dir: /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2c24c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2c24c.dir/build.make CMakeFiles/cmTC_2c24c.dir/build
+make[1]: Entering directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2c24c.dir/src.cxx.o
+/usr/bin/c++    -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_COVERAGE  --coverage   --coverage -o CMakeFiles/cmTC_2c24c.dir/src.cxx.o -c /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_2c24c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c24c.dir/link.txt --verbose=1
+/usr/bin/c++   -std=c++11 -pthread  -std=c++11  -Wall  -Wextra  -Wshadow  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_COVERAGE  --coverage    CMakeFiles/cmTC_2c24c.dir/src.cxx.o  -o cmTC_2c24c 
+make[1]: Leaving directory '/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

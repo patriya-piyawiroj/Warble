@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
 # Gets proto filenames
 get_filename_component(store_proto "../protos/kvstore.proto" ABSOLUTE)

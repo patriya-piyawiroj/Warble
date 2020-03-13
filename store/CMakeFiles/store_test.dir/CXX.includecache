@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/kvstore_client.h
+/home/vagrant/csci499_patriya-piyawiroj/store/kvstore_client.h
 iostream
 -
 string
@@ -14,15 +14,15 @@ string
 grpcpp/grpcpp.h
 -
 kvstore.grpc.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/kvstore.grpc.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/kvstore.grpc.pb.h
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/store_test.cc
+/home/vagrant/csci499_patriya-piyawiroj/store/store_test.cc
 gtest/gtest.h
 -
 grpc/grpc.h
 -
 kvstore_client.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/kvstore_client.h
+/home/vagrant/csci499_patriya-piyawiroj/store/kvstore_client.h
 
 /usr/local/include/google/protobuf/any.h
 string

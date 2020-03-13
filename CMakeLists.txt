@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.3)
 project(projectname C CXX)
 
 # Uses cpp 11
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
+set(glog_DIR "~/csci499_patriya-piyawiroj/third_party/glog")
 
 # Finds Protobuf installation
 # Looks for protobuf-config.cmake file installed by Protobuf's CMake installation.
@@ -19,7 +20,7 @@ set(_PROTOBUF_PROTOC $<TARGET_FILE:protobuf::protoc>)
 set(_GRPC_GRPCPP_UNSECURE grpc++_unsecure)
 set(_GRPC_CPP_PLUGIN_EXECUTABLE /usr/local/bin/grpc_cpp_plugin)
 
-#set(THIRD_PARTY_DIR "third_party")
+set(THIRD_PARTY_DIR "third_party/grpc/third_party")
 
 # Adds googletest
 add_subdirectory(${THIRD_PARTY_DIR}/googletest)
@@ -33,7 +34,7 @@ find_package(gflags REQUIRED)
 add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
 
 # Adds glog
-add_subdirectory(${THIRD_PARTY_DIR}/glog)
+#add_subdirectory(glog)
 
 # Adds subdirectories
 # ! Notice here !

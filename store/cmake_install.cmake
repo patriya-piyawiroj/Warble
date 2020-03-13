@@ -1,4 +1,4 @@
-# Install script for directory: /home/vagrant/warble/csci499_patriya-piyawiroj/store
+# Install script for directory: /home/vagrant/csci499_patriya-piyawiroj/store
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -48,24 +48,70 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/warble/csci499_patriya-piyawiroj
+CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/warble/csci499_patriya-piyawiroj
+CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +124,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles /home/vagrant/warble/csci499_patriya-piyawiroj/store/CMakeFiles/progress.marks
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles 0
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles /home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/progress.marks
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/clean
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,52 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/preinstall
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/preinstall
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-store/CMakeFiles/store.dir/rule:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
-.PHONY : store/CMakeFiles/store.dir/rule
-
-# Convenience name for target.
-store: store/CMakeFiles/store.dir/rule
-
-.PHONY : store
-
-# fast build rule for target.
-store/fast:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
-.PHONY : store/fast
-
-# Convenience name for target.
-store/CMakeFiles/key_value_store_server.dir/rule:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/key_value_store_server.dir/rule
-.PHONY : store/CMakeFiles/key_value_store_server.dir/rule
-
-# Convenience name for target.
-key_value_store_server: store/CMakeFiles/key_value_store_server.dir/rule
-
-.PHONY : key_value_store_server
-
-# fast build rule for target.
-key_value_store_server/fast:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/build
-.PHONY : key_value_store_server/fast
-
-# Convenience name for target.
 store/CMakeFiles/store_test.dir/rule:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store_test.dir/rule
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store_test.dir/rule
 .PHONY : store/CMakeFiles/store_test.dir/rule
 
 # Convenience name for target.
@@ -152,8 +179,38 @@ store_test: store/CMakeFiles/store_test.dir/rule
 
 # fast build rule for target.
 store_test/fast:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
 .PHONY : store_test/fast
+
+# Convenience name for target.
+store/CMakeFiles/key_value_store_server.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/key_value_store_server.dir/rule
+.PHONY : store/CMakeFiles/key_value_store_server.dir/rule
+
+# Convenience name for target.
+key_value_store_server: store/CMakeFiles/key_value_store_server.dir/rule
+
+.PHONY : key_value_store_server
+
+# fast build rule for target.
+key_value_store_server/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/build
+.PHONY : key_value_store_server/fast
+
+# Convenience name for target.
+store/CMakeFiles/store.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
+.PHONY : store/CMakeFiles/store.dir/rule
+
+# Convenience name for target.
+store: store/CMakeFiles/store.dir/rule
+
+.PHONY : store
+
+# fast build rule for target.
+store/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
+.PHONY : store/fast
 
 dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
@@ -161,7 +218,7 @@ dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
 # target to build an object file
 dist/kvstore.grpc.pb.cc.o:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o
 .PHONY : dist/kvstore.grpc.pb.cc.o
 
 dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
@@ -170,7 +227,7 @@ dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
 
 # target to preprocess a source file
 dist/kvstore.grpc.pb.cc.i:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i
 .PHONY : dist/kvstore.grpc.pb.cc.i
 
 dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
@@ -179,7 +236,7 @@ dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
 
 # target to generate assembly for a file
 dist/kvstore.grpc.pb.cc.s:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s
 .PHONY : dist/kvstore.grpc.pb.cc.s
 
 dist/kvstore.pb.o: dist/kvstore.pb.cc.o
@@ -188,7 +245,7 @@ dist/kvstore.pb.o: dist/kvstore.pb.cc.o
 
 # target to build an object file
 dist/kvstore.pb.cc.o:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o
 .PHONY : dist/kvstore.pb.cc.o
 
 dist/kvstore.pb.i: dist/kvstore.pb.cc.i
@@ -197,7 +254,7 @@ dist/kvstore.pb.i: dist/kvstore.pb.cc.i
 
 # target to preprocess a source file
 dist/kvstore.pb.cc.i:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i
 .PHONY : dist/kvstore.pb.cc.i
 
 dist/kvstore.pb.s: dist/kvstore.pb.cc.s
@@ -206,7 +263,7 @@ dist/kvstore.pb.s: dist/kvstore.pb.cc.s
 
 # target to generate assembly for a file
 dist/kvstore.pb.cc.s:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s
 .PHONY : dist/kvstore.pb.cc.s
 
 key_value_store_server.o: key_value_store_server.cc.o
@@ -215,7 +272,7 @@ key_value_store_server.o: key_value_store_server.cc.o
 
 # target to build an object file
 key_value_store_server.cc.o:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o
 .PHONY : key_value_store_server.cc.o
 
 key_value_store_server.i: key_value_store_server.cc.i
@@ -224,7 +281,7 @@ key_value_store_server.i: key_value_store_server.cc.i
 
 # target to preprocess a source file
 key_value_store_server.cc.i:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i
 .PHONY : key_value_store_server.cc.i
 
 key_value_store_server.s: key_value_store_server.cc.s
@@ -233,7 +290,7 @@ key_value_store_server.s: key_value_store_server.cc.s
 
 # target to generate assembly for a file
 key_value_store_server.cc.s:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s
 .PHONY : key_value_store_server.cc.s
 
 store.o: store.cc.o
@@ -242,7 +299,7 @@ store.o: store.cc.o
 
 # target to build an object file
 store.cc.o:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.o
 .PHONY : store.cc.o
 
 store.i: store.cc.i
@@ -251,7 +308,7 @@ store.i: store.cc.i
 
 # target to preprocess a source file
 store.cc.i:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.i
 .PHONY : store.cc.i
 
 store.s: store.cc.s
@@ -260,7 +317,7 @@ store.s: store.cc.s
 
 # target to generate assembly for a file
 store.cc.s:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
 .PHONY : store.cc.s
 
 store_test.o: store_test.cc.o
@@ -269,7 +326,7 @@ store_test.o: store_test.cc.o
 
 # target to build an object file
 store_test.cc.o:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.o
 .PHONY : store_test.cc.o
 
 store_test.i: store_test.cc.i
@@ -278,7 +335,7 @@ store_test.i: store_test.cc.i
 
 # target to preprocess a source file
 store_test.cc.i:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.i
 .PHONY : store_test.cc.i
 
 store_test.s: store_test.cc.s
@@ -287,7 +344,7 @@ store_test.s: store_test.cc.s
 
 # target to generate assembly for a file
 store_test.cc.s:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.s
 .PHONY : store_test.cc.s
 
 # Help Target
@@ -296,11 +353,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... install/strip"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... store_test"
+	@echo "... key_value_store_server"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... rebuild_cache"
 	@echo "... store"
-	@echo "... key_value_store_server"
-	@echo "... store_test"
+	@echo "... edit_cache"
 	@echo "... dist/kvstore.grpc.pb.o"
 	@echo "... dist/kvstore.grpc.pb.i"
 	@echo "... dist/kvstore.grpc.pb.s"
@@ -327,6 +389,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

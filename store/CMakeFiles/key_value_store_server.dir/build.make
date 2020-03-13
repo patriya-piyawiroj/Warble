@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/warble/csci499_patriya-piyawiroj
+CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/warble/csci499_patriya-piyawiroj
+CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # Include any dependencies generated for this target.
 include store/CMakeFiles/key_value_store_server.dir/depend.make
@@ -58,8 +58,8 @@ include store/CMakeFiles/key_value_store_server.dir/progress.make
 include store/CMakeFiles/key_value_store_server.dir/flags.make
 
 store/dist/kvstore.pb.cc: protos/kvstore.proto
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dist/kvstore.pb.cc, dist/kvstore.pb.h, dist/kvstore.grpc.pb.cc, dist/kvstore.grpc.pb.h"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/local/bin/protoc --grpc_out /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist --cpp_out /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist -I /home/vagrant/warble/csci499_patriya-piyawiroj/protos --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" /home/vagrant/warble/csci499_patriya-piyawiroj/protos/kvstore.proto
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dist/kvstore.pb.cc, dist/kvstore.pb.h, dist/kvstore.grpc.pb.cc, dist/kvstore.grpc.pb.h"
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/local/bin/protoc --grpc_out /home/vagrant/csci499_patriya-piyawiroj/store/dist --cpp_out /home/vagrant/csci499_patriya-piyawiroj/store/dist -I /home/vagrant/csci499_patriya-piyawiroj/protos --plugin=protoc-gen-grpc="/usr/local/bin/grpc_cpp_plugin" /home/vagrant/csci499_patriya-piyawiroj/protos/kvstore.proto
 
 store/dist/kvstore.pb.h: store/dist/kvstore.pb.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate store/dist/kvstore.pb.h
@@ -72,16 +72,16 @@ store/dist/kvstore.grpc.pb.h: store/dist/kvstore.pb.cc
 
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o: store/CMakeFiles/key_value_store_server.dir/flags.make
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o: store/key_value_store_server.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o -c /home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.cc
 
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.cc > CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.cc > CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.i
 
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.cc -o CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.cc -o CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s
 
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o.requires:
 
@@ -96,16 +96,16 @@ store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o.provides
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o: store/CMakeFiles/key_value_store_server.dir/flags.make
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o: store/dist/kvstore.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o -c /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc > CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc > CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc -o CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc -o CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o.requires:
 
@@ -120,16 +120,16 @@ store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o.provides.build:
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o: store/CMakeFiles/key_value_store_server.dir/flags.make
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o: store/dist/kvstore.grpc.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o -c /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc > CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc > CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc -o CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc -o CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s
 
 store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o.requires:
 
@@ -155,11 +155,11 @@ store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/key_va
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/build.make
-store/key_value_store_server: /usr/local/lib/libprotobuf.so
+store/key_value_store_server: /usr/local/lib/libprotobuf.a
 store/key_value_store_server: store/libstore.a
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/warble/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable key_value_store_server"
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/key_value_store_server.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable key_value_store_server"
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/key_value_store_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 store/CMakeFiles/key_value_store_server.dir/build: store/key_value_store_server
@@ -173,13 +173,13 @@ store/CMakeFiles/key_value_store_server.dir/requires: store/CMakeFiles/key_value
 .PHONY : store/CMakeFiles/key_value_store_server.dir/requires
 
 store/CMakeFiles/key_value_store_server.dir/clean:
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -P CMakeFiles/key_value_store_server.dir/cmake_clean.cmake
+	cd /home/vagrant/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -P CMakeFiles/key_value_store_server.dir/cmake_clean.cmake
 .PHONY : store/CMakeFiles/key_value_store_server.dir/clean
 
 store/CMakeFiles/key_value_store_server.dir/depend: store/dist/kvstore.pb.cc
 store/CMakeFiles/key_value_store_server.dir/depend: store/dist/kvstore.pb.h
 store/CMakeFiles/key_value_store_server.dir/depend: store/dist/kvstore.grpc.pb.cc
 store/CMakeFiles/key_value_store_server.dir/depend: store/dist/kvstore.grpc.pb.h
-	cd /home/vagrant/warble/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/warble/csci499_patriya-piyawiroj /home/vagrant/warble/csci499_patriya-piyawiroj/store /home/vagrant/warble/csci499_patriya-piyawiroj /home/vagrant/warble/csci499_patriya-piyawiroj/store /home/vagrant/warble/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/store /home/vagrant/csci499_patriya-piyawiroj /home/vagrant/csci499_patriya-piyawiroj/store /home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : store/CMakeFiles/key_value_store_server.dir/depend
 

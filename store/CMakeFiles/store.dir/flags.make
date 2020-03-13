@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++17 -pthread -std=c++17 -pthread
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include -I/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist 
+CXX_INCLUDES = -I/usr/local/include -I/home/vagrant/csci499_patriya-piyawiroj/store/dist 
 
