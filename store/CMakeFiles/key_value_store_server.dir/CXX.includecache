@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc
 kvstore.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
 kvstore.grpc.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.h
 functional
 -
 grpcpp/impl/codegen/async_stream.h
@@ -40,9 +40,9 @@ grpcpp/impl/codegen/service_type.h
 grpcpp/impl/codegen/sync_stream.h
 -
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.h
 kvstore.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
 functional
 -
 grpc/impl/codegen/port_platform.h
@@ -82,9 +82,9 @@ grpcpp/impl/codegen/stub_options.h
 grpcpp/impl/codegen/sync_stream.h
 -
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc
 kvstore.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
 algorithm
 -
 google/protobuf/io/coded_stream.h
@@ -106,7 +106,7 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.h
 limits
 -
 string
@@ -144,11 +144,11 @@ google/protobuf/port_def.inc
 google/protobuf/port_undef.inc
 -
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.cc
+/home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.cc
 key_value_store_server.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.h
+/home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.h
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/key_value_store_server.h
+/home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.h
 iostream
 -
 unordered_map
@@ -158,11 +158,11 @@ string
 grpcpp/grpcpp.h
 -
 kvstore.grpc.pb.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/kvstore.grpc.pb.h
+/home/vagrant/csci499_patriya-piyawiroj/store/kvstore.grpc.pb.h
 store.h
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/store.h
+/home/vagrant/csci499_patriya-piyawiroj/store/store.h
 
-/home/vagrant/warble/csci499_patriya-piyawiroj/store/store.h
+/home/vagrant/csci499_patriya-piyawiroj/store/store.h
 unordered_map
 -
 string

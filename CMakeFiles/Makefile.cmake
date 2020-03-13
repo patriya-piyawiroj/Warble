@@ -102,7 +102,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "third_party/grpc/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "third_party/grpc/third_party/benchmark/src/CMakeFiles/benchmark_main.dir/DependInfo.cmake"
   "third_party/grpc/third_party/benchmark/src/CMakeFiles/benchmark.dir/DependInfo.cmake"
-  "store/CMakeFiles/store_test.dir/DependInfo.cmake"
   "store/CMakeFiles/key_value_store_server.dir/DependInfo.cmake"
   "store/CMakeFiles/store.dir/DependInfo.cmake"
   "warble/CMakeFiles/warble.dir/DependInfo.cmake"

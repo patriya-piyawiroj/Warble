@@ -16,34 +16,12 @@ DEFINE_bool(profile, false, "Get the user's profile of following and followers")
 
 class WarbleInterface {
  public:
-  // TODO: Prints error message
-  void PrintError(const std::string &errorMessage, const std::string &fields) {
-    printf("%s %s", errorMessage.c_str(), fields.c_str());
-  }
-
-  // TODO: Registers the given non-blank username
-  void RegisterUser(std::string username) {
-    LOG(INFO) << "Registering " << username;
-  }
-
-  // TODO: Posts a new warble (optionally as a reply), returns the id of new warble
-  std::string Warble(const std::string &username, const std::string &text,
-                     const std::string &warbleID = "") {
-    return "";
-  }
-
-  // Starts following a given user
-  void Follow(std::string username, std::string userToFollow) {
-  
-  }
-
-  // Reads a warble thread from the given id
-  void Read(std::string warbleID) {
-  
-  }
-
-  // Returns this user's following and followers
-  void Profile() {
-  
-  }
-}
+  void PrintError(const std::string &errorMessage, const std::string &fields);
+  void RegisterUser(std::string username);
+  std::string Warble(const std::string &username, const std::string &text);
+  std::string Reply(const std::string &username, const std::string &text,
+                     const std::string &warbleID);
+  void Follow(std::string username, std::string userToFollow);
+  void Read(std::string warbleID);
+  void Profile(std::string usernamer);
+};

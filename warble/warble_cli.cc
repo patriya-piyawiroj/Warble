@@ -3,7 +3,7 @@
 // TODO: Prints error message
 void WarbleInterface::PrintError(const std::string &errorMessage, const std::string &fields) {
   //printf("%s %s", errorMessage.c_str(), fields.c_str());
-  cout << errorMessage << fields;
+  std::cout << errorMessage << fields;
 }
 
 // Registers the given non-blank username
@@ -42,7 +42,7 @@ void WarbleInterface::Profile(std::string username) {
 
 int main(int argc, char* argv[]) {
   google::ParseCommandLineFlags(&argc, &argv, true);
-  WarbleInteface warble;
+  WarbleInterface warble;
 
 
   // register user if registeruser flag is present
@@ -58,16 +58,22 @@ int main(int argc, char* argv[]) {
     return 0;
   }
   
-  if (!FLAGS_warble.empty()) 
-    Warble(FLAGS_user, FLAGS_warble); 
+  if (!FLAGS_warble.empty() && FLAGS_reply.empty())
+    // creates new warble if user and warble flag exists but reply does not 
+    warble.Warble(FLAGS_user, FLAGS_warble); 
   if (!FLAGS_reply.empty()) 
-    Warble(FLAGS_user, FLAGS_warble, FLAGS_reply);
+    // create new warble as reply if user, warble and reply flags exist	  
+    warble.Reply(FLAGS_user, FLAGS_warble, FLAGS_reply);
   if (!FLAGS_follow.empty()) 
-    Follow(FLAGS_user, FLAGS_follow);
+    // follows another user if user and follow flags exist
+    warble.Follow(FLAGS_user, FLAGS_follow);
   if (!FLAGS_read.empty()) 
-    Read(FLAGS_read);
+    // reads a warble if read flag exists
+    warble.Read(FLAGS_read);
+
   if (!FLAGS_profile) 
-    Profile();
+    // prints profile
+    warble.Profile(FLAGS_user);
 
   return 0;
 }

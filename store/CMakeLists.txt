@@ -31,16 +31,16 @@ include_directories("${DIST_DIR}")
 add_library(store STATIC store.cc store.h)
 
 # Adds test
-add_executable(store_test store_test.cc)
-target_link_libraries(store_test PUBLIC
-    gtest
-    gtest_main
-    store
-)
-add_test(
-    NAME store_test
-    COMMAND store_test
-)
+#add_executable(store_test store_test.cc)
+#target_link_libraries(store_test PUBLIC
+#    gtest
+#    gtest_main
+#    store
+#)
+#add_test(
+#    NAME store_test
+#    COMMAND store_test
+#)
 
 # Compiles key_value_store_server_sync
 add_executable(key_value_store_server key_value_store_server.cc
@@ -49,6 +49,6 @@ add_executable(key_value_store_server key_value_store_server.cc
     ${store_grpc_srcs})
 target_link_libraries(key_value_store_server
     ${_GRPC_GRPCPP_UNSECURE}
-    ${_PROTOBUF_LIBPROTOBUF}
+    ${_PROTOBUF_LIBPROTOBUF})
     #glog::glog
-    store)
+    # store)

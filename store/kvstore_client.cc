@@ -28,7 +28,7 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   }
 }
 
-std::optional<string> KvstoreClient::Get(const std::string& key) {
+std::optional<std::string> KvstoreClient::Get(const std::string& key) {
   // Data to be sent to server
   GetRequest request;
   request.set_key(key);

@@ -1,1 +1,1 @@
-/usr/bin/c++   -std=c++17 -pthread   CMakeFiles/warble.dir/warble_cli.cc.o  -o warble  -L/usr/local/lib -Wl,-rpath,/usr/local/lib /usr/local/lib/libgflags.a -lglog -lpthread 
+/usr/bin/c++     CMakeFiles/warble.dir/warble_cli.cc.o  -o warble /usr/local/lib/libgflags.a -lglog -lpthread 

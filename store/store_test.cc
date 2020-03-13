@@ -8,8 +8,8 @@ TEST(GetTest, GetValueFromPut) {
   std::string key("key");
   std::string value("value");
   kvstore.Put(key, value);
-  std::string replyValue  = kvstore.Get(key);
-  EXPECT_EQ(value, replyValue);
+  std::optional<std::string> replyValue  = kvstore.Get(key);
+  EXPECT_EQ(value, replyValue.value());
 }
 
 int main(int argc, char* argv[]) {

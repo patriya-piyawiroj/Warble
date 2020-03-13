@@ -80,16 +80,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -112,6 +102,16 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -166,21 +166,6 @@ preinstall/fast:
 depend:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-store/CMakeFiles/store_test.dir/rule:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store_test.dir/rule
-.PHONY : store/CMakeFiles/store_test.dir/rule
-
-# Convenience name for target.
-store_test: store/CMakeFiles/store_test.dir/rule
-
-.PHONY : store_test
-
-# fast build rule for target.
-store_test/fast:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
-.PHONY : store_test/fast
 
 # Convenience name for target.
 store/CMakeFiles/key_value_store_server.dir/rule:
@@ -320,33 +305,6 @@ store.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
 .PHONY : store.cc.s
 
-store_test.o: store_test.cc.o
-
-.PHONY : store_test.o
-
-# target to build an object file
-store_test.cc.o:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.o
-.PHONY : store_test.cc.o
-
-store_test.i: store_test.cc.i
-
-.PHONY : store_test.i
-
-# target to preprocess a source file
-store_test.cc.i:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.i
-.PHONY : store_test.cc.i
-
-store_test.s: store_test.cc.s
-
-.PHONY : store_test.s
-
-# target to generate assembly for a file
-store_test.cc.s:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.s
-.PHONY : store_test.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -355,11 +313,10 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... store_test"
 	@echo "... key_value_store_server"
 	@echo "... install/local"
 	@echo "... test"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... store"
 	@echo "... edit_cache"
@@ -375,9 +332,6 @@ help:
 	@echo "... store.o"
 	@echo "... store.i"
 	@echo "... store.s"
-	@echo "... store_test.o"
-	@echo "... store_test.i"
-	@echo "... store_test.s"
 .PHONY : help
 
 

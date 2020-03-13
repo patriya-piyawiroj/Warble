@@ -156,7 +156,6 @@ store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/dist/k
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/build.make
 store/key_value_store_server: /usr/local/lib/libprotobuf.a
-store/key_value_store_server: store/libstore.a
 store/key_value_store_server: store/CMakeFiles/key_value_store_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable key_value_store_server"
 	cd /home/vagrant/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/key_value_store_server.dir/link.txt --verbose=$(VERBOSE)

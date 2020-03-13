@@ -246,19 +246,6 @@ benchmark/fast:
 .PHONY : benchmark/fast
 
 #=============================================================================
-# Target rules for targets named store_test
-
-# Build rule for target.
-store_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 store_test
-.PHONY : store_test
-
-# fast build rule for target.
-store_test/fast:
-	$(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
-.PHONY : store_test/fast
-
-#=============================================================================
 # Target rules for targets named key_value_store_server
 
 # Build rule for target.
@@ -316,7 +303,6 @@ help:
 	@echo "... gtest"
 	@echo "... benchmark_main"
 	@echo "... benchmark"
-	@echo "... store_test"
 	@echo "... key_value_store_server"
 	@echo "... store"
 	@echo "... warble"
