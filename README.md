@@ -15,6 +15,7 @@ sudo apt-get upgrade
 
 ## Install third-party
 ```
+cd third_party
 git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 
 # install grpc
