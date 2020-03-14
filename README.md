@@ -10,6 +10,8 @@ sudo apt-get install build-essential autoconf libtool pkg-config
 sudo apt-get install golang
 sudo apt-get install make
 sudo apt-get install cmake
+sudo apt-get install libgflags-dev
+sudo apt-get install libunwind-dev
 sudo apt-get upgrade
 ```
 
@@ -43,6 +45,16 @@ cd third_party/gflags
 cmake .
 make
 sudo make install
+
+# in grpc root dir
+sudo cmake .
+make
+```
+
+```
+# in csci499_patriya-piyawiroj/third_party
+git clone https://github.com/google/glog.git
+./autogen.sh && ./configure && make && sudo make install
 ```
 
 ## Make files
