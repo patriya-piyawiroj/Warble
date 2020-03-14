@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <thread>
 
 #include <grpcpp/grpcpp.h>
 
@@ -8,6 +9,7 @@
 using grpc::Channel;
 using grpc::ClientContext;
 using grpc::Status;
+using grpc::ClientReaderWriter;
 using kvstore::PutRequest;
 using kvstore::PutReply;
 using kvstore::GetRequest;

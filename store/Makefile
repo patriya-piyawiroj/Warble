@@ -111,21 +111,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-store/CMakeFiles/store.dir/rule:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
-.PHONY : store/CMakeFiles/store.dir/rule
-
-# Convenience name for target.
-store: store/CMakeFiles/store.dir/rule
-
-.PHONY : store
-
-# fast build rule for target.
-store/fast:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
-.PHONY : store/fast
-
-# Convenience name for target.
 store/CMakeFiles/key_value_store_server.dir/rule:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/key_value_store_server.dir/rule
 .PHONY : store/CMakeFiles/key_value_store_server.dir/rule
@@ -141,19 +126,34 @@ key_value_store_server/fast:
 .PHONY : key_value_store_server/fast
 
 # Convenience name for target.
-store/CMakeFiles/store_test.dir/rule:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store_test.dir/rule
-.PHONY : store/CMakeFiles/store_test.dir/rule
+store/CMakeFiles/store.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
+.PHONY : store/CMakeFiles/store.dir/rule
 
 # Convenience name for target.
-store_test: store/CMakeFiles/store_test.dir/rule
+store: store/CMakeFiles/store.dir/rule
 
-.PHONY : store_test
+.PHONY : store
 
 # fast build rule for target.
-store_test/fast:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
-.PHONY : store_test/fast
+store/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
+.PHONY : store/fast
+
+# Convenience name for target.
+store/CMakeFiles/kvstore_client.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/kvstore_client.dir/rule
+.PHONY : store/CMakeFiles/kvstore_client.dir/rule
+
+# Convenience name for target.
+kvstore_client: store/CMakeFiles/kvstore_client.dir/rule
+
+.PHONY : kvstore_client
+
+# fast build rule for target.
+kvstore_client/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/build
+.PHONY : kvstore_client/fast
 
 dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
@@ -162,6 +162,7 @@ dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 # target to build an object file
 dist/kvstore.grpc.pb.cc.o:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.grpc.pb.cc.o
 .PHONY : dist/kvstore.grpc.pb.cc.o
 
 dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
@@ -171,6 +172,7 @@ dist/kvstore.grpc.pb.i: dist/kvstore.grpc.pb.cc.i
 # target to preprocess a source file
 dist/kvstore.grpc.pb.cc.i:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.grpc.pb.cc.i
 .PHONY : dist/kvstore.grpc.pb.cc.i
 
 dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
@@ -180,6 +182,7 @@ dist/kvstore.grpc.pb.s: dist/kvstore.grpc.pb.cc.s
 # target to generate assembly for a file
 dist/kvstore.grpc.pb.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.grpc.pb.cc.s
 .PHONY : dist/kvstore.grpc.pb.cc.s
 
 dist/kvstore.pb.o: dist/kvstore.pb.cc.o
@@ -189,6 +192,7 @@ dist/kvstore.pb.o: dist/kvstore.pb.cc.o
 # target to build an object file
 dist/kvstore.pb.cc.o:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.pb.cc.o
 .PHONY : dist/kvstore.pb.cc.o
 
 dist/kvstore.pb.i: dist/kvstore.pb.cc.i
@@ -198,6 +202,7 @@ dist/kvstore.pb.i: dist/kvstore.pb.cc.i
 # target to preprocess a source file
 dist/kvstore.pb.cc.i:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.pb.cc.i
 .PHONY : dist/kvstore.pb.cc.i
 
 dist/kvstore.pb.s: dist/kvstore.pb.cc.s
@@ -207,6 +212,7 @@ dist/kvstore.pb.s: dist/kvstore.pb.cc.s
 # target to generate assembly for a file
 dist/kvstore.pb.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/dist/kvstore.pb.cc.s
 .PHONY : dist/kvstore.pb.cc.s
 
 key_value_store_server.o: key_value_store_server.cc.o
@@ -236,14 +242,42 @@ key_value_store_server.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.s
 .PHONY : key_value_store_server.cc.s
 
+kvstore_client.o: kvstore_client.cc.o
+
+.PHONY : kvstore_client.o
+
+# target to build an object file
+kvstore_client.cc.o:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/kvstore_client.cc.o
+.PHONY : kvstore_client.cc.o
+
+kvstore_client.i: kvstore_client.cc.i
+
+.PHONY : kvstore_client.i
+
+# target to preprocess a source file
+kvstore_client.cc.i:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/kvstore_client.cc.i
+.PHONY : kvstore_client.cc.i
+
+kvstore_client.s: kvstore_client.cc.s
+
+.PHONY : kvstore_client.s
+
+# target to generate assembly for a file
+kvstore_client.cc.s:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/kvstore_client.cc.s
+.PHONY : kvstore_client.cc.s
+
 store.o: store.cc.o
 
 .PHONY : store.o
 
 # target to build an object file
 store.cc.o:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.o
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/store.cc.o
 .PHONY : store.cc.o
 
 store.i: store.cc.i
@@ -252,8 +286,9 @@ store.i: store.cc.i
 
 # target to preprocess a source file
 store.cc.i:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.i
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/store.cc.i
 .PHONY : store.cc.i
 
 store.s: store.cc.s
@@ -262,36 +297,10 @@ store.s: store.cc.s
 
 # target to generate assembly for a file
 store.cc.s:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/store.cc.s
 .PHONY : store.cc.s
-
-store_test.o: store_test.cc.o
-
-.PHONY : store_test.o
-
-# target to build an object file
-store_test.cc.o:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.o
-.PHONY : store_test.cc.o
-
-store_test.i: store_test.cc.i
-
-.PHONY : store_test.i
-
-# target to preprocess a source file
-store_test.cc.i:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.i
-.PHONY : store_test.cc.i
-
-store_test.s: store_test.cc.s
-
-.PHONY : store_test.s
-
-# target to generate assembly for a file
-store_test.cc.s:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.s
-.PHONY : store_test.cc.s
 
 # Help Target
 help:
@@ -300,10 +309,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... key_value_store_server"
 	@echo "... rebuild_cache"
 	@echo "... store"
-	@echo "... key_value_store_server"
-	@echo "... store_test"
+	@echo "... kvstore_client"
 	@echo "... dist/kvstore.grpc.pb.o"
 	@echo "... dist/kvstore.grpc.pb.i"
 	@echo "... dist/kvstore.grpc.pb.s"
@@ -313,12 +322,12 @@ help:
 	@echo "... key_value_store_server.o"
 	@echo "... key_value_store_server.i"
 	@echo "... key_value_store_server.s"
+	@echo "... kvstore_client.o"
+	@echo "... kvstore_client.i"
+	@echo "... kvstore_client.s"
 	@echo "... store.o"
 	@echo "... store.i"
 	@echo "... store.s"
-	@echo "... store_test.o"
-	@echo "... store_test.i"
-	@echo "... store_test.s"
 .PHONY : help
 
 

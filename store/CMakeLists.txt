@@ -31,18 +31,26 @@ include_directories("${DIST_DIR}")
 add_library(store STATIC store.cc store.h)
 
 # Adds test
-add_executable(store_test store_test.cc)
-target_link_libraries(store_test PUBLIC
-    gtest
-    gtest_main
-    kvstore_client.h kvstore_client.cc
-    store
-)
-add_test(
-    NAME store_test
-    COMMAND store_test
-)
+#add_executable(store_test store_test.cc)
+#target_link_libraries(store_test PUBLIC
+	#gtest
+    #gtest_main
+    #kvstore_client.h kvstore_client.cc
+    #store
+    #)
+#add_test(
+	#NAME store_test
+    #COMMAND store_test
+    #)
 
+add_executable(kvstore_client kvstore_client.cc kvstore_client.h
+	store
+	${store_proto_srcs}
+	${store_grpc_srcs})
+target_link_libraries(kvstore_client
+	${_GRPC_GRPCPP_UNSECURE}
+	${_PROTOBUF_LIBPROTOBUF}
+	store)
 # Compiles key_value_store_server_sync
 add_executable(key_value_store_server key_value_store_server.cc
     key_value_store_server.h

@@ -26,7 +26,7 @@ using warble::RegisteruserReply;
 class MockServer {
  public:
   // Feature 1: Registers a new user
-  void RegisterUser(const std::string& username);
+  void RegisterUser(const RegisteruserRequest* request, RegisteruserReply* reply);
   
   // Feature 2: Creates a warble optionally as a reply, returns new warble ID
   //Status CreateWarble(const WarbleRequest* request, const WarbleReply* reply);

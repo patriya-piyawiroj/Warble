@@ -1,7 +1,7 @@
 # csci499_patriya-piyawiroj
 
 ## Environment
-Using Vagrant box: ubuntu/bionic64
+Using Vagrant box: ubuntu/bionic64 (virtualbox, 20190109.0.0)
 
 ## Install prerequisites
 ```
@@ -10,12 +10,14 @@ sudo apt-get install build-essential autoconf libtool pkg-config
 sudo apt-get install golang
 sudo apt-get install make
 sudo apt-get install cmake
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:george-edison55/cmake-3.x
 sudo apt-get install libgflags-dev
 sudo apt-get install libunwind-dev
 sudo apt-get upgrade
 ```
 
-## Install third-party
+## Install third-parties
 ```
 cd third_party
 git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
@@ -23,13 +25,19 @@ git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 # install grpc
 cd grpc
 git submodule update --init
-cmake .
 make
 sudo make install
 
-#install protobuf
+# install protobuf
+# in grpc root dir
+cmake .
+
 cd third_party/protobuf
 sudo make install
+
+# install submodule dependency
+git submodule init
+git submodule update
 ```
 
 install pacakges

@@ -20,7 +20,7 @@ void WarbleInterface::RegisterUser(std::string username) {
   RegisteruserRequest request;
   RegisteruserReply reply;
   request.set_username(username);
-  warble_service.RegisterUser(username);
+  warble_service.RegisterUser(&request, &reply);
 }
 
 // Posts a new warble returns the id of new warble
