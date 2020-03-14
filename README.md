@@ -28,8 +28,8 @@ git submodule update --init
 make
 sudo make install
 
-#install protobuf
-on root grpc directory
+# install protobuf
+in grpc root dir
 cmake .
 
 cd third_party/protobuf
