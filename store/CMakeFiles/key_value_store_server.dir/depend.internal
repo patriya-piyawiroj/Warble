@@ -381,3 +381,6 @@ store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o
  /usr/local/include/grpcpp/support/string_ref.h
  store/dist/kvstore.grpc.pb.h
  store/dist/kvstore.pb.h
+store/CMakeFiles/key_value_store_server.dir/store.cc.o
+ /home/vagrant/csci499_patriya-piyawiroj/store/store.cc
+ /home/vagrant/csci499_patriya-piyawiroj/store/store.h

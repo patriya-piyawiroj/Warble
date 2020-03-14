@@ -5,9 +5,6 @@
 
 #include "mock_service.h"
 
-const std::string INVALID_FLAG_ERROR = "Invalid flag combinations. Missing ";
-const std::string MISSING_ARGUMENT_ERROR = "Missing arguments for ";
-
 DEFINE_string(registeruser, "", "Registers the given username");
 DEFINE_string(user, "", "Logs in as the given username");
 DEFINE_string(warble, "", "Creates a new warble with the given text");
@@ -18,6 +15,7 @@ DEFINE_bool(profile, false, "Get the user's profile of following and followers")
 
 class WarbleInterface {
  public:
+  static const std::string INVALID_FLAG_ERROR;                                                                            static const std::string MISSING_ARGUMENT_ERROR;
   void PrintError(const std::string &errorMessage, const std::string &fields);
   void RegisterUser(std::string username);
   std::string Warble(const std::string &username, const std::string &text);
@@ -29,4 +27,5 @@ class WarbleInterface {
  
  private:
   MockServer warble_service;
+ // static const std::string INVALID_FLAG_ERROR;                                                                            static const std::string MISSING_ARGUMENT_ERROR; 
 };

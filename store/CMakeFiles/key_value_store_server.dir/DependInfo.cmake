@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.grpc.pb.cc" "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o"
   "/home/vagrant/csci499_patriya-piyawiroj/store/dist/kvstore.pb.cc" "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o"
   "/home/vagrant/csci499_patriya-piyawiroj/store/key_value_store_server.cc" "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o"
+  "/home/vagrant/csci499_patriya-piyawiroj/store/store.cc" "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir/store.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -26,6 +27,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/store.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

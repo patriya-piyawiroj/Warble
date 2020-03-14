@@ -381,3 +381,6 @@ store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o: /usr/lo
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o: store/dist/kvstore.grpc.pb.h
 store/CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o: store/dist/kvstore.pb.h
 
+store/CMakeFiles/key_value_store_server.dir/store.cc.o: store/store.cc
+store/CMakeFiles/key_value_store_server.dir/store.cc.o: store/store.h
+

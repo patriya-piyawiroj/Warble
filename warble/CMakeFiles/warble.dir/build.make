@@ -94,9 +94,57 @@ warble/CMakeFiles/warble.dir/warble_cli.cc.o.provides: warble/CMakeFiles/warble.
 warble/CMakeFiles/warble.dir/warble_cli.cc.o.provides.build: warble/CMakeFiles/warble.dir/warble_cli.cc.o
 
 
+warble/CMakeFiles/warble.dir/mock_service.cc.o: warble/CMakeFiles/warble.dir/flags.make
+warble/CMakeFiles/warble.dir/mock_service.cc.o: warble/mock_service.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object warble/CMakeFiles/warble.dir/mock_service.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warble.dir/mock_service.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/warble/mock_service.cc
+
+warble/CMakeFiles/warble.dir/mock_service.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warble.dir/mock_service.cc.i"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/warble/mock_service.cc > CMakeFiles/warble.dir/mock_service.cc.i
+
+warble/CMakeFiles/warble.dir/mock_service.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warble.dir/mock_service.cc.s"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/warble/mock_service.cc -o CMakeFiles/warble.dir/mock_service.cc.s
+
+warble/CMakeFiles/warble.dir/mock_service.cc.o.requires:
+
+.PHONY : warble/CMakeFiles/warble.dir/mock_service.cc.o.requires
+
+warble/CMakeFiles/warble.dir/mock_service.cc.o.provides: warble/CMakeFiles/warble.dir/mock_service.cc.o.requires
+	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/mock_service.cc.o.provides.build
+.PHONY : warble/CMakeFiles/warble.dir/mock_service.cc.o.provides
+
+warble/CMakeFiles/warble.dir/mock_service.cc.o.provides.build: warble/CMakeFiles/warble.dir/mock_service.cc.o
+
+
+warble/CMakeFiles/warble.dir/store.cc.o: warble/CMakeFiles/warble.dir/flags.make
+warble/CMakeFiles/warble.dir/store.cc.o: warble/store.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object warble/CMakeFiles/warble.dir/store.cc.o"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warble.dir/store.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/warble/store.cc
+
+warble/CMakeFiles/warble.dir/store.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/warble.dir/store.cc.i"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/vagrant/csci499_patriya-piyawiroj/warble/store.cc > CMakeFiles/warble.dir/store.cc.i
+
+warble/CMakeFiles/warble.dir/store.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/warble.dir/store.cc.s"
+	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/vagrant/csci499_patriya-piyawiroj/warble/store.cc -o CMakeFiles/warble.dir/store.cc.s
+
+warble/CMakeFiles/warble.dir/store.cc.o.requires:
+
+.PHONY : warble/CMakeFiles/warble.dir/store.cc.o.requires
+
+warble/CMakeFiles/warble.dir/store.cc.o.provides: warble/CMakeFiles/warble.dir/store.cc.o.requires
+	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/store.cc.o.provides.build
+.PHONY : warble/CMakeFiles/warble.dir/store.cc.o.provides
+
+warble/CMakeFiles/warble.dir/store.cc.o.provides.build: warble/CMakeFiles/warble.dir/store.cc.o
+
+
 warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o: warble/CMakeFiles/warble.dir/flags.make
 warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o: warble/dist/warble.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o"
 	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warble.dir/dist/warble.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/warble/dist/warble.pb.cc
 
 warble/CMakeFiles/warble.dir/dist/warble.pb.cc.i: cmake_force
@@ -120,7 +168,7 @@ warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o.provides.build: warble/CMakeFil
 
 warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o: warble/CMakeFiles/warble.dir/flags.make
 warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o: warble/dist/warble.grpc.pb.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o"
 	cd /home/vagrant/csci499_patriya-piyawiroj/warble && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o -c /home/vagrant/csci499_patriya-piyawiroj/warble/dist/warble.grpc.pb.cc
 
 warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.i: cmake_force
@@ -145,6 +193,8 @@ warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o.provides.build: warble/CMa
 # Object files for target warble
 warble_OBJECTS = \
 "CMakeFiles/warble.dir/warble_cli.cc.o" \
+"CMakeFiles/warble.dir/mock_service.cc.o" \
+"CMakeFiles/warble.dir/store.cc.o" \
 "CMakeFiles/warble.dir/dist/warble.pb.cc.o" \
 "CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o"
 
@@ -152,6 +202,8 @@ warble_OBJECTS = \
 warble_EXTERNAL_OBJECTS =
 
 warble/warble: warble/CMakeFiles/warble.dir/warble_cli.cc.o
+warble/warble: warble/CMakeFiles/warble.dir/mock_service.cc.o
+warble/warble: warble/CMakeFiles/warble.dir/store.cc.o
 warble/warble: warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o
 warble/warble: warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o
 warble/warble: warble/CMakeFiles/warble.dir/build.make
@@ -159,10 +211,8 @@ warble/warble: /usr/local/lib/libprotobuf.a
 warble/warble: /usr/local/lib/libgflags.a
 warble/warble: /usr/local/lib/libglog.a
 warble/warble: /usr/local/lib/libgflags.a
-warble/warble: /usr/lib/x86_64-linux-gnu/libunwind.so
-warble/warble: /usr/lib/x86_64-linux-gnu/libunwind-x86_64.so
 warble/warble: warble/CMakeFiles/warble.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable warble"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable warble"
 	cd /home/vagrant/csci499_patriya-piyawiroj/warble && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/warble.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -171,6 +221,8 @@ warble/CMakeFiles/warble.dir/build: warble/warble
 .PHONY : warble/CMakeFiles/warble.dir/build
 
 warble/CMakeFiles/warble.dir/requires: warble/CMakeFiles/warble.dir/warble_cli.cc.o.requires
+warble/CMakeFiles/warble.dir/requires: warble/CMakeFiles/warble.dir/mock_service.cc.o.requires
+warble/CMakeFiles/warble.dir/requires: warble/CMakeFiles/warble.dir/store.cc.o.requires
 warble/CMakeFiles/warble.dir/requires: warble/CMakeFiles/warble.dir/dist/warble.pb.cc.o.requires
 warble/CMakeFiles/warble.dir/requires: warble/CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o.requires
 

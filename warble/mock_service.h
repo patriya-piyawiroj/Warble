@@ -1,11 +1,17 @@
+#include <string>
+#include <iostream>
+#include <stdlib.h>
+#include <optional>
+
 #include <grpcpp/grpcpp.h>
+#include <glog/logging.h>
 
 #include "warble.grpc.pb.h"
 
-#include "../store/store.h"
+#include "store.h"
 
 
-using gprc::Status;
+using grpc::Status;
 using grpc::StatusCode;
 using warble::Warble;
 using warble::RegisteruserRequest;
@@ -20,7 +26,7 @@ using warble::RegisteruserReply;
 class MockServer {
  public:
   // Feature 1: Registers a new user
-  Status RegisterUser(const RegisteruserRequest* request, const RegisteruserReply* reply);
+  void RegisterUser(const std::string& username);
   
   // Feature 2: Creates a warble optionally as a reply, returns new warble ID
   //Status CreateWarble(const WarbleRequest* request, const WarbleReply* reply);
@@ -35,5 +41,5 @@ class MockServer {
   //Status Profile(const ProfileRequest* request, const ProfileReply* reply);
 
  private:
-  Kvamp map_;
-}
+  Kvmap map_;
+};

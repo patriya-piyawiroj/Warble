@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "dist/kvstore.grpc.pb.cc"
   "dist/kvstore.grpc.pb.h"
   "CMakeFiles/key_value_store_server.dir/key_value_store_server.cc.o"
+  "CMakeFiles/key_value_store_server.dir/store.cc.o"
   "CMakeFiles/key_value_store_server.dir/dist/kvstore.pb.cc.o"
   "CMakeFiles/key_value_store_server.dir/dist/kvstore.grpc.pb.cc.o"
   "key_value_store_server.pdb"

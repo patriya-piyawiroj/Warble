@@ -90,10 +90,7 @@ store_test_EXTERNAL_OBJECTS =
 
 store/store_test: store/CMakeFiles/store_test.dir/store_test.cc.o
 store/store_test: store/CMakeFiles/store_test.dir/build.make
-store/store_test: lib/libgtest.a
-store/store_test: lib/libgtest_main.a
 store/store_test: store/libstore.a
-store/store_test: lib/libgtest.a
 store/store_test: store/CMakeFiles/store_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable store_test"
 	cd /home/vagrant/csci499_patriya-piyawiroj/store && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/store_test.dir/link.txt --verbose=$(VERBOSE)

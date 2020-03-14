@@ -56,62 +56,16 @@ CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -123,17 +77,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+store/CMakeFiles/store.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
+.PHONY : store/CMakeFiles/store.dir/rule
+
+# Convenience name for target.
+store: store/CMakeFiles/store.dir/rule
+
+.PHONY : store
+
+# fast build rule for target.
+store/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
+.PHONY : store/fast
+
+# Convenience name for target.
 store/CMakeFiles/key_value_store_server.dir/rule:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/key_value_store_server.dir/rule
 .PHONY : store/CMakeFiles/key_value_store_server.dir/rule
@@ -183,19 +141,19 @@ key_value_store_server/fast:
 .PHONY : key_value_store_server/fast
 
 # Convenience name for target.
-store/CMakeFiles/store.dir/rule:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store.dir/rule
-.PHONY : store/CMakeFiles/store.dir/rule
+store/CMakeFiles/store_test.dir/rule:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/store_test.dir/rule
+.PHONY : store/CMakeFiles/store_test.dir/rule
 
 # Convenience name for target.
-store: store/CMakeFiles/store.dir/rule
+store_test: store/CMakeFiles/store_test.dir/rule
 
-.PHONY : store
+.PHONY : store_test
 
 # fast build rule for target.
-store/fast:
-	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
-.PHONY : store/fast
+store_test/fast:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/build
+.PHONY : store_test/fast
 
 dist/kvstore.grpc.pb.o: dist/kvstore.grpc.pb.cc.o
 
@@ -285,6 +243,7 @@ store.o: store.cc.o
 # target to build an object file
 store.cc.o:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.o
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.o
 .PHONY : store.cc.o
 
 store.i: store.cc.i
@@ -294,6 +253,7 @@ store.i: store.cc.i
 # target to preprocess a source file
 store.cc.i:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.i
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.i
 .PHONY : store.cc.i
 
 store.s: store.cc.s
@@ -303,7 +263,35 @@ store.s: store.cc.s
 # target to generate assembly for a file
 store.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/store.cc.s
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/store.cc.s
 .PHONY : store.cc.s
+
+store_test.o: store_test.cc.o
+
+.PHONY : store_test.o
+
+# target to build an object file
+store_test.cc.o:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.o
+.PHONY : store_test.cc.o
+
+store_test.i: store_test.cc.i
+
+.PHONY : store_test.i
+
+# target to preprocess a source file
+store_test.cc.i:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.i
+.PHONY : store_test.cc.i
+
+store_test.s: store_test.cc.s
+
+.PHONY : store_test.s
+
+# target to generate assembly for a file
+store_test.cc.s:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f store/CMakeFiles/store_test.dir/build.make store/CMakeFiles/store_test.dir/store_test.cc.s
+.PHONY : store_test.cc.s
 
 # Help Target
 help:
@@ -311,15 +299,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install"
-	@echo "... key_value_store_server"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... list_install_components"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... store"
-	@echo "... edit_cache"
+	@echo "... key_value_store_server"
+	@echo "... store_test"
 	@echo "... dist/kvstore.grpc.pb.o"
 	@echo "... dist/kvstore.grpc.pb.i"
 	@echo "... dist/kvstore.grpc.pb.s"
@@ -332,6 +316,9 @@ help:
 	@echo "... store.o"
 	@echo "... store.i"
 	@echo "... store.s"
+	@echo "... store_test.o"
+	@echo "... store_test.i"
+	@echo "... store_test.s"
 .PHONY : help
 
 

@@ -56,62 +56,6 @@ CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -123,17 +67,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -236,6 +179,60 @@ dist/warble.pb.cc.s:
 	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/dist/warble.pb.cc.s
 .PHONY : dist/warble.pb.cc.s
 
+mock_service.o: mock_service.cc.o
+
+.PHONY : mock_service.o
+
+# target to build an object file
+mock_service.cc.o:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/mock_service.cc.o
+.PHONY : mock_service.cc.o
+
+mock_service.i: mock_service.cc.i
+
+.PHONY : mock_service.i
+
+# target to preprocess a source file
+mock_service.cc.i:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/mock_service.cc.i
+.PHONY : mock_service.cc.i
+
+mock_service.s: mock_service.cc.s
+
+.PHONY : mock_service.s
+
+# target to generate assembly for a file
+mock_service.cc.s:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/mock_service.cc.s
+.PHONY : mock_service.cc.s
+
+store.o: store.cc.o
+
+.PHONY : store.o
+
+# target to build an object file
+store.cc.o:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/store.cc.o
+.PHONY : store.cc.o
+
+store.i: store.cc.i
+
+.PHONY : store.i
+
+# target to preprocess a source file
+store.cc.i:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/store.cc.i
+.PHONY : store.cc.i
+
+store.s: store.cc.s
+
+.PHONY : store.s
+
+# target to generate assembly for a file
+store.cc.s:
+	cd /home/vagrant/csci499_patriya-piyawiroj && $(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/store.cc.s
+.PHONY : store.cc.s
+
 warble_cli.o: warble_cli.cc.o
 
 .PHONY : warble_cli.o
@@ -269,20 +266,21 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... list_install_components"
+	@echo "... rebuild_cache"
 	@echo "... warble"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... install"
 	@echo "... dist/warble.grpc.pb.o"
 	@echo "... dist/warble.grpc.pb.i"
 	@echo "... dist/warble.grpc.pb.s"
 	@echo "... dist/warble.pb.o"
 	@echo "... dist/warble.pb.i"
 	@echo "... dist/warble.pb.s"
+	@echo "... mock_service.o"
+	@echo "... mock_service.i"
+	@echo "... mock_service.s"
+	@echo "... store.o"
+	@echo "... store.i"
+	@echo "... store.s"
 	@echo "... warble_cli.o"
 	@echo "... warble_cli.i"
 	@echo "... warble_cli.s"

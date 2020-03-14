@@ -39,7 +39,7 @@ BENCHMARK_ENABLE_INSTALL:BOOL=ON
 //Enable link time optimisation of the benchmark library.
 BENCHMARK_ENABLE_LTO:BOOL=OFF
 
-//Enable testing of the benchmark library.
+//Suppressing benchmark's tests
 BENCHMARK_ENABLE_TESTING:BOOL=OFF
 
 //Flags used for linking binaries during coverage builds.
@@ -548,7 +548,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

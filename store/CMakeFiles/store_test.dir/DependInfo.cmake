@@ -12,14 +12,10 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/include"
   "store/dist"
-  "third_party/grpc/third_party/googletest/googletest/include"
-  "third_party/grpc/third_party/googletest/googletest"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/googletest/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/store.dir/DependInfo.cmake"
   )
 

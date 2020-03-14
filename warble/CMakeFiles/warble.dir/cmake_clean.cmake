@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "dist/warble.grpc.pb.cc"
   "dist/warble.grpc.pb.h"
   "CMakeFiles/warble.dir/warble_cli.cc.o"
+  "CMakeFiles/warble.dir/mock_service.cc.o"
+  "CMakeFiles/warble.dir/store.cc.o"
   "CMakeFiles/warble.dir/dist/warble.pb.cc.o"
   "CMakeFiles/warble.dir/dist/warble.grpc.pb.cc.o"
   "warble.pdb"

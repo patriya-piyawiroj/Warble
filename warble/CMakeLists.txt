@@ -34,8 +34,9 @@ include_directories("${DIST_DIR}")
 # Compiles movk server as library
 #add_library(mock_service STATIC mock_service.cc mock_service.h)
 
-add_executable("${PROJECT_NAME}" warble_cli.cc
-	warble_cli.h
+add_executable("${PROJECT_NAME}" warble_cli.cc warble_cli.h
+	mock_service.h mock_service.cc
+	store.h store.cc
 	${warble_proto_srcs}
 	${warble_grpc_srcs})
 target_link_libraries("${PROJECT_NAME}"

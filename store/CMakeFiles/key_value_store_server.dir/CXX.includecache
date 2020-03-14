@@ -162,6 +162,10 @@ kvstore.grpc.pb.h
 store.h
 /home/vagrant/csci499_patriya-piyawiroj/store/store.h
 
+/home/vagrant/csci499_patriya-piyawiroj/store/store.cc
+store.h
+/home/vagrant/csci499_patriya-piyawiroj/store/store.h
+
 /home/vagrant/csci499_patriya-piyawiroj/store/store.h
 unordered_map
 -

@@ -23,17 +23,17 @@ set(_GRPC_CPP_PLUGIN_EXECUTABLE /usr/local/bin/grpc_cpp_plugin)
 set(THIRD_PARTY_DIR "third_party/grpc/third_party")
 
 # Adds googletest
-add_subdirectory(${THIRD_PARTY_DIR}/googletest)
-enable_testing()
+#add_subdirectory(${THIRD_PARTY_DIR}/googletest)
+#enable_testing()
 
 # Adds gflags
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORCE)
-find_package(gflags REQUIRED)
+#find_package(gflags REQUIRED)
 
 # Adds benchmark
-add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
+#add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
 
 # Adds subdirectories
 # ! Notice here !
-#add_subdirectory(store)
+add_subdirectory(store)
 add_subdirectory(warble)

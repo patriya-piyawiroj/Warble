@@ -1,7 +1,6 @@
 #include "mock_service.h"
 
-Status MockServer::RegisterUser(const RegisteruserRequest* request, const RegisteruserReply* reply) {
-  std::string username = request->username();
+void MockServer::RegisterUser(const std::string &username) {
    
   // Feature Logic
   std::string key = "username-" + username;
@@ -12,6 +11,5 @@ Status MockServer::RegisterUser(const RegisteruserRequest* request, const Regist
   map_.put(followingKey, "");
 
   LOG(INFO) << "Put in username: " << username;
-  LOG(INFO) << "Retrieved: " << map_.get(key);
-  return Status::OK 
+  LOG(INFO) << "Retrieved: " << map_.get(key).value();
 }

@@ -1,5 +1,9 @@
 #include "warble_cli.h"
 
+const std::string WarbleInterface::INVALID_FLAG_ERROR = "Invalid flag combination. Missing ";
+const std::string WarbleInterface::MISSING_ARGUMENT_ERROR = "Missing arguments for ";
+
+
 void WarbleInterface::PrintError(const std::string &errorMessage, const std::string &fields) {
   std::cout << errorMessage << fields << std::endl;
 }
@@ -16,7 +20,7 @@ void WarbleInterface::RegisterUser(std::string username) {
   RegisteruserRequest request;
   RegisteruserReply reply;
   request.set_username(username);
-  warble_service.RegisterUser(request, reply);
+  warble_service.RegisterUser(username);
 }
 
 // Posts a new warble returns the id of new warble
@@ -57,7 +61,7 @@ int main(int argc, char* argv[]) {
 
   // if not user logged in, can not perform other functions
   if (FLAGS_user.empty()) { 
-    warble.PrintError(INVALID_FLAG_ERROR, "username");
+    warble.PrintError(warble.INVALID_FLAG_ERROR, "username");
     return 0;
   }
 
@@ -69,7 +73,7 @@ int main(int argc, char* argv[]) {
   if (!FLAGS_reply.empty()) 
     // create new warble as reply if user, warble and reply flags exist
     if (FLAGS_warble.empty())
-      warble.PrintError(INVALID_FLAG_ERROR, "warble");    
+      warble.PrintError(warble.INVALID_FLAG_ERROR, "warble");    
       return 0;	    
     warble.Reply(FLAGS_user, FLAGS_warble, FLAGS_reply);
   if (!FLAGS_follow.empty()) 
