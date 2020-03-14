@@ -29,7 +29,7 @@ make
 sudo make install
 
 # install protobuf
-in grpc root dir
+# in grpc root dir
 cmake .
 
 cd third_party/protobuf
