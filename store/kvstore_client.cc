@@ -1,6 +1,17 @@
 #include "kvstore_client.h"
 
-class KvstoreClient {
+int main(int argc, char** argv) {
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
+  std::string key("test-key");
+  std::string value("test-value");
+  client.Put(key, value);
+  std::optional<std::string> reply = client.Get(key);
+  if (reply.has_value()) {
+    std:: cout << reply.value();
+  } else {
+    std::cout << "not found" << std::endl;
+  }
+}
 
 KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
@@ -29,18 +40,20 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
 }
 
 std::optional<std::string> KvstoreClient::Get(const std::string& key) {
-  // Data to be sent to server
-  GetRequest request;
-  request.set_key(key);
-
-  // Container for reply
-  GetReply reply;
-
-  // Context for client
   ClientContext context;
 
-  // RPC
-  Status status = stub_->get(&context, request, &reply);
+  std::shared_ptr<ClientReaderWriter<GetRequest, GetReply> > stream (
+    stub_->get(&context));
+  GetRequest request;
+  request.set_key(key);
+  stream->Write(request);
+  stream->WritesDone();
+  std::thread writer([stream]() {
+  });
+  GetReply reply;
+  while (stream->Read(&reply)) {}
+  writer.join();
+  Status status = stream->Finish();
 
   // Act upon status
   if (status.ok()) {

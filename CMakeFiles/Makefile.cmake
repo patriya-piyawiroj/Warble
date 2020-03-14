@@ -64,8 +64,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "store/CMakeFiles/store.dir/DependInfo.cmake"
   "store/CMakeFiles/key_value_store_server.dir/DependInfo.cmake"
-  "store/CMakeFiles/store_test.dir/DependInfo.cmake"
+  "store/CMakeFiles/store.dir/DependInfo.cmake"
+  "store/CMakeFiles/kvstore_client.dir/DependInfo.cmake"
   "warble/CMakeFiles/warble.dir/DependInfo.cmake"
   )
