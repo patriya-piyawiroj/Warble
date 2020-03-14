@@ -72,3 +72,12 @@ git clone https://github.com/google/glog.git
 cmake .
 make
 ```
+In /warble: run ./warble followed by arguments
+In /store: run ./key_value_store_server to start server 
+
+## Completion Notes
+Func: Implemented, not functional
+Kvstore: Partially functional
+Warble: Partially functional
+Command Line: Functional
+
