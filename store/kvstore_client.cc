@@ -5,6 +5,16 @@ class KvstoreClient {
 KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
 
+int main(int argc, char** argv){
+	GreeterClient greeter(grpc::CreateChannel(
+      		"localhost:50051", grpc::InsecureChannelCredentials()));
+  	std::string user("world");
+  	std::string reply = greeter.SayHello(user);
+  	std::cout << "Greeter received: " << reply << std::endl;
+
+  return 0;
+}
+
 void KvstoreClient::Put(const std::string& key, const std::string& value) {
   // Data to be sent to server
   PutRequest request;

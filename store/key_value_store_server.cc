@@ -24,7 +24,6 @@ Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* r
   }
 }
 
-
 void RunServer() {
   std::string server_address("127.0.0.1:50001");
   KvstoreServiceImpl service;
