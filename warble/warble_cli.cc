@@ -25,27 +25,46 @@ void WarbleInterface::RegisterUser(std::string username) {
 
 // Posts a new warble returns the id of new warble
 std::string WarbleInterface::Warble(const std::string &username, const std::string &text) {
+  WarbleRequest request;
+  WarbleReply reply;
+  request.set_username(username);
+  request.set_text(text);
+  request.set_parent_id("");
+  warble_service.CreateWarble(&request, &reply);
   return "";
 }
 
 // Posts a new warble as a reply 
 std::string WarbleInterface::Reply(const std::string &username, const std::string &text, const std::string &warbleID) {
+  WarbleRequest request;                                                                                                  WarbleReply reply;
+  request.set_username(username);                                                                                         request.set_text(text);                                                                                                 request.set_parent_id(warbleID);
+  warble_service.CreateWarble(&request, &reply);   
   return "";
 }
 
 // Starts following a given user
 void WarbleInterface::Follow(std::string username, std::string userToFollow) {
-
+  FollowRequest request;
+  FollowReply reply;
+  request.set_username(username);
+  request.set_to_follow(userToFollow);
+  warble_service.Follow(&request, &reply);
 }
 
 // Reads a warble thread from the given id
 void WarbleInterface::Read(std::string warbleID) {
-
+  ReadRequest request;
+  ReadReply reply;
+  request.set_warble_id(warbleID);
+  warble_service.Read(&request, &reply);
 }
 
 // Returns this user's following and followers
 void WarbleInterface::Profile(std::string username) {
-
+  ProfileRequest request;
+  ProfileReply reply;
+  request.set_username(username);
+  warble_service.Profile(&request, &reply);
 }
 
 int main(int argc, char* argv[]) {
