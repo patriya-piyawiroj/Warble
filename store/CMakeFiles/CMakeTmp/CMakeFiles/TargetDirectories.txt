@@ -1,3 +1,0 @@
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/CMakeTmp/CMakeFiles/rebuild_cache.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_d87fd.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/CMakeTmp/CMakeFiles/edit_cache.dir
