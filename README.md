@@ -66,3 +66,9 @@ git clone https://github.com/google/glog.git
 ```
 
 ## Make files
+
+```
+# At root directory, will compile subdirectories
+cmake .
+make
+```
