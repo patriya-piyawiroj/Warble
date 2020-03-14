@@ -5,7 +5,7 @@ project(projectname C CXX)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 include_directories(/usr/local/include)
 link_directories(/usr/local/lib)
-set(glog_DIR "~/csci499_patriya-piyawiroj/third_party/glog")
+
 
 # Finds Protobuf installation
 # Looks for protobuf-config.cmake file installed by Protobuf's CMake installation.
@@ -33,10 +33,7 @@ find_package(gflags REQUIRED)
 # Adds benchmark
 add_subdirectory(${THIRD_PARTY_DIR}/benchmark)
 
-# Adds glog
-#add_subdirectory(glog)
-
 # Adds subdirectories
 # ! Notice here !
-add_subdirectory(store)
+#add_subdirectory(store)
 add_subdirectory(warble)

@@ -246,32 +246,6 @@ benchmark/fast:
 .PHONY : benchmark/fast
 
 #=============================================================================
-# Target rules for targets named key_value_store_server
-
-# Build rule for target.
-key_value_store_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 key_value_store_server
-.PHONY : key_value_store_server
-
-# fast build rule for target.
-key_value_store_server/fast:
-	$(MAKE) -f store/CMakeFiles/key_value_store_server.dir/build.make store/CMakeFiles/key_value_store_server.dir/build
-.PHONY : key_value_store_server/fast
-
-#=============================================================================
-# Target rules for targets named store
-
-# Build rule for target.
-store: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 store
-.PHONY : store
-
-# fast build rule for target.
-store/fast:
-	$(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
-.PHONY : store/fast
-
-#=============================================================================
 # Target rules for targets named warble
 
 # Build rule for target.
@@ -303,8 +277,6 @@ help:
 	@echo "... gtest"
 	@echo "... benchmark_main"
 	@echo "... benchmark"
-	@echo "... key_value_store_server"
-	@echo "... store"
 	@echo "... warble"
 .PHONY : help
 

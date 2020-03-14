@@ -1,18 +1,22 @@
 #include "warble_cli.h"
 
-// TODO: Prints error message
 void WarbleInterface::PrintError(const std::string &errorMessage, const std::string &fields) {
-  //printf("%s %s", errorMessage.c_str(), fields.c_str());
-  std::cout << errorMessage << fields;
+  std::cout << errorMessage << fields << std::endl;
 }
 
 // Registers the given non-blank username
 void WarbleInterface::RegisterUser(std::string username) {
   if (username == "") {
-    LOG(ERROR) << "Username was blank";
+    PrintError(MISSING_ARGUMENT_ERROR, "username");
     return;
   }
   LOG(INFO) << "Registering " << username;
+
+  // Calls warble function registeruser
+  RegisteruserRequest request;
+  RegisteruserReply reply;
+  request.set_username(username);
+  warble_service.RegisterUser(request, reply);
 }
 
 // Posts a new warble returns the id of new warble
@@ -52,17 +56,21 @@ int main(int argc, char* argv[]) {
   }
 
   // if not user logged in, can not perform other functions
-  if (!FLAGS_user.empty()) { 
-    //TODO: Print error
-    warble.PrintError(MISSING_ARGUMENT_ERROR, "username");
+  if (FLAGS_user.empty()) { 
+    warble.PrintError(INVALID_FLAG_ERROR, "username");
     return 0;
   }
+
+  LOG(INFO) << "Using user: " << FLAGS_user;
   
   if (!FLAGS_warble.empty() && FLAGS_reply.empty())
     // creates new warble if user and warble flag exists but reply does not 
     warble.Warble(FLAGS_user, FLAGS_warble); 
   if (!FLAGS_reply.empty()) 
-    // create new warble as reply if user, warble and reply flags exist	  
+    // create new warble as reply if user, warble and reply flags exist
+    if (FLAGS_warble.empty())
+      warble.PrintError(INVALID_FLAG_ERROR, "warble");    
+      return 0;	    
     warble.Reply(FLAGS_user, FLAGS_warble, FLAGS_reply);
   if (!FLAGS_follow.empty()) 
     // follows another user if user and follow flags exist

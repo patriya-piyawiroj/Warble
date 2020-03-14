@@ -6,5 +6,4 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("third_party/grpc/third_party/googletest")
 subdirs("third_party/grpc/third_party/benchmark")
-subdirs("store")
 subdirs("warble")

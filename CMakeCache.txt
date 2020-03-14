@@ -309,6 +309,15 @@ Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/local/lib/libprotoc.a
 //Path to a library.
 Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/usr/local/lib/libprotoc.a
 
+//unwind include directory
+Unwind_INCLUDE_DIR:PATH=/usr/include/x86_64-linux-gnu
+
+//unwind library
+Unwind_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libunwind.so
+
+//unwind library platform
+Unwind_PLATFORM_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libunwind-x86_64.so
+
 //Value Computed by CMake
 benchmark_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/benchmark
 
@@ -375,6 +384,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Dependencies for target
+mock_service_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 projectname_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj
@@ -536,7 +548,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -593,6 +605,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/local/lib/libprotobuf.a;-pt
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3.6][v3.6.9()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//Details about finding Unwind
+FIND_PACKAGE_MESSAGE_DETAILS_Unwind:INTERNAL=[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libunwind.so][/usr/lib/x86_64-linux-gnu/libunwind-x86_64.so][v1.2.1(1.2.1)]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Test HAVE_CXX_FLAG_COVERAGE
@@ -651,6 +665,12 @@ RUN_HAVE_STD_REGEX:INTERNAL=0
 RUN_HAVE_STEADY_CLOCK:INTERNAL=0
 //Result of TRY_COMPILE
 THREADS_HAVE_PTHREAD_ARG:INTERNAL=TRUE
+//ADVANCED property for variable: Unwind_INCLUDE_DIR
+Unwind_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Unwind_LIBRARY
+Unwind_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Unwind_PLATFORM_LIBRARY
+Unwind_PLATFORM_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 generated_dir:INTERNAL=/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/googletest/googletest/generated

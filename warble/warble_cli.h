@@ -3,8 +3,10 @@
 #include <glog/logging.h>
 #include <iostream>
 
-const std::string INVALID_FLAG_ERROR = "Invalid flag combinations";
-const std::string MISSING_ARGUMENT_ERROR = "Missing arguments";
+#include "mock_service.h"
+
+const std::string INVALID_FLAG_ERROR = "Invalid flag combinations. Missing ";
+const std::string MISSING_ARGUMENT_ERROR = "Missing arguments for ";
 
 DEFINE_string(registeruser, "", "Registers the given username");
 DEFINE_string(user, "", "Logs in as the given username");
@@ -24,4 +26,7 @@ class WarbleInterface {
   void Follow(std::string username, std::string userToFollow);
   void Read(std::string warbleID);
   void Profile(std::string usernamer);
+ 
+ private:
+  MockServer warble_service;
 };

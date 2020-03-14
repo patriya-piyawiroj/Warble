@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmock_service.a  CMakeFiles/mock_service.dir/mock_service.cc.o
+/usr/bin/ranlib libmock_service.a

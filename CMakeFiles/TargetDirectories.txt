@@ -46,15 +46,6 @@
 /home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/benchmark/src/CMakeFiles/test.dir
 /home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/benchmark/src/CMakeFiles/list_install_components.dir
 /home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/benchmark/src/CMakeFiles/rebuild_cache.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/install/strip.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/install.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/install/local.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/test.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/list_install_components.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/rebuild_cache.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/store.dir
-/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/edit_cache.dir
 /home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/install/strip.dir
 /home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/install/local.dir
 /home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/test.dir

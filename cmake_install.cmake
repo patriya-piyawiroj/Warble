@@ -41,7 +41,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/googletest/cmake_install.cmake")
   include("/home/vagrant/csci499_patriya-piyawiroj/third_party/grpc/third_party/benchmark/cmake_install.cmake")
-  include("/home/vagrant/csci499_patriya-piyawiroj/store/cmake_install.cmake")
   include("/home/vagrant/csci499_patriya-piyawiroj/warble/cmake_install.cmake")
 
 endif()
