@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-e1456427d7492030d366642545fa4cbd dist/func.pb.cc
