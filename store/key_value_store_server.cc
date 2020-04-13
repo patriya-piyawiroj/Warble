@@ -1,6 +1,7 @@
 #include "key_value_store_server.h"
 
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
+  std::cout << "Attempting put " << request->key() << std::endl;
   map_.put(request->key(), request->value());
   return Status::OK;
 }

@@ -1,30 +1,22 @@
 #include "kvstore_client.h"
 
 int main(int argc, char** argv) {
+  std::cout << "Connecting" << std::endl;
   KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
   std::string key("test-key");
   std::string value("test-value");
   client.Put(key, value);
-  std::optional<std::string> reply = client.Get(key);
-  if (reply.has_value()) {
-    std:: cout << reply.value();
-  } else {
-    std::cout << "not found" << std::endl;
-  }
+//  std::optional<std::string> reply = client.Get(key);
+//  if (reply.has_value()) {
+//    std:: cout << reply.value();
+//  } else {
+//    std::cout << "not found" << std::endl;
+//  }
 }
 
 KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
 
-int main(int argc, char** argv){
-	GreeterClient greeter(grpc::CreateChannel(
-      		"localhost:50051", grpc::InsecureChannelCredentials()));
-  	std::string user("world");
-  	std::string reply = greeter.SayHello(user);
-  	std::cout << "Greeter received: " << reply << std::endl;
-
-  return 0;
-}
 
 void KvstoreClient::Put(const std::string& key, const std::string& value) {
   // Data to be sent to server
@@ -38,10 +30,12 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   ClientContext context;
 
   // RPC
+  std::cout << "Starting RPC" << std::endl;
   Status status = stub_->put(&context, request, &reply);
 
   // Act upon status
   if (status.ok()) {
+    std::cout << "Status OK" << std::endl;
     return;
   } else {
     std::cout << status.error_code() <<  ": " << status.error_message() << std::endl;
