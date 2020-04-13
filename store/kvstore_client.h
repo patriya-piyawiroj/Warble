@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <stdlib.h>
 
 #include <grpcpp/grpcpp.h>
+#include <glog/logging.h>
 
 #include "kvstore.grpc.pb.h"
 
