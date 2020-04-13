@@ -5,13 +5,15 @@ int main(int argc, char** argv) {
   KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
   std::string key("test-key");
   std::string value("test-value");
+  LOG(INFO) << "Starting Put";
+  LOG(INFO) << "Attempting to put " << key << " : " << value;
   client.Put(key, value);
-//  std::optional<std::string> reply = client.Get(key);
-//  if (reply.has_value()) {
-//    std:: cout << reply.value();
-//  } else {
-//    std::cout << "not found" << std::endl;
-//  }
+ // std::optional<std::string> reply = client.Get(key);
+ // if (reply.has_value()) {
+  //  std:: cout << reply.value();
+ // } else {
+ //   std::cout << "not found" << std::endl;
+ // }
 }
 
 KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
@@ -22,6 +24,7 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   // Data to be sent to server
   PutRequest request;
   request.set_key(key);
+  request.set_value(value);
 
   // Container for reply
   PutReply reply;
@@ -30,15 +33,16 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   ClientContext context;
 
   // RPC
-  std::cout << "Starting RPC" << std::endl;
+  LOG(INFO) << "Starting RPC";
   Status status = stub_->put(&context, request, &reply);
 
   // Act upon status
   if (status.ok()) {
-    std::cout << "Status OK" << std::endl;
+    LOG(INFO) << "Put Successful";
     return;
   } else {
-    std::cout << status.error_code() <<  ": " << status.error_message() << std::endl;
+    LOG(INFO) << "Put Failed";
+    std::cout  << status.error_code() <<  ": " << status.error_message();
     return;
   }
 }

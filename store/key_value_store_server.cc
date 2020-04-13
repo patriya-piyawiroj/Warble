@@ -1,8 +1,11 @@
 #include "key_value_store_server.h"
 
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
-  std::cout << "Attempting put " << request->key() << std::endl;
-  map_.put(request->key(), request->value());
+  std::string key = request->key();
+  std::string value = request->value();
+  CreateKeyFile(key, value);
+  map_.put(key, value);
+  LOG(INFO) << "Putting in " << key;
   return Status::OK;
 }
 
@@ -25,8 +28,24 @@ Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* r
   }
 }
 
+bool KvstoreServiceImpl::fileExists(const char *fileName)
+{
+    std::ifstream infile(fileName);
+    return infile.good();
+}
+
+void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string &value){
+}
+
+void KvstoreServiceImpl::Writeline(const char *file_name, const char *key, const char *val){
+}
+
+void KvstoreServiceImpl::Deleteline(const char *file_name, int n) { 
+} 
+
+
 void RunServer() {
-  std::string server_address("127.0.0.1:50001");
+  std::string server_address("localhost:50001");
   KvstoreServiceImpl service;
 
   ServerBuilder builder;
@@ -34,7 +53,9 @@ void RunServer() {
   builder.RegisterService(&service);
   std::unique_ptr<Server> server(builder.BuildAndStart());
   std::cout << "Server listening on " << server_address << std::endl;
+  LOG(INFO) << "Server waiting";
   server->Wait();
+  server->Shutdown();
 }
 
 int main(int argc, char* argv[]) {

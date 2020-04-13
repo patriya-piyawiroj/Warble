@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.3)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
 
+set(glog_DIR "~/csci499_patriya-piyawiroj/third_party/glog")
+find_package(glog 0.4.0 REQUIRED)
+
 # Gets proto filenames
 get_filename_component(store_proto "../protos/kvstore.proto" ABSOLUTE)
 get_filename_component(store_proto_path "${store_proto}" PATH)
@@ -29,6 +32,7 @@ include_directories("${DIST_DIR}")
 
 # Compiles store as a library
 add_library(store STATIC store.cc store.h)
+#add_library(kvstore_client STATIC kvstore_client.cc kvstore_client.h)
 
 # Adds test
 #add_executable(store_test store_test.cc)
@@ -43,13 +47,15 @@ add_library(store STATIC store.cc store.h)
     #COMMAND store_test
     #)
 
-add_executable(kvstore_client kvstore_client.cc kvstore_client.h
+add_executable(kvstore_client kvstore_client.cc 
+	kvstore_client.h
 	store
 	${store_proto_srcs}
 	${store_grpc_srcs})
 target_link_libraries(kvstore_client
 	${_GRPC_GRPCPP_UNSECURE}
 	${_PROTOBUF_LIBPROTOBUF}
+	glog::glog
 	store)
 # Compiles key_value_store_server_sync
 add_executable(key_value_store_server key_value_store_server.cc
@@ -60,5 +66,5 @@ add_executable(key_value_store_server key_value_store_server.cc
 target_link_libraries(key_value_store_server
     ${_GRPC_GRPCPP_UNSECURE}
     ${_PROTOBUF_LIBPROTOBUF}
-    #glog::glog
+    glog::glog
     store)

@@ -3,6 +3,8 @@
 #include <optional>
 #include <mutex>
 
+#include <glog/logging.h>
+
 class Kvmap {
 
  private:

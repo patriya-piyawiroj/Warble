@@ -7,6 +7,7 @@ void Kvmap::put(std::string key, std::string value) {
   std::unique_lock<std::mutex> lock(mu_);
   std::pair<std::string, std::string> pair(key, value);
   map_.insert(pair);
+  LOG(INFO) << "Put pair " << key << ":" << value << " into map";
   return;
 }
 
