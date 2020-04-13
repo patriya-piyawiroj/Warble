@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+b9929514cb2d383996039cf6e653cd29 func/dist/func.pb.cc
+44318ca5470fa572cd6f4fac97a5e2d8 func/dist/warble.pb.cc
+37ed52f2284c2e490b164c3878d8e2ba store/dist/kvstore.pb.cc
+7ebd4bffc9c2c4339bac3189f1ebd01e warble/dist/warble.pb.cc

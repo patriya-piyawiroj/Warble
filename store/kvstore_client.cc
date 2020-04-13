@@ -1,6 +1,7 @@
 #include "kvstore_client.h"
 
 int main(int argc, char** argv) {
+  std::cout << "Connecting" << std::endl;
   KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
   std::string key("test-key");
   std::string value("test-value");
@@ -29,10 +30,12 @@ void KvstoreClient::Put(const std::string& key, const std::string& value) {
   ClientContext context;
 
   // RPC
+  std::cout << "Starting RPC" << std::endl;
   Status status = stub_->put(&context, request, &reply);
 
   // Act upon status
   if (status.ok()) {
+    std::cout << "Status OK" << std::endl;
     return;
   } else {
     std::cout << status.error_code() <<  ": " << status.error_message() << std::endl;
