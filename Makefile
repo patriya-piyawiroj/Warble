@@ -162,6 +162,19 @@ warble/fast:
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/build
 .PHONY : warble/fast
 
+#=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) -f func/CMakeFiles/server.dir/build.make func/CMakeFiles/server.dir/build
+.PHONY : server/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,6 +187,7 @@ help:
 	@echo "... store"
 	@echo "... kvstore_client"
 	@echo "... warble"
+	@echo "... server"
 .PHONY : help
 
 

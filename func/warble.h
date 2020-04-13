@@ -1,3 +1,6 @@
+#ifndef WARBLEIMPL_H
+#define WARBLEIMPL_H
+
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -37,6 +40,9 @@ using warble::ProfileReply;
 //         server.RegisterUser(username);
 class WarbleImpl {
  public:
+
+  void Call(std::string event_function, const google::protobuf::Any* request, google::protobuf::Any* reply);
+
   // Feature 1: Registers a new user
   void RegisterUser(const RegisteruserRequest* request, RegisteruserReply* reply);
   
@@ -71,3 +77,4 @@ class WarbleImpl {
   bool CheckWarble(std::string warbleID);       
 };
 
+#endif

@@ -1,5 +1,20 @@
 #include "warble.h"
 
+void WarbleImpl::Call(std::string event_function, const google::protobuf::Any* request, google::protobuf::Any* reply) {
+  // TODO: Call relevent function for given event_function
+  if (event_function.compare("register") == 0) {
+    // TODO
+  } else if (event_function.compare("create") == 0) {
+    // TODO
+  } else if (event_function.compare("follow") == 0) {
+    // TODO
+  } else if (event_function.compare("read") == 0) {
+    // TODO
+  } else if (event_function.compare("profile") == 0) {
+    // TODO
+  } 
+}
+
 // Returns true if user exists, false otherwise
 bool WarbleImpl::CheckUser(std::string username) {
   std::string key = "username-" + username;

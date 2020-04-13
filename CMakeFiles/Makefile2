@@ -125,7 +125,7 @@ clean: store/CMakeFiles/key_value_store_server.dir/clean
 store/CMakeFiles/store.dir/all:
 	$(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/depend
 	$(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=13,14 "Built target store"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=23,24 "Built target store"
 .PHONY : store/CMakeFiles/store.dir/all
 
 # Include target in all.
@@ -217,7 +217,7 @@ warble/preinstall:
 warble/CMakeFiles/warble.dir/all:
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/depend
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target warble"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Built target warble"
 .PHONY : warble/CMakeFiles/warble.dir/all
 
 # Include target in all.
@@ -244,6 +244,61 @@ warble/CMakeFiles/warble.dir/clean:
 
 # clean rule for target.
 clean: warble/CMakeFiles/warble.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory func
+
+# Convenience name for "all" pass in the directory.
+func/all: func/CMakeFiles/server.dir/all
+
+.PHONY : func/all
+
+# Convenience name for "clean" pass in the directory.
+func/clean: func/CMakeFiles/server.dir/clean
+
+.PHONY : func/clean
+
+# Convenience name for "preinstall" pass in the directory.
+func/preinstall:
+
+.PHONY : func/preinstall
+
+#=============================================================================
+# Target rules for target func/CMakeFiles/server.dir
+
+# All Build rule for target.
+func/CMakeFiles/server.dir/all:
+	$(MAKE) -f func/CMakeFiles/server.dir/build.make func/CMakeFiles/server.dir/depend
+	$(MAKE) -f func/CMakeFiles/server.dir/build.make func/CMakeFiles/server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22 "Built target server"
+.PHONY : func/CMakeFiles/server.dir/all
+
+# Include target in all.
+all: func/CMakeFiles/server.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+func/CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 func/CMakeFiles/server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
+.PHONY : func/CMakeFiles/server.dir/rule
+
+# Convenience name for target.
+server: func/CMakeFiles/server.dir/rule
+
+.PHONY : server
+
+# clean rule for target.
+func/CMakeFiles/server.dir/clean:
+	$(MAKE) -f func/CMakeFiles/server.dir/build.make func/CMakeFiles/server.dir/clean
+.PHONY : func/CMakeFiles/server.dir/clean
+
+# clean rule for target.
+clean: func/CMakeFiles/server.dir/clean
 
 .PHONY : clean
 
