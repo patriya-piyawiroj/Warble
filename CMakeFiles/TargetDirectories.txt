@@ -1,0 +1,10 @@
+/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/edit_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/edit_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/key_value_store_server.dir
+/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/store.dir
+/home/vagrant/csci499_patriya-piyawiroj/store/CMakeFiles/kvstore_client.dir
+/home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/warble.dir
+/home/vagrant/csci499_patriya-piyawiroj/warble/CMakeFiles/edit_cache.dir

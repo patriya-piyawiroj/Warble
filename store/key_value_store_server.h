@@ -1,8 +1,10 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <stdlib.h>
 
 #include <grpcpp/grpcpp.h>
+#include <glog/logging.h>
 
 #include "kvstore.grpc.pb.h"
 
@@ -29,5 +31,9 @@ class KvstoreServiceImpl final : public KeyValueStore::Service {
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply);
  private:
   Kvmap map_;
+  bool fileExists(const char *fileName);
+  void CreateKeyFile(const std::string &key, const std::string &value);
+  void Writeline(const char *file_name, const char *key, const char *val);
+  void Deleteline(const char *file_name, int n);
 };
   
