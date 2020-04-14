@@ -1,8 +1,12 @@
 #include "key_value_store_server.h"
+
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
   std::string key = request->key();
   std::string value = request->value();
-  CreateKeyFile(key, value);
+  std::string filename = request->filename();
+  if (!filename.empty()) {
+    CreateKeyFile(key, value, filename);
+  }
   map_.put(key, value);
   LOG(INFO) << "Putting in " << key;
   return Status::OK;
@@ -27,25 +31,26 @@ Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* r
   }
 }
 
-bool KvstoreServiceImpl::fileExists(const char *fileName)
+bool KvstoreServiceImpl::fileExists(const std::string &fileName)
 {
     std::ifstream infile(fileName);
     return infile.good();
 }
 
-void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string &value){
-  if (!fileExists("key-pair.txt")){
+void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string &value, const std::string &filename){
+  if (!fileExists(filename)){
     std::ofstream myfile;
-    myfile.open("key-pair.txt", std::ios_base::app);
+    myfile.open(filename, std::ios_base::app);
     myfile << key << ":" << value << "\n";
     myfile.close();
   } else {
-    std::fstream infile("key-pair.txt");
+    std::fstream infile(filename);
     std::string line;
     std::string delimiter = ":";
     int i = 0;
     const char * v = value.c_str();
     const char * k = key.c_str();
+    const char * f = filename.c_str();
     while(std::getline(infile, line)){
       i++;
       std::string first = line.substr(0,line.find(delimiter));
@@ -53,12 +58,12 @@ void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string
       const char * f = first.c_str();
       if (strcmp(k,f)==0){
         LOG(INFO) << "FOUND SAME USER";
-        Deleteline("key-pair.txt", i);
-        Writeline("key-pair.txt",k, v);
+        Deleteline(f, i);
+        Writeline(f,k, v);
         return;
       }
     }
-    Writeline("key-pair.txt",k, v); 
+    Writeline(f,k,v); 
   }
 }
 

@@ -194,6 +194,7 @@ class PutRequest :
   enum : int {
     kKeyFieldNumber = 1,
     kValueFieldNumber = 2,
+    kFilenameFieldNumber = 3,
   };
   // bytes key = 1;
   void clear_key();
@@ -227,6 +228,22 @@ class PutRequest :
   std::string* _internal_mutable_value();
   public:
 
+  // bytes filename = 3;
+  void clear_filename();
+  const std::string& filename() const;
+  void set_filename(const std::string& value);
+  void set_filename(std::string&& value);
+  void set_filename(const char* value);
+  void set_filename(const void* value, size_t size);
+  std::string* mutable_filename();
+  std::string* release_filename();
+  void set_allocated_filename(std::string* filename);
+  private:
+  const std::string& _internal_filename() const;
+  void _internal_set_filename(const std::string& value);
+  std::string* _internal_mutable_filename();
+  public:
+
   // @@protoc_insertion_point(class_scope:kvstore.PutRequest)
  private:
   class _Internal;
@@ -234,6 +251,7 @@ class PutRequest :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr filename_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_kvstore_2eproto;
 };
@@ -1001,6 +1019,66 @@ inline void PutRequest::set_allocated_value(std::string* value) {
   }
   value_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set_allocated:kvstore.PutRequest.value)
+}
+
+// bytes filename = 3;
+inline void PutRequest::clear_filename() {
+  filename_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& PutRequest::filename() const {
+  // @@protoc_insertion_point(field_get:kvstore.PutRequest.filename)
+  return _internal_filename();
+}
+inline void PutRequest::set_filename(const std::string& value) {
+  _internal_set_filename(value);
+  // @@protoc_insertion_point(field_set:kvstore.PutRequest.filename)
+}
+inline std::string* PutRequest::mutable_filename() {
+  // @@protoc_insertion_point(field_mutable:kvstore.PutRequest.filename)
+  return _internal_mutable_filename();
+}
+inline const std::string& PutRequest::_internal_filename() const {
+  return filename_.GetNoArena();
+}
+inline void PutRequest::_internal_set_filename(const std::string& value) {
+  
+  filename_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+}
+inline void PutRequest::set_filename(std::string&& value) {
+  
+  filename_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:kvstore.PutRequest.filename)
+}
+inline void PutRequest::set_filename(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  filename_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:kvstore.PutRequest.filename)
+}
+inline void PutRequest::set_filename(const void* value, size_t size) {
+  
+  filename_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:kvstore.PutRequest.filename)
+}
+inline std::string* PutRequest::_internal_mutable_filename() {
+  
+  return filename_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* PutRequest::release_filename() {
+  // @@protoc_insertion_point(field_release:kvstore.PutRequest.filename)
+  
+  return filename_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void PutRequest::set_allocated_filename(std::string* filename) {
+  if (filename != nullptr) {
+    
+  } else {
+    
+  }
+  filename_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), filename);
+  // @@protoc_insertion_point(field_set_allocated:kvstore.PutRequest.filename)
 }
 
 // -------------------------------------------------------------------

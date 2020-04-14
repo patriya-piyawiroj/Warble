@@ -1,29 +1,19 @@
 #include "kvstore_client.h"
 
-int main(int argc, char** argv) {
-  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
-  std::string key("test-key");
-  std::string value("test-value");
-  LOG(INFO) << "Starting Put";
-  LOG(INFO) << "Attempting to put " << key << " : " << value;
-  client.Put(key, value);
- // std::optional<std::string> reply = client.Get(key);
- // if (reply.has_value()) {
-  //  std:: cout << reply.value();
- // } else {
- //   std::cout << "not found" << std::endl;
- // }
-}
-
 KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
 
 
-void KvstoreClient::Put(const std::string& key, const std::string& value) {
+void KvstoreClient::Put(const std::string& key, const std::string& value, const std::optional<std::string>& filename) {
   // Data to be sent to server
   PutRequest request;
   request.set_key(key);
   request.set_value(value);
+  if (filename.has_value()) {
+    request.set_filename(filename.value());
+  } else {
+    request.set_filename(std::string());
+  }
 
   // Container for reply
   PutReply reply;
