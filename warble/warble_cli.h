@@ -1,5 +1,11 @@
-#include WARBLE_CLIENT_H_
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+
+#ifndef WARBLE_CLIENT_H_
 #define WARBLE_CLIENT_H_
+
 #include <stdlib.h>
 #include <gflags/gflags.h>
 #include <glog/logging.h>

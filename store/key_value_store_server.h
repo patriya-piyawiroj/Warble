@@ -1,4 +1,8 @@
-#include STORE_SERVER_H_
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+#ifndef STORE_SERVER_H_
 #define STORE_SERVER_H_
 #include <iostream>
 #include <unordered_map>

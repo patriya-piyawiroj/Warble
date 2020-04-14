@@ -1,4 +1,8 @@
-#include STORE_CLIENT_H_
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+#ifndef STORE_CLIENT_H_
 #define STORE_CLIENT_H_
 #include <iostream>
 #include <string>
