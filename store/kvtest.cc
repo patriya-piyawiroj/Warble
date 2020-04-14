@@ -1,8 +1,13 @@
+//
+//  Pearl Piyawiroj
+//  @patriya-piyawiroj
+//
 // This class can be used to manually test client
 // Example: 
 //     ./kvtest -key {key} -value {value}
 //     Replace {} with desired parameters
 // This will store key and value to server and will store to a file if -store is given to server
+//
 
 #include <optional>
 

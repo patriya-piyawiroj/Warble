@@ -1,3 +1,7 @@
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
 #ifndef FUNC_WARBLEIMPL_H_
 #define FUNC_WARBLEIMPL_H_
 

@@ -1,5 +1,10 @@
-#include STORE_STORE_H_
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+#ifndef STORE_STORE_H_
 #define STORE_STORE_H_
+
 #include <unordered_map>
 #include <string>
 #include <optional>

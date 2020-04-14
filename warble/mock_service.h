@@ -1,3 +1,10 @@
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+#ifndef WARBLE_MOCKSERV_H_
+#define WARBLE_MOCKSERV_H_
+
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -69,4 +76,6 @@ class MockServer {
   // Checks if warble exists
   bool Check_Warble(std::string warbleID);       
 };
+
+#endif // WARBLE_MOCKSERV_H_
 

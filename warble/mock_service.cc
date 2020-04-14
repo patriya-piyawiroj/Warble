@@ -1,3 +1,8 @@
+//
+//    Pearl Piyawiroj
+//    @patriya-piyawiroj
+//
+
 #include "mock_service.h"
 
 // Returns true if user exists, false otherwise
