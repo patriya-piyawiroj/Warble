@@ -14,7 +14,7 @@
 
 #include "warble.grpc.pb.h"
 
-#include "store.h"
+#include "../store/kvstore_client.h"
 
 
 using grpc::Status;
@@ -59,8 +59,7 @@ class WarbleImpl {
   void Profile(const ProfileRequest* request, ProfileReply* reply);
 
  private:
-  Kvmap map_;
-
+ 
   // Creats a warble
   Warble Create_Warble(std::string username, std::string text, std::string id, std::string parent_id);
 

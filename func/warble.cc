@@ -1,17 +1,40 @@
 #include "warble.h"
 
-void WarbleImpl::Call(std::string event_function, const google::protobuf::Any* request, google::protobuf::Any* reply) {
-  // TODO: Call relevent function for given event_function
+void WarbleImpl::Call(std::string event_function, const google::protobuf::Any* any_request, google::protobuf::Any* any_reply) {
   if (event_function.compare("register") == 0) {
-    // TODO
+    RegisteruserRequest request;
+    RegisteruserReply reply;
+    if (any_request.UnpackTo(&request)) {
+      RegisterUser(&request, &reply);
+      any_reply.PackFrom(reply);
+    }
   } else if (event_function.compare("create") == 0) {
-    // TODO
+    WarbleRequest request;
+    WarbleReply reply;
+    if (any_request.UnpackTo(&request)) {
+      CreateWarble(&request, &reply);
+      any_reply.PackFrom(reply);
+    }
   } else if (event_function.compare("follow") == 0) {
-    // TODO
+    FollowRequest request;
+    FollowReply reply; 
+    if (any_request.UnpackTo(&request)) {
+      Follow(&request, &reply);
+      any_reply.PackFrom(reply);
+    }
   } else if (event_function.compare("read") == 0) {
-    // TODO
+    ReadRequest request;                          
+    ReadReply reply;
+    if (any_request.UnpackTo(&request)) {                                   
+      Read(&request, &reply);
+      any_reply.PackFrom(reply);
+    }
   } else if (event_function.compare("profile") == 0) {
-    // TODO
+    ProfileRequest request;
+    ProfileReply reply;
+    if (any_request.UnpackTo(&request)) {
+      Profile(&request, &reply);
+      any_reply.PackFrom(reply);
   } 
 }
 
@@ -83,14 +106,16 @@ Warble WarbleImpl::To_Warble(std::string string) {
 // Feature 1: Register user:
 void WarbleImpl::RegisterUser(const RegisteruserRequest* request, RegisteruserReply* reply) {
   std::string username = request->username();
-       	
+  
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));  
+
   // Feature Logic
   std::string key = "username-" + username;
-  map_.put(key, username);
+  client.Put(key, username);
   std::string followersKey = "followers-" + username;
-  map_.put(followersKey, "");
+  client.Put(followersKey, "");
   std::string followingKey = "following-" + username;
-  map_.put(followingKey, "");
+  client.Put(followingKey, "");
 
   LOG(INFO) << "Put in username: " << username;
   LOG(INFO) << "Retrieved: " << map_.get(key).value();
@@ -103,13 +128,15 @@ std::string WarbleImpl::CreateWarble(const WarbleRequest* request, WarbleReply* 
   std::string text = request->text();
   std::string parent_id = request->parent_id();
 
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
+
   // Feature Logic
   std::string hash_str = username + "-" + text + "-" + parent_id;
   std::size_t id = std::hash<std::string>{}(hash_str);
   std::string key = "warble-" + id;
   Warble warble = Create_Warble(username,text,std::to_string(id),parent_id);
   std::string warble_string = Convert_Warble(warble);
-  map_.put(key, warble_string);
+  client.Put(key, warble_string);
   LOG(INFO) << "Creating new warble with hash: " <<  id;
 
   // Set Reply
@@ -123,20 +150,22 @@ void WarbleImpl::Follow(const FollowRequest* request, FollowReply* reply) {
   std::string username = request->username();
   std::string to_follow = request->to_follow();
 
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
+
   // Add username to followers of to_follow
   std::string followersKey = "followers-" + to_follow;
-  std::optional<std::string> followers = map_.get(followersKey);
+  std::optional<std::string> followers = client.Get(followersKey);
   if (followers.has_value()) {
     std::string updated = followers.value() + username + ",";
-    map_.put(followersKey, updated); 
+    client.Put(followersKey, updated); 
     LOG(INFO) << username << " is now following " << to_follow;
   } 
   // Add userToFollow to following of username
   std::string followingKey = "following-" + username;
-  std::optional<std::string> following = map_.get(followingKey);
+  std::optional<std::string> following = client.Get(followingKey);
   if (following.has_value()) {
     std::string updated = following.value() + to_follow + ",";
-    map_.put(followingKey, updated);
+    client.Put(followingKey, updated);
     LOG(INFO) << to_follow << " has follower " << username;
   }
   LOG(INFO) << " finished following";
@@ -148,9 +177,11 @@ void WarbleImpl::Read(const ReadRequest* request, ReadReply* reply) {
   // Get Request Params
   std::string warble_id = request->warble_id();
 
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
+
   // Feature Logic
   std::string key = "warble-" + warble_id;
-  std::optional<std::string> warble_string = map_.get(key);
+  std::optional<std::string> warble_string = client.Get(key);
   Warble warble;
   if (warble_string.has_value()) {
     Warble warble = To_Warble(warble_string.value());
@@ -167,11 +198,13 @@ void WarbleImpl::Profile(const ProfileRequest* request, ProfileReply* reply) {
   // Get Request Params
   std::string username = request->username();
 
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
+
   // Feature Logic
   std::string followersKey = "followers-" + username;
-  std::optional<std::string> followers = map_.get(followersKey);
+  std::optional<std::string> followers = client.Get(followersKey);
   std::string followingKey = "following-" + username;
-  std::optional<std::string> following = map_.get(followingKey);
+  std::optional<std::string> following = client.Get(followingKey);
 
   // Set Reply
   if (followers.has_value()) {
