@@ -33,7 +33,7 @@ class KvstoreServiceImpl final : public KeyValueStore::Service {
  private:
   Kvmap map_;
   void CreateKeyFile(const std::string &key, const std::string &value, const std::string &filename);
-  void Writeline(const char *file_name, const char *key, const char *val);
-  void Deleteline(const char *file_name, int n);
+  void Writeline(const std::string &file_name, const std::string &key, const std::string &val);
+  void Deleteline(const std::string &file_name, int n);
 };
   

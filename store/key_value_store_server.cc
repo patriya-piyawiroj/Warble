@@ -43,33 +43,29 @@ void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string
     std::string line;
     std::string delimiter = ":";
     int i = 0;
-    const char * v = value.c_str();
-    const char * k = key.c_str();
-    const char * f = filename.c_str();
     while(std::getline(infile, line)){
       i++;
       std::string first = line.substr(0,line.find(delimiter));
       std::string second = line.substr(line.find(delimiter)+1, line.length());
-      const char * f = first.c_str();
-      if (strcmp(k,f)==0){
+      if (key.compare(first)==0){
         LOG(INFO) << "FOUND SAME USER";
-        Deleteline(f, i);
-        Writeline(f,k, v);
+        Deleteline(first, i);
+        Writeline(first,key, value);
         return;
       }
     }
-    Writeline(f,k,v); 
+    Writeline(filename,key,value); 
   }
 }
 
-void KvstoreServiceImpl::Writeline(const char *file_name, const char *key, const char *val){
+void KvstoreServiceImpl::Writeline(const std::string &file_name, const std::string &key, const std::string &val){
   std::ofstream ofs;
   ofs.open(file_name, std::ios_base::app);
   ofs << key << ":" << val << "\n";
   ofs.close();
 }
 
-void KvstoreServiceImpl::Deleteline(const char *file_name, int n) { 
+void KvstoreServiceImpl::Deleteline(const std::string &file_name, int n) { 
     std::ifstream is(file_name); 
     std::ofstream ofs; 
     ofs.open("temp.txt", std::ofstream::out); 
@@ -83,8 +79,9 @@ void KvstoreServiceImpl::Deleteline(const char *file_name, int n) {
     } 
     ofs.close(); 
     is.close(); 
-    std::remove(file_name); 
-    std::rename("temp.txt", file_name); 
+    const char * file_name_2 = file_name.c_str();
+    std::remove(file_name_2); 
+    std::rename("temp.txt", file_name_2); 
 } 
 
 
