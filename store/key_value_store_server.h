@@ -1,3 +1,5 @@
+#include STORE_SERVER_H_
+#define STORE_SERVER_H_
 #include <iostream>
 #include <unordered_map>
 #include <string>
@@ -36,4 +38,4 @@ class KvstoreServiceImpl final : public KeyValueStore::Service {
   void Writeline(const std::string &file_name, const std::string &key, const std::string &val);
   void Deleteline(const std::string &file_name, int n);
 };
-  
+#endif // STORE_SERVER_H_

@@ -1,3 +1,5 @@
+#include STORE_CLIENT_H_
+#define STORE_CLIENT_H_
 #include <iostream>
 #include <string>
 #include <thread>
@@ -31,3 +33,4 @@ class KvstoreClient {
   std::unique_ptr<KeyValueStore::Stub> stub_;
 };
   
+#endif // STORE_CLIENT_H_

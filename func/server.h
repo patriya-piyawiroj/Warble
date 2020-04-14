@@ -1,3 +1,6 @@
+#ifndef FUNC_SERVER_H_
+#define FUNC_SERVER_H_
+
 #include <iostream>
 
 #include <grpcpp/grpcpp.h>
@@ -26,3 +29,4 @@ class FuncServiceImpl final : public FuncService::Service {
  private:
   std::unordered_map<int, std::string> func_; 
 };
+#endif // FUNC_SERVER_H_

@@ -1,3 +1,5 @@
+#include STORE_STORE_H_
+#define STORE_STORE_H_
 #include <unordered_map>
 #include <string>
 #include <optional>
@@ -16,3 +18,4 @@ class Kvmap {
   std::optional<std::string> get(std::string key); 
   bool remove(std::string key); 
 };
+#endif // STORE_STORE_H_
