@@ -50,11 +50,11 @@ void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string
       if (key.compare(first)==0){
         LOG(INFO) << "FOUND SAME USER";
         Deleteline(first, i);
-        Writeline(first,key, value);
+        Writeline(first, key, value);
         return;
       }
     }
-    Writeline(filename,key,value); 
+    Writeline(filename, key, value); 
   }
 }
 
@@ -79,9 +79,10 @@ void KvstoreServiceImpl::Deleteline(const std::string &file_name, int n) {
     } 
     ofs.close(); 
     is.close(); 
-    const char * file_name_2 = file_name.c_str();
-    std::remove(file_name_2); 
-    std::rename("temp.txt", file_name_2); 
+    //std method of remove requires char * //
+    const char * filename = file_name.c_str();
+    std::remove(filename); 
+    std::rename("temp.txt", filename); 
 } 
 
 
