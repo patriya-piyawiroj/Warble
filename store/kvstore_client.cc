@@ -4,16 +4,11 @@ KvstoreClient::KvstoreClient(std::shared_ptr<Channel> channel)
     : stub_(KeyValueStore::NewStub(channel)) {}
 
 
-void KvstoreClient::Put(const std::string& key, const std::string& value, const std::optional<std::string>& filename) {
+void KvstoreClient::Put(const std::string& key, const std::string& value) {
   // Data to be sent to server
   PutRequest request;
   request.set_key(key);
   request.set_value(value);
-  if (filename.has_value()) {
-    request.set_filename(filename.value());
-  } else {
-    request.set_filename(std::string());
-  }
 
   // Container for reply
   PutReply reply;

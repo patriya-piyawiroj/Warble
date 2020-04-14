@@ -13,7 +13,6 @@
 #include <glog/logging.h>
 
 #include "warble.grpc.pb.h"
-
 #include "../store/kvstore_client.h"
 
 
@@ -32,15 +31,15 @@ using warble::ReadReply;
 using warble::ProfileRequest;
 using warble::ProfileReply;
 
-// A mock server that calls warble functions directly rather than through func. This is meant to simulate 
-// warble functionality. Not to be confused with WarbleService as this does not connect to kvstore through gRPC.
-// Rather, it uses a map defined and used in kvstore.
-//     Example: 
-//         MockServer server;
-//         server.RegisterUser(username);
+// Warble functions defined in protos/warble.proto. These functions are known and used by func func/server.h
+// and connects and stores data to kvstore through gRPC. 
+//    Example: 
+//        WarbleImpl warble;
+//        warble.Call("register", RegisterUserRequest(), RegisterUserReply());
+// All functions are handled through Call, which takes any protobuf payload. 
 class WarbleImpl {
  public:
-
+  // This function maps a given event_function string to one of the five features defined below and calls it 
   void Call(std::string event_function, const google::protobuf::Any* request, google::protobuf::Any* reply);
 
   // Feature 1: Registers a new user

@@ -3,9 +3,8 @@
 Status KvstoreServiceImpl::put(ServerContext* context, const PutRequest* request, PutReply* reply) {
   std::string key = request->key();
   std::string value = request->value();
-  std::string filename = request->filename();
-  if (!filename.empty()) {
-    CreateKeyFile(key, value, filename);
+  if (!filename_.empty()) {
+    CreateKeyFile(key, value, filename_);
   }
   map_.put(key, value);
   LOG(INFO) << "Putting in " << key;
@@ -86,9 +85,14 @@ void KvstoreServiceImpl::Deleteline(const std::string &file_name, int n) {
 } 
 
 
-void RunServer() {
+void RunServer(std::string &filename) {
   std::string server_address("localhost:50001");
   KvstoreServiceImpl service;
+
+  if (!filename.empty()) {
+    service.filename_ = filename;
+  } 
+	
 
   ServerBuilder builder;
   builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
@@ -101,6 +105,12 @@ void RunServer() {
 }
 
 int main(int argc, char* argv[]) {
-  RunServer();
+  google::ParseCommandLineFlags(&argc, &argv, true);
+  if (!FLAGS_store.empty()){
+    std::string filename(FLAGS_store);
+    RunServer(filename);
+  } else {	  
+    RunServer(std::string()) ;
+  }
   return 0;
 }
