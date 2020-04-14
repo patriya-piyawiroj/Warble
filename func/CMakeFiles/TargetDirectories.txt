@@ -1,0 +1,3 @@
+/home/vagrant/csci499_patriya-piyawiroj/func/CMakeFiles/rebuild_cache.dir
+/home/vagrant/csci499_patriya-piyawiroj/func/CMakeFiles/func_server.dir
+/home/vagrant/csci499_patriya-piyawiroj/func/CMakeFiles/edit_cache.dir

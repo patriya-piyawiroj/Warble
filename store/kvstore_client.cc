@@ -27,11 +27,10 @@ void KvstoreClient::Put(const std::string& key, const std::string& value, const 
 
   // Act upon status
   if (status.ok()) {
-    LOG(INFO) << "Success";
-    std::cout << "Put Successful";
+    LOG(INFO) << "Put Successful";
     return;
   } else {
-    LOG(INFO) << "failed";
+    LOG(INFO) << "Put Failed";
     std::cout  << status.error_code() <<  ": " << status.error_message();
     return;
   }
