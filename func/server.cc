@@ -14,22 +14,25 @@ Status FuncServiceImpl::unhook(ServerContext* context, const UnhookRequest* requ
   if (it == func_.end()) {
     return Status(StatusCode::NOT_FOUND, "Event not found");
   }
+  func_.erase(it);
   return Status::OK;
 }
 
 Status FuncServiceImpl::event(ServerContext* context, EventRequest* request, EventReply* reply) {
-/*  int event_type = request->event_type();
-  auto it = map_.find(event_type):
-  if (it == map_.end()) {
+  int event_type = request->event_type();
+  auto it = func_.find(event_type);
+  if (it == func_.end()) {
     return Status(StatusCode::NOT_FOUND, "Event not found");
   } 
-  std::string event_function = it*;
-  Any request_payload;
-  Any reply_payload;
-  request_payload.PackFrom(request->paylaod());
-  reply_payload(reply->payload());
-  warble_.Call(event_function, &request_payload, &reply_payload);
-*/
+  std::string event_function = it->second;
+  google::protobuf::Any request_payload;
+  google::protobuf::Any reply_payload;
+  request_payload.PackFrom(request->payload());
+  reply_payload.PackFrom(reply->payload());
+  
+  WarbleImpl warble;
+  warble.Call(event_function, &request_payload, &reply_payload);
+
   return Status::OK;
 }
 

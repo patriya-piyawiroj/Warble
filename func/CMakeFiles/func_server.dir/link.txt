@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++17 -pthread -std=c++17 -pthread  -rdynamic   -o func_server  -L/usr/local/lib -Wl,-rpath,/usr/local/lib -lgrpc++_unsecure /usr/local/lib/libprotobuf.a ../third_party/glog/libglog.a /usr/lib/x86_64-linux-gnu/libunwind.so /usr/lib/x86_64-linux-gnu/libunwind-x86_64.so /usr/local/lib/libgflags.a -lpthread 

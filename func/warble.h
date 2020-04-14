@@ -1,3 +1,6 @@
+#ifndef WARBLEIMPL_H
+#define WARBLEIMPL_H
+
 #include <string>
 #include <iostream>
 #include <stdlib.h>
@@ -11,7 +14,7 @@
 
 #include "warble.grpc.pb.h"
 
-#include "store.h"
+#include "../store/kvstore_client.h"
 
 
 using grpc::Status;
@@ -37,6 +40,9 @@ using warble::ProfileReply;
 //         server.RegisterUser(username);
 class WarbleImpl {
  public:
+
+  void Call(std::string event_function, const google::protobuf::Any* request, google::protobuf::Any* reply);
+
   // Feature 1: Registers a new user
   void RegisterUser(const RegisteruserRequest* request, RegisteruserReply* reply);
   
@@ -53,8 +59,7 @@ class WarbleImpl {
   void Profile(const ProfileRequest* request, ProfileReply* reply);
 
  private:
-  Kvmap map_;
-
+ 
   // Creats a warble
   Warble Create_Warble(std::string username, std::string text, std::string id, std::string parent_id);
 
@@ -71,3 +76,4 @@ class WarbleImpl {
   bool CheckWarble(std::string warbleID);       
 };
 
+#endif
