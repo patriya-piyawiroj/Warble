@@ -1,21 +1,21 @@
 #include "mock_service.h"
 
 // Returns true if user exists, false otherwise
-bool MockServer::CheckUser(std::string username) {
+bool MockServer::Check_User(std::string username) {
   std::string key = "username-" + username;
   std::optional<std::string> user = map_.get(key);
   return user.has_value();
 }
 
 // Returns true if warble exists, false if otherwise
-bool MockServer::CheckWarble(std::string warbleID) {
+bool MockServer::Check_Warble(std::string warbleID) {
   std::string key = "warble-" + warbleID;
   std::optional<std::string> warble = map_.get(key);
   return warble.has_value();
 }
 
 // Creates a Warble
-Warble MockServer::Create_Warble(std::string username, std::string text, std::string id, std::string parent_id) {
+Warble MockServer::New_Warble(std::string username, std::string text, std::string id, std::string parent_id) {
   // TODO : Create Warble
   Timestamp timestamp;
   timestamp.set_seconds(0);
@@ -92,7 +92,7 @@ std::string MockServer::CreateWarble(const WarbleRequest* request, WarbleReply* 
   std::string hash_str = username + "-" + text + "-" + parent_id;
   std::size_t id = std::hash<std::string>{}(hash_str);
   std::string key = "warble-" + id;
-  Warble warble = Create_Warble(username,text,std::to_string(id),parent_id);
+  Warble warble = New_Warble(username,text,std::to_string(id),parent_id);
   std::string warble_string = Convert_Warble(warble);
   map_.put(key, warble_string);
   LOG(INFO) << "Creating new warble with hash: " <<  id;

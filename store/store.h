@@ -5,6 +5,7 @@
 
 #include <glog/logging.h>
 
+// The map class used to store kvstore data. Used by kvstore/kvstore_client.h
 class Kvmap {
 
  private:
@@ -12,7 +13,12 @@ class Kvmap {
   std::mutex mu_;
 
  public:
+  // Map put key and value
   void put(std::string key, std::string value); 
+
+  // Map get key
   std::optional<std::string> get(std::string key); 
+
+  // Map remove key
   bool remove(std::string key); 
 };

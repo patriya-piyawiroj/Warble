@@ -10,7 +10,6 @@
 #include <glog/logging.h>
 
 #include "warble.grpc.pb.h"
-
 #include "store.h"
 
 
@@ -56,7 +55,7 @@ class MockServer {
   Kvmap map_;
 
   // Creats a warble
-  Warble Create_Warble(std::string username, std::string text, std::string id, std::string parent_id);
+  Warble New_Warble(std::string username, std::string text, std::string id, std::string parent_id);
 
   // Converst Warble to string
   std::string Convert_Warble(Warble warble);
@@ -65,9 +64,9 @@ class MockServer {
   Warble To_Warble(std::string);
 
   // Check if user exists
-  bool CheckUser(std::string username);
+  bool Check_User(std::string username);
   
   // Checks if warble exists
-  bool CheckWarble(std::string warbleID);       
+  bool Check_Warble(std::string warbleID);       
 };
 

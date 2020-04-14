@@ -3,6 +3,8 @@
 #include <optional>
 #include <mutex>
 
+// A map class, same as the one present in kvstore/store.h . warble/mock_service.h uses this
+// class to store
 class Kvmap {
 
  private:
@@ -10,7 +12,12 @@ class Kvmap {
   std::mutex mu_;
 
  public:
+  // map put (key, value)
   void put(std::string key, std::string value); 
+  
+  // map get key
   std::optional<std::string> get(std::string key); 
+
+  // map remove key
   bool remove(std::string key); 
 };

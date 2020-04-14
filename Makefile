@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/vagrant/csci499_patriya-piyawiroj
+CMAKE_SOURCE_DIR = /home/vagrant/mergeconflict/master/csci499_patriya-piyawiroj
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
+CMAKE_BINARY_DIR = /home/vagrant/mergeconflict/master/csci499_patriya-piyawiroj
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/mergeconflict/master/csci499_patriya-piyawiroj/CMakeFiles /home/vagrant/mergeconflict/master/csci499_patriya-piyawiroj/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/mergeconflict/master/csci499_patriya-piyawiroj/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,19 +175,6 @@ warble/fast:
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/build
 .PHONY : warble/fast
 
-#=============================================================================
-# Target rules for targets named server
-
-# Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 server
-.PHONY : server
-
-# fast build rule for target.
-server/fast:
-	$(MAKE) -f func/CMakeFiles/server.dir/build.make func/CMakeFiles/server.dir/build
-.PHONY : server/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -201,7 +188,6 @@ help:
 	@echo "... store"
 	@echo "... kvstore_client"
 	@echo "... warble"
-	@echo "... server"
 .PHONY : help
 
 

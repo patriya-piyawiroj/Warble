@@ -3,7 +3,7 @@
 const std::string WarbleInterface::INVALID_FLAG_ERROR = "Invalid flag combination. Missing ";
 const std::string WarbleInterface::MISSING_ARGUMENT_ERROR = "Missing arguments for ";
 
-
+// Format for printing error message
 void WarbleInterface::PrintError(const std::string &errorMessage, const std::string &fields) {
   std::cout << errorMessage << fields << std::endl;
 }
