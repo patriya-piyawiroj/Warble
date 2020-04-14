@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/vagrant/csci499_patriya-piyawiroj
 
 # Convenience name for "all" pass in the directory.
 store/all: store/CMakeFiles/key_value_store_server.dir/all
+store/all: store/CMakeFiles/kvtest.dir/all
 store/all: store/CMakeFiles/store.dir/all
 store/all: store/CMakeFiles/kvstore_client.dir/all
 
@@ -71,6 +72,7 @@ store/all: store/CMakeFiles/kvstore_client.dir/all
 
 # Convenience name for "clean" pass in the directory.
 store/clean: store/CMakeFiles/key_value_store_server.dir/clean
+store/clean: store/CMakeFiles/kvtest.dir/clean
 store/clean: store/CMakeFiles/store.dir/clean
 store/clean: store/CMakeFiles/kvstore_client.dir/clean
 
@@ -119,13 +121,52 @@ clean: store/CMakeFiles/key_value_store_server.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target store/CMakeFiles/kvtest.dir
+
+# All Build rule for target.
+store/CMakeFiles/kvtest.dir/all: store/CMakeFiles/store.dir/all
+	$(MAKE) -f store/CMakeFiles/kvtest.dir/build.make store/CMakeFiles/kvtest.dir/depend
+	$(MAKE) -f store/CMakeFiles/kvtest.dir/build.make store/CMakeFiles/kvtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=9,10,11,12,13,14,15 "Built target kvtest"
+.PHONY : store/CMakeFiles/kvtest.dir/all
+
+# Include target in all.
+all: store/CMakeFiles/kvtest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+store/CMakeFiles/kvtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 9
+	$(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/kvtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
+.PHONY : store/CMakeFiles/kvtest.dir/rule
+
+# Convenience name for target.
+kvtest: store/CMakeFiles/kvtest.dir/rule
+
+.PHONY : kvtest
+
+# clean rule for target.
+store/CMakeFiles/kvtest.dir/clean:
+	$(MAKE) -f store/CMakeFiles/kvtest.dir/build.make store/CMakeFiles/kvtest.dir/clean
+.PHONY : store/CMakeFiles/kvtest.dir/clean
+
+# clean rule for target.
+clean: store/CMakeFiles/kvtest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target store/CMakeFiles/store.dir
 
 # All Build rule for target.
 store/CMakeFiles/store.dir/all:
 	$(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/depend
 	$(MAKE) -f store/CMakeFiles/store.dir/build.make store/CMakeFiles/store.dir/build
+
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=23,24 "Built target store"
+
 .PHONY : store/CMakeFiles/store.dir/all
 
 # Include target in all.
@@ -159,10 +200,10 @@ clean: store/CMakeFiles/store.dir/clean
 # Target rules for target store/CMakeFiles/kvstore_client.dir
 
 # All Build rule for target.
-store/CMakeFiles/kvstore_client.dir/all: store/CMakeFiles/store.dir/all
+store/CMakeFiles/kvstore_client.dir/all:
 	$(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/depend
 	$(MAKE) -f store/CMakeFiles/kvstore_client.dir/build.make store/CMakeFiles/kvstore_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target kvstore_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=7,8 "Built target kvstore_client"
 .PHONY : store/CMakeFiles/kvstore_client.dir/all
 
 # Include target in all.
@@ -172,7 +213,7 @@ all: store/CMakeFiles/kvstore_client.dir/all
 
 # Build rule for subdir invocation for target.
 store/CMakeFiles/kvstore_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 store/CMakeFiles/kvstore_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/vagrant/csci499_patriya-piyawiroj/CMakeFiles 0
 .PHONY : store/CMakeFiles/kvstore_client.dir/rule
@@ -217,7 +258,9 @@ warble/preinstall:
 warble/CMakeFiles/warble.dir/all:
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/depend
 	$(MAKE) -f warble/CMakeFiles/warble.dir/build.make warble/CMakeFiles/warble.dir/build
+
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vagrant/csci499_patriya-piyawiroj/CMakeFiles --progress-num=25,26,27,28,29,30,31 "Built target warble"
+
 .PHONY : warble/CMakeFiles/warble.dir/all
 
 # Include target in all.

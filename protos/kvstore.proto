@@ -4,6 +4,7 @@ package kvstore;
 message PutRequest {
   bytes key = 1;
   bytes value = 2;
+  bytes filename = 3;
 }
 
 message PutReply {
