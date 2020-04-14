@@ -3,9 +3,6 @@
 #include <string>
 #include <stdlib.h>
 #include <fstream>
-#include <string.h>
-#include <algorithm>
-#include <bits/stdc++.h>
 
 #include <grpcpp/grpcpp.h>
 #include <glog/logging.h>
@@ -35,9 +32,8 @@ class KvstoreServiceImpl final : public KeyValueStore::Service {
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply);
  private:
   Kvmap map_;
-  bool fileExists(const char *fileName);
-  void CreateKeyFile(const std::string &key, const std::string &value);
-  void Writeline(const char *file_name, const char *key, const char *val);
-  void Deleteline(const char *file_name, int n);
+  void CreateKeyFile(const std::string &key, const std::string &value, const std::string &filename);
+  void Writeline(const std::string &file_name, const std::string &key, const std::string &val);
+  void Deleteline(const std::string &file_name, int n);
 };
   

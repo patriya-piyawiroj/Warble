@@ -220,6 +220,9 @@ Unwind_PLATFORM_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libunwind-x86_64.so
 //The directory containing a CMake configuration file for gflags.
 gflags_DIR:PATH=/usr/local/lib/cmake/gflags
 
+//Dependencies for target
+kvstore_client_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 projectname_BINARY_DIR:STATIC=/home/vagrant/csci499_patriya-piyawiroj
 

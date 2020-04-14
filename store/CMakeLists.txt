@@ -8,6 +8,8 @@ find_package(glog 0.4.0 REQUIRED)
 get_filename_component(store_proto "../protos/kvstore.proto" ABSOLUTE)
 get_filename_component(store_proto_path "${store_proto}" PATH)
 
+find_package(gflags REQUIRED)
+
 # Generates gRPC codes
 set(DIST_DIR "${CMAKE_CURRENT_BINARY_DIR}/dist")
 file(MAKE_DIRECTORY ${DIST_DIR})
@@ -32,7 +34,7 @@ include_directories("${DIST_DIR}")
 
 # Compiles store as a library
 add_library(store STATIC store.cc store.h)
-#add_library(kvstore_client STATIC kvstore_client.cc kvstore_client.h)
+add_library(kvstore_client STATIC kvstore_client.cc kvstore_client.h)
 
 # Adds test
 #add_executable(store_test store_test.cc)
@@ -47,15 +49,16 @@ add_library(store STATIC store.cc store.h)
     #COMMAND store_test
     #)
 
-add_executable(kvstore_client kvstore_client.cc 
-	kvstore_client.h
+add_executable(kvtest kvtest.cc 
+	kvstore_client
 	store
 	${store_proto_srcs}
 	${store_grpc_srcs})
-target_link_libraries(kvstore_client
+target_link_libraries(kvtest
 	${_GRPC_GRPCPP_UNSECURE}
 	${_PROTOBUF_LIBPROTOBUF}
 	glog::glog
+	gflags
 	store)
 # Compiles key_value_store_server_sync
 add_executable(key_value_store_server key_value_store_server.cc

@@ -2,6 +2,7 @@
 #include <string>
 #include <thread>
 #include <stdlib.h>
+#include <optional>
 
 #include <grpcpp/grpcpp.h>
 #include <glog/logging.h>
@@ -23,7 +24,7 @@ using kvstore::KeyValueStore;
 class KvstoreClient {
  public:
   KvstoreClient(std::shared_ptr<Channel> channel); 
-  void Put(const std::string& key, const std::string& value);
+  void Put(const std::string& key, const std::string& value, const std::optional<std::string>& filename);
   std::optional<std::string> Get(const std::string&  key); 
   void Remove(const std::string& key);
  private:

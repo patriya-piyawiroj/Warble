@@ -124,6 +124,19 @@ key_value_store_server/fast:
 .PHONY : key_value_store_server/fast
 
 #=============================================================================
+# Target rules for targets named kvtest
+
+# Build rule for target.
+kvtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 kvtest
+.PHONY : kvtest
+
+# fast build rule for target.
+kvtest/fast:
+	$(MAKE) -f store/CMakeFiles/kvtest.dir/build.make store/CMakeFiles/kvtest.dir/build
+.PHONY : kvtest/fast
+
+#=============================================================================
 # Target rules for targets named store
 
 # Build rule for target.
@@ -171,6 +184,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... key_value_store_server"
+	@echo "... kvtest"
 	@echo "... store"
 	@echo "... kvstore_client"
 	@echo "... warble"

@@ -136,6 +136,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_kvstore_2eproto::offsets[] PRO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::kvstore::PutRequest, key_),
   PROTOBUF_FIELD_OFFSET(::kvstore::PutRequest, value_),
+  PROTOBUF_FIELD_OFFSET(::kvstore::PutRequest, filename_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::kvstore::PutReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -167,11 +168,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_kvstore_2eproto::offsets[] PRO
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::kvstore::PutRequest)},
-  { 7, -1, sizeof(::kvstore::PutReply)},
-  { 12, -1, sizeof(::kvstore::GetRequest)},
-  { 18, -1, sizeof(::kvstore::GetReply)},
-  { 24, -1, sizeof(::kvstore::RemoveRequest)},
-  { 30, -1, sizeof(::kvstore::RemoveReply)},
+  { 8, -1, sizeof(::kvstore::PutReply)},
+  { 13, -1, sizeof(::kvstore::GetRequest)},
+  { 19, -1, sizeof(::kvstore::GetReply)},
+  { 25, -1, sizeof(::kvstore::RemoveRequest)},
+  { 31, -1, sizeof(::kvstore::RemoveReply)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -184,16 +185,16 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_kvstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rkvstore.proto\022\007kvstore\"(\n\nPutRequest\022\013"
-  "\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\"\n\n\010PutReply\"\031"
-  "\n\nGetRequest\022\013\n\003key\030\001 \001(\014\"\031\n\010GetReply\022\r\n"
-  "\005value\030\001 \001(\014\"\034\n\rRemoveRequest\022\013\n\003key\030\001 \001"
-  "(\014\"\r\n\013RemoveReply2\257\001\n\rKeyValueStore\022/\n\003p"
-  "ut\022\023.kvstore.PutRequest\032\021.kvstore.PutRep"
-  "ly\"\000\0223\n\003get\022\023.kvstore.GetRequest\032\021.kvsto"
-  "re.GetReply\"\000(\0010\001\0228\n\006remove\022\026.kvstore.Re"
-  "moveRequest\032\024.kvstore.RemoveReply\"\000b\006pro"
-  "to3"
+  "\n\rkvstore.proto\022\007kvstore\":\n\nPutRequest\022\013"
+  "\n\003key\030\001 \001(\014\022\r\n\005value\030\002 \001(\014\022\020\n\010filename\030\003"
+  " \001(\014\"\n\n\010PutReply\"\031\n\nGetRequest\022\013\n\003key\030\001 "
+  "\001(\014\"\031\n\010GetReply\022\r\n\005value\030\001 \001(\014\"\034\n\rRemove"
+  "Request\022\013\n\003key\030\001 \001(\014\"\r\n\013RemoveReply2\257\001\n\r"
+  "KeyValueStore\022/\n\003put\022\023.kvstore.PutReques"
+  "t\032\021.kvstore.PutReply\"\000\0223\n\003get\022\023.kvstore."
+  "GetRequest\032\021.kvstore.GetReply\"\000(\0010\001\0228\n\006r"
+  "emove\022\026.kvstore.RemoveRequest\032\024.kvstore."
+  "RemoveReply\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_kvstore_2eproto_deps[1] = {
 };
@@ -208,7 +209,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_kvs
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_kvstore_2eproto_once;
 static bool descriptor_table_kvstore_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_kvstore_2eproto = {
-  &descriptor_table_kvstore_2eproto_initialized, descriptor_table_protodef_kvstore_2eproto, "kvstore.proto", 363,
+  &descriptor_table_kvstore_2eproto_initialized, descriptor_table_protodef_kvstore_2eproto, "kvstore.proto", 381,
   &descriptor_table_kvstore_2eproto_once, descriptor_table_kvstore_2eproto_sccs, descriptor_table_kvstore_2eproto_deps, 6, 0,
   schemas, file_default_instances, TableStruct_kvstore_2eproto::offsets,
   file_level_metadata_kvstore_2eproto, 6, file_level_enum_descriptors_kvstore_2eproto, file_level_service_descriptors_kvstore_2eproto,
@@ -243,6 +244,10 @@ PutRequest::PutRequest(const PutRequest& from)
   if (!from._internal_value().empty()) {
     value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
+  filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_filename().empty()) {
+    filename_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.filename_);
+  }
   // @@protoc_insertion_point(copy_constructor:kvstore.PutRequest)
 }
 
@@ -250,6 +255,7 @@ void PutRequest::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_PutRequest_kvstore_2eproto.base);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  filename_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 PutRequest::~PutRequest() {
@@ -260,6 +266,7 @@ PutRequest::~PutRequest() {
 void PutRequest::SharedDtor() {
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  filename_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void PutRequest::SetCachedSize(int size) const {
@@ -279,6 +286,7 @@ void PutRequest::Clear() {
 
   key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   value_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  filename_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -301,6 +309,14 @@ const char* PutRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes filename = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_filename();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -343,6 +359,12 @@ failure:
         2, this->_internal_value(), target);
   }
 
+  // bytes filename = 3;
+  if (this->filename().size() > 0) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_filename(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -371,6 +393,13 @@ size_t PutRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_value());
+  }
+
+  // bytes filename = 3;
+  if (this->filename().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_filename());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -412,6 +441,10 @@ void PutRequest::MergeFrom(const PutRequest& from) {
 
     value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
+  if (from.filename().size() > 0) {
+
+    filename_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.filename_);
+  }
 }
 
 void PutRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -438,6 +471,8 @@ void PutRequest::InternalSwap(PutRequest* other) {
   key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  filename_.Swap(&other->filename_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
 }
 

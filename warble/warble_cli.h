@@ -11,6 +11,7 @@ DEFINE_string(warble, "", "Creates a new warble with the given text");
 DEFINE_string(reply, "", "Indicates that the new warble is a reply to the given id");
 DEFINE_string(follow, "", "Starts following the given username");
 DEFINE_string(read, "", "Reads the warble thread starting at the given id");
+DEFINE_string(store, "", "Stores to the given file name");
 DEFINE_bool(profile, false, "Get the user's profile of following and followers");
 
 class WarbleInterface {
@@ -26,6 +27,5 @@ class WarbleInterface {
   void Profile(std::string usernamer);
  
  private:
-  MockServer warble_service;
- // static const std::string INVALID_FLAG_ERROR;                                                                            static const std::string MISSING_ARGUMENT_ERROR; 
+  MockServer warble_service;                                                            
 };
