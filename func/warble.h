@@ -1,5 +1,5 @@
-#ifndef WARBLEIMPL_H
-#define WARBLEIMPL_H
+#ifndef FUNC_WARBLEIMPL_H_
+#define FUNC_WARBLEIMPL_H_
 
 #include <string>
 #include <iostream>
@@ -76,4 +76,4 @@ class WarbleImpl {
   bool CheckWarble(std::string warbleID);       
 };
 
-#endif
+#endif // FUNC_WARBLEIMPL_H_

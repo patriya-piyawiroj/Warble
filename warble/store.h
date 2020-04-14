@@ -1,3 +1,5 @@
+#include WARBLE_STORE_H_
+#define WARBLE_STORE_H_
 #include <unordered_map>
 #include <string>
 #include <optional>
@@ -21,3 +23,4 @@ class Kvmap {
   // map remove key
   bool remove(std::string key); 
 };
+#endif // WARBLE_STORE_H_

@@ -1,3 +1,5 @@
+#include WARBLE_CLIENT_H_
+#define WARBLE_CLIENT_H_
 #include <stdlib.h>
 #include <iostream>
 
@@ -46,3 +48,4 @@ class WarbleInterface {
  private:
   MockServer warble_service;                                                            
 };
+#endif // WARBLE_CLIENT_H_
