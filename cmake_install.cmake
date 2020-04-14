@@ -1,4 +1,4 @@
-# Install script for directory: /home/vagrant/temp/csci499_patriya-piyawiroj
+# Install script for directory: /home/vagrant/csci499_patriya-piyawiroj
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/vagrant/temp/csci499_patriya-piyawiroj/store/cmake_install.cmake")
-  include("/home/vagrant/temp/csci499_patriya-piyawiroj/warble/cmake_install.cmake")
+  include("/home/vagrant/csci499_patriya-piyawiroj/store/cmake_install.cmake")
+  include("/home/vagrant/csci499_patriya-piyawiroj/warble/cmake_install.cmake")
 
 endif()
 
@@ -52,5 +52,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vagrant/temp/csci499_patriya-piyawiroj/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vagrant/csci499_patriya-piyawiroj/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

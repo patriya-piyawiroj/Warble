@@ -31,14 +31,9 @@ Status KvstoreServiceImpl::remove(ServerContext* context, const RemoveRequest* r
   }
 }
 
-bool KvstoreServiceImpl::fileExists(const std::string &fileName)
-{
-    std::ifstream infile(fileName);
-    return infile.good();
-}
-
 void KvstoreServiceImpl::CreateKeyFile(const std::string &key, const std::string &value, const std::string &filename){
-  if (!fileExists(filename)){
+  std::ifstream infile(filename) ;
+  if (!infile.is_open()){
     std::ofstream myfile;
     myfile.open(filename, std::ios_base::app);
     myfile << key << ":" << value << "\n";

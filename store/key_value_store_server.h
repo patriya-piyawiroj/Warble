@@ -32,7 +32,6 @@ class KvstoreServiceImpl final : public KeyValueStore::Service {
   Status remove(ServerContext* context, const RemoveRequest* request, RemoveReply* reply);
  private:
   Kvmap map_;
-  bool fileExists(const std::string &fileName);
   void CreateKeyFile(const std::string &key, const std::string &value, const std::string &filename);
   void Writeline(const char *file_name, const char *key, const char *val);
   void Deleteline(const char *file_name, int n);

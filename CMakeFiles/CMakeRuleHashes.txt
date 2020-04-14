@@ -1,3 +1,3 @@
 # Hashes of file build rules.
-678056455f6996fee800c44c6d56a5ab store/dist/kvstore.pb.cc
-f21cf8696001eb32ed028187c435aa35 warble/dist/warble.pb.cc
+37ed52f2284c2e490b164c3878d8e2ba store/dist/kvstore.pb.cc
+7ebd4bffc9c2c4339bac3189f1ebd01e warble/dist/warble.pb.cc
