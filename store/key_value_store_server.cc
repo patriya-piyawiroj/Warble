@@ -89,7 +89,7 @@ void KvstoreServiceImpl::Deleteline(const std::string &file_name, int n) {
 } 
 
 
-void RunServer(std::string &filename) {
+void RunServer(std::string filename) {
   std::string server_address("localhost:50001");
   KvstoreServiceImpl service;
 
