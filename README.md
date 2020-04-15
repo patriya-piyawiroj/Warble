@@ -4,7 +4,7 @@
 Using Vagrant box: ubuntu/bionic64 (virtualbox, 20190109.0.0)
 
 ## Set-up
-The previous installation instructions in the README.md from Phase 1 was moved to INSTALL.md
+The previous installation instructions in the README.md from Phase 1 was moved to INSTALL.md\n
 Set up can be done using the following scripts (based off previous README) or the full instructions found in INSTALL.md
 
 ```
@@ -23,8 +23,7 @@ make
 
 ### Phase 2: Persistence
 
-Note: the kvtest executable is not a unit test suite but can be used to test persistant functionality
-      see example and class comments for more details 
+Note: the kvtest executable is not a unit test suite but can be used to test persistant functionality (see example and class comments for more details) 
 
 Example:
 ```
