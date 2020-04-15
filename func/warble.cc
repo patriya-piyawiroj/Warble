@@ -8,57 +8,59 @@ void WarbleImpl::Call(std::string event_function, const google::protobuf::Any* a
   if (event_function.compare("register") == 0) {
     RegisteruserRequest request;
     RegisteruserReply reply;
-    if (any_request.UnpackTo(&request)) {
+    if (any_request->UnpackTo(&request)) {
       RegisterUser(&request, &reply);
-      any_reply.PackFrom(reply);
+      any_reply->PackFrom(reply);
     }
   } else if (event_function.compare("create") == 0) {
     WarbleRequest request;
     WarbleReply reply;
-    if (any_request.UnpackTo(&request)) {
+    if (any_request->UnpackTo(&request)) {
       CreateWarble(&request, &reply);
-      any_reply.PackFrom(reply);
+      any_reply->PackFrom(reply);
     }
   } else if (event_function.compare("follow") == 0) {
     FollowRequest request;
     FollowReply reply; 
-    if (any_request.UnpackTo(&request)) {
+    if (any_request->UnpackTo(&request)) {
       Follow(&request, &reply);
-      any_reply.PackFrom(reply);
+      any_reply->PackFrom(reply);
     }
   } else if (event_function.compare("read") == 0) {
     ReadRequest request;                          
     ReadReply reply;
-    if (any_request.UnpackTo(&request)) {                                   
+    if (any_request->UnpackTo(&request)) {                                   
       Read(&request, &reply);
-      any_reply.PackFrom(reply);
+      any_reply->PackFrom(reply);
     }
   } else if (event_function.compare("profile") == 0) {
     ProfileRequest request;
     ProfileReply reply;
-    if (any_request.UnpackTo(&request)) {
+    if (any_request->UnpackTo(&request)) {
       Profile(&request, &reply);
-      any_reply.PackFrom(reply);
+      any_reply->PackFrom(reply);
+    }
   } 
 }
 
 // Returns true if user exists, false otherwise
 bool WarbleImpl::CheckUser(std::string username) {
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
   std::string key = "username-" + username;
-  std::optional<std::string> user = map_.get(key);
+  std::optional<std::string> user = client.Get(key);
   return user.has_value();
 }
 
 // Returns true if warble exists, false if otherwise
 bool WarbleImpl::CheckWarble(std::string warbleID) {
+  KvstoreClient client(grpc::CreateChannel("localhost:50001", grpc::InsecureChannelCredentials()));
   std::string key = "warble-" + warbleID;
-  std::optional<std::string> warble = map_.get(key);
+  std::optional<std::string> warble = client.Get(key);
   return warble.has_value();
 }
 
 // Creates a Warble
 Warble WarbleImpl::Create_Warble(std::string username, std::string text, std::string id, std::string parent_id) {
-  // TODO : Create Warble
   Timestamp timestamp;
   timestamp.set_seconds(0);
   timestamp.set_useconds(0);
@@ -122,7 +124,7 @@ void WarbleImpl::RegisterUser(const RegisteruserRequest* request, RegisteruserRe
   client.Put(followingKey, "");
 
   LOG(INFO) << "Put in username: " << username;
-  LOG(INFO) << "Retrieved: " << map_.get(key).value();
+  LOG(INFO) << "Retrieved: " << client.Get(key).value();
 }
 
 // Feature 2: Post new warble

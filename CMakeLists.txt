@@ -37,4 +37,4 @@ set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Suppressing benchmark's tests" FORC
 # ! Notice here !
 add_subdirectory(store)
 add_subdirectory(warble)
-#add_subdirectory(func)
+add_subdirectory(func)
