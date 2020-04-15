@@ -4,7 +4,7 @@
 Using Vagrant box: ubuntu/bionic64 (virtualbox, 20190109.0.0)
 
 ## Set-up
-The previous installation instructions in the README.md from Phase 1 was moved to INSTALL.md\n
+The previous installation instructions in the README.md from Phase 1 was moved to INSTALL.md<br />
 Set up can be done using the following scripts (based off previous README) or the full instructions found in INSTALL.md
 
 ```
