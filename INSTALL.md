@@ -1,5 +1,7 @@
 # csci499_patriya-piyawiroj
 
+***This contains the README from Phase 1.***
+
 ## Environment
 Using Vagrant box: ubuntu/bionic64 (virtualbox, 20190109.0.0)
 
