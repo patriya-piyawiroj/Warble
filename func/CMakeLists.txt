@@ -59,6 +59,9 @@ add_custom_command(
 # Include generated *.pb.h files
 include_directories("${DIST_DIR}")
 
+# Compiles client as a library
+add_library(func_client STATIC client.cc client.h)
+
 # Compiles key_value_store_server_sync
 add_executable(server server.cc server.h
     warble.cc warble.h
@@ -72,5 +75,13 @@ target_link_libraries(server
     ${_GRPC_GRPCPP_UNSECURE}
     ${_PROTOBUF_LIBPROTOBUF}
     kvstore_client    
+    glog::glog)
+
+add_executable(startup startup.cc)
+target_link_libraries(startup
+    ${_GRPC_GRPCPP_UNSECURE}
+    ${_PROTOBUF_LIBPROTOBUF}
+    func_client
+    kvstore_client
     glog::glog)
 
