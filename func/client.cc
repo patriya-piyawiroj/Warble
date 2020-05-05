@@ -5,7 +5,7 @@
 #include "client.h"
 
 FuncClient::FuncClient(std::shared_ptr<Channel> channel)
-	    : stub_(KeyValueStore::NewStub(channel)) {}
+	    : stub_(FuncService::NewStub(channel)) {}
 
 void FuncClient::Hook(const int32_t &event_type, const std::string &event_function) {
   // Data to be sent to server
@@ -55,7 +55,7 @@ google::protobuf::Any Event(const int32_t &event_type, const google::protobuf::A
   EventRequest request;
   EventReply reply;
   request.set_event_type(event_type);
-  reqyest.set_payload(payload);
+  request.set_payload(payload);
 
   // Context for client
   ClientContext context;

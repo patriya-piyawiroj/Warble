@@ -33,7 +33,7 @@ using func::FuncService;
 class FuncClient {
  public:
   // Instantiates client with connection to channel
-  KvstoreClient(std::shared_ptrt<Channel> channel);
+  FuncClient(std::shared_ptr<Channel> channel);
 
   // Hooks a given event type and event function
   void Hook(const int32_t &event_type, const std::string &event_function);
@@ -45,7 +45,7 @@ class FuncClient {
   google::protobuf::Any Event(const int32_t &event_type, const google::protobuf::Any &payload);
  
  private:
-  std::unique_ptr<FuncServer::Stub> stub_;
+  std::unique_ptr<FuncService::Stub> stub_;
 };
 
 #endif // FUNC_CLIENT_H_
