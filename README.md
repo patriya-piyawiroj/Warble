@@ -1,4 +1,4 @@
-# csci499_patriya-piyawiroj
+# Twitter Social Network
 
 
 ## Environment
